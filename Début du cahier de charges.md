@@ -27,7 +27,9 @@ Il combine les différentes possibilités pour tomber sur la ou les solutions qu
 La programmation se fera en c++.
 
 ## Informations diverses
-Date du début de projet : inconnue
-Objectifs et timing : à discuter
-Partage des tâches :
+###Date du début de projet :
+inconnue
+###Objectifs et timing :
+à discuter
+###Partage des tâches :
 Pierre-Emmanuel s’occupe de la partie interface graphique et Rébecca, du moteur de calcul. La partie gestion des erreurs de l’utilisateur : à discuter…
