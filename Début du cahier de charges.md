@@ -5,9 +5,9 @@ Le programme doit calculer la meilleure combinaison des coupes de manière à ob
 
 ###Interface :
 L’interface comportera 3 champs :
-1. "de combien de pièces disposez-vous ?"
-2."quelle en est leur taille" (taille unique de toutes les barres)
-3."veuillez entrer les tailles des morceaux que vous voulez obtenir, séparés par des virgules.Vous pouvez utiliser le symbole * pour indiquer que vous en voulez plusieurs de cette taille. Exemple de format : 12.5, 7.8*3, 9 ,47, 36*2"
+* "de combien de pièces disposez-vous ?"
+* "quelle en est leur taille" (taille unique de toutes les barres)
+* "veuillez entrer les tailles des morceaux que vous voulez obtenir, séparés par des virgules.Vous pouvez utiliser le symbole * pour indiquer que vous en voulez plusieurs de cette taille. Exemple de format : 12.5, 7.8*3, 9 ,47, 36*2"
 
 ###Présentation des résultats :
 Soit sous forme écrite : morceau1 : 12, 15,12.5,7	 morceau2 : 50 etc., soit sous forme graphique avec un schéma de découpe de chaque morceau. Il faudra aussi faire figurer le pourcentage de chutes et  le nombre de poutres non entamées.
