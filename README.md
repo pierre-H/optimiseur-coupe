@@ -5,4 +5,4 @@ Optimiseur de coupe en C++ avec Qt dans le cadre d'un projet réalisé pour l'IE
 
 [Pour le Markdown.](https://guides.github.com/features/mastering-markdown/)
 
-[Pur une petite idée d'un autre projet dansle même domaine.](http://www.online-app.eu.pn/fr/)
+[Pur une petite idée d'un autre projet dans le même domaine.](http://www.online-app.eu.pn/fr/)
