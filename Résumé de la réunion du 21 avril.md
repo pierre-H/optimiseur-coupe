@@ -33,6 +33,7 @@ REBECCA : "de quelles captures d'écran s'agit-il ?"
   3. Un document expliquant les structures de données du moteur (et les différents champs de l'interface ?) ou peut-être, de manière plus générale, un grand schéma de la structure du programme (document XLM ?) avec le rôle des différentes fonctions etc.
   4. Un document readme qui indique très basiquement les fonctionnalités du programme et comment s'en servir ?
   5. Un document expliquant le rôle de chacun dans le projet, et en gros qu'il voie qu'on a tous travaillé.
-C'est logique ou c'est trop ? Ou pas assez ?(d'autres idées de choses qui pourraient être nécessaires ?)
+C'est logique ou c'est trop ? Ou pas assez ?(d'autres idées de choses qui pourraient être nécessaires ?).
+
 ### Bonne fin de journée !
 Rébecca
