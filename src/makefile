@@ -17,10 +17,10 @@ List.o: List.cpp List.h
 Paire.o: Paire.cpp Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
-ListPaires.o: ListPaires.cpp Listpaires.h Paire.h
+ListPaires.o: ListPaires.cpp ListPaires.h Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
-DoubleListPaires.o: DoubleListPaires.cpp DoubleListPaires.h List.h Paires.h
+DoubleListPaires.o: DoubleListPaires.cpp DoubleListPaires.h List.h Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
 Moteur.o: Moteur.cpp Moteur.h
