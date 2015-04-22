@@ -11,38 +11,38 @@
 class List
 {
     public:
+    	// fonctions de construction et de destruction
         List();
         List(float);
         List (List* m_prochain);
-
         virtual ~List();
-
-        void affiche (bool premier = true) const ;
+        
         List& cons (float);
-        int length ();
         List& append (float , ...);
-        int member (float);
         int supprime ();
         int supprimeNieme (int);
         void supprimeExplicite (float ASupprimer);
         List& insere (float, int);
-        float car ();
-        List* cdr();
         void trie (float element);
+        
         // définies ds moteur
         int ordreCombinaison (float tailleBarres);
         void copie (std::vector<float> * v);
-        List * getProchain ();
+        
+        // fonctions d'accès et d'information
+        void affiche (bool premier = true) const ;
+        int member (float);
         float getPremier ();
-
+        List * getProchain ();
         bool empty();
+        int length ();
 
     protected:
         float m_element;
         List * m_prochain;
 };
 
-//prototype
+//ex
 List * createSortedList (List * l= new List(), ...);
 
 #endif // List_H

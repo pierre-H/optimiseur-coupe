@@ -1,0 +1,14 @@
+- Maquette à quoi devrait ressembler l'interface (un peu bizarre parce que l'interface est presque prête, mais je crois que M. Bernard aprécierait l'idée quand même)
+
+- Jeu de test très complet comprenant tous les cas possibles et imaginables : toutes les erreurs de l'utilisateur, mauvais format d'entrée, nombre faramineux de segments voulus (à partir de combien la combinatoire ralentit l'ordinateur de manière inacceptable, et fixer cette limite à l'utilisateur), nombre de barres insuffisant etc...
+
+- Bien agencer les différentes fonctions de manière à ce qu'il soit possible de recommencer le calcul très facilement en cas d'erreur de la part du client, un bouton du style "Nouvelle recherche" qui appelle un handler recherche () qui réinitialise toutes les structures de données.)
+
+- Faut-il faire des tests de non régression dans chaque fichier ? Et les rendre ?
+
+- Rédaction d'une belle documentation.
+
+Note 1 : pour Xavier, je n'ai pas touché à ce code depuis très longtemps, et il me semble à présent assez étranger... En gros, c'est vrai qu'il va falloir que tu fasses la gymnastique de te mettre dans la tête de quelqu'un d'autre pour bien rentrer dans le code, mais je vais devoir faire le même (ou presque !) bouleau pour me replonger dans mon propre code !
+
+Note 2 : pour Xavier aussi, il y a un grosse somme de travail qu'il te reste, ne t'inquiète pas, mais il va juste falloir qu'on trouve un titre qui peut réunir les différentes choses dont tu vas t'occuper...
+
