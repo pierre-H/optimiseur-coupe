@@ -33,16 +33,16 @@ DoubleListPaires::~DoubleListPaires()
 // ajoute une combinaison à la liste des possibilités
 // si cette combinaison ne dépasse pas la longueur des barres
 // et qu'elle est au dessus du niveau d'exigence de rendement
-// retourne si on a ajouté ou non la liste de possibilités
-bool DoubleListPaires::push (ListPaires * l)
+// retourne 0 si on a ajouté à la liste de possibilités
+// 1 si c'était plus grand que la taille des barres, et 2 si < que exigence
+int DoubleListPaires::push (ListPaires * l)
 {
-    if ((l->calculeRendement(m_tailleBarres) <= 100)
-    && (l->getRendement() > m_exigence))
-    {
-        m_possibilites.push_back(*l);
-        return true;
-    }
-    return false;
+    if ((l->calculeRendement(m_tailleBarres) > 100))
+    	return 1;
+	if (l->getRendement() < m_exigence)
+		return 2;
+    m_possibilites.push_back(*l);
+    return 0;
 }
 
 // fonction récursive
@@ -51,19 +51,30 @@ bool DoubleListPaires::push (ListPaires * l)
 // renvoie le nombre de possibilités dans la liste
 int DoubleListPaires::moteurCombinaisons (ListPaires& l)
 {
-    int cpt = 0;
+    int cpt = 0, t;
     Paire * p = new Paire ();
     ListPaires * lp = new ListPaires();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
-        *lp = l; // copie de la liste donnée en argument
+        *lp = l; 				// copie de la liste donnée en argument
         p->setLongueur(m_tab[i]);
-        p->setPosition(i); // création d'1 nvelle paire
+        p->setPosition(i); 		// création d'1 nvelle paire
         lp->push (*p);             // rajout à la liste de paires
-        if (push (lp)) cpt++;    // nouvelle possibilité créé rajoutée à la liste
-        cpt += moteurCombinaisons(*lp);
+        //lp->affiche();
+        switch (t = push (lp))
+        {
+			case 0 :
+				cpt++;    // nouvelle possibilité créé rajoutée à la liste
+				cpt += moteurCombinaisons(*lp);
+				break;
+			case 1 :
+				break;	// tailler la branche qui dépasse la longueur de la barre
+			default :
+				cpt += moteurCombinaisons(*lp);
+				break;
+		}
    }
-    return cpt;
+   return cpt;
 }
 
 
@@ -99,6 +110,7 @@ ListPaires&  DoubleListPaires::maxi(ListPaires *lp)
 bool DoubleListPaires::rentreCombinaisonFinale ()
 {
     ListPaires * lp= new ListPaires ();
+
     if (m_possibilites.empty())
     {
         m_exigence -= 10;
@@ -144,6 +156,7 @@ void DoubleListPaires::pilote ()
     {
 		moteurCombinaisons(*liste);
 		rentreCombinaisonFinale();
+		//getTroncons ()->affiche();
 	}
 	affiche();
 	cout << "Vous aurez besoin de "<<m_resultatFinal.size()<<" barres de "<< m_tailleBarres<< "cm" <<endl;

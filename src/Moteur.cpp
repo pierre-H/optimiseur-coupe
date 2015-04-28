@@ -5,11 +5,6 @@
 
 using namespace std;
 
-int fact (int nb)
-{
-    if (nb == 0) return 0;
-    else return nb + fact (nb-1);
-}
 // calcule l'ordre de la combinaison.
 // quel est le nombre maximal de tronçons qui peuvent exister
 // dans une combinaison en sachant la taille des barres ?

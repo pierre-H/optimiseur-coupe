@@ -13,7 +13,7 @@ class DoubleListPaires
         public:
             DoubleListPaires(List* troncons, float tailleBarres, int);
             virtual ~DoubleListPaires();
-            bool push (ListPaires *);
+            int push (ListPaires *);
 
             int moteurCombinaisons (ListPaires&);
             ListPaires& maxi (ListPaires * lp=NULL);

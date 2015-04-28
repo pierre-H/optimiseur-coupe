@@ -15,6 +15,7 @@ List::List(float premier)
     m_element = 0;
     m_prochain = new List ();
     m_prochain->m_element = premier;
+    m_prochain->m_prochain = NULL;
 }
 
 // deuxième surcharge du constructeur
@@ -61,9 +62,9 @@ int List::supprime ()
 {
     if (this != NULL)
     {
-		List * victime = m_prochain;
+		List * victime = m_prochain; 
 		if (victime == NULL) return 0;
-		m_prochain = victime->m_prochain;
+		m_prochain = victime->m_prochain; 
 		victime = NULL;
 		delete victime;
     }
@@ -134,14 +135,13 @@ List * createSortedList (List * l, ...)
 }
 
 // fonctions d'accès et d'information
-
 // affiche ce que contient la Liste
 void List::affiche (bool premier) const
 {
     if (not premier) 
     {
 		cout << m_element;
-    	if (m_prochain != 0)
+    	if (m_prochain != NULL)
     	{
 			cout <<", ";
 			m_prochain->affiche (false);
@@ -206,6 +206,8 @@ int main ()
 	cout <<"Test de insere (54., index négatif) : "; l.insere (5555.,-5); l.affiche ();
 	cout << "Test de createSortedList (12.,18.2, 40.5, 95.,54., 546.,45., 0) : "; 
 	List * li = new List(); createSortedList (li,12.,18.2, 40.5, 95.,54., 546.,45., 0);
+	li->affiche ();
+	for (int i = 0 ; i < 6 ; i++) li->supprime ();
 	li->affiche ();
 	return 0;
 }
