@@ -29,6 +29,7 @@ List::~List()
         delete m_prochain;
 }
 
+
 // ajoute un element en première position de la liste
 List& List::cons (float premier)
 {

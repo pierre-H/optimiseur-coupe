@@ -16,8 +16,9 @@ DoubleListPaires::DoubleListPaires(List* troncons, float tailleBarres, int nbBar
     m_tailleBarres =tailleBarres;
     m_nbBarres = nbBarres;
     m_nbTroncons = m_troncons->length();
-    m_troncons->copie(&m_copieTroncons);
+    m_troncons->copie(&m_tab);
     m_exigence = 80;
+    m_flag = 0;
 }
 
 
@@ -55,7 +56,7 @@ int DoubleListPaires::moteurCombinaisons (ListPaires& l)
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
         *lp = l; 				// copie de la liste donnée en argument
-        p->setLongueur(m_copieTroncons[i]);
+        p->setLongueur(m_tab[i]);
         p->setPosition(i); 		// création d'1 nvelle paire
         lp->push (*p);             // rajout à la liste de paires
         //lp->affiche();
@@ -102,7 +103,7 @@ ListPaires&  DoubleListPaires::maxi(ListPaires *lp)
 
 // rentre la meilleure combinaison dans la ListPaires resultatFinal
 // supprime les tronçons correspondants dans la liste des tronçons
-// recopie le vecteur m_copieTroncons avec les nouvelles valeurs de la liste de tronçons
+// recopie le vecteur m_tab avec les nouvelles valeurs de la liste de tronçons
 // fait le ménage ds la liste des possibilités
 // vérifie s'il n'y a pas trop de tronçons pour le nombre de barres.
 bool DoubleListPaires::rentreCombinaisonFinale ()
@@ -112,6 +113,7 @@ bool DoubleListPaires::rentreCombinaisonFinale ()
     if (m_possibilites.empty())
     {
         m_exigence -= 10;
+        m_flag = 1;
         return false;
     }
     lp = &maxi(lp);
@@ -120,9 +122,11 @@ bool DoubleListPaires::rentreCombinaisonFinale ()
     list<Paire> p = lp->getList();
     for (it = p.begin(); it != p.end(); it++)
         m_troncons->supprimeExplicite (it->getLongueur());
-    m_copieTroncons.clear();
-    m_troncons->copie (&m_copieTroncons);
+    m_tab.clear();
+    m_troncons->copie (&m_tab);
     m_possibilites.clear();
+    if (m_resultatFinal.size() > m_nbBarres)
+        m_flag = 2;
     return true;
 }
 // calcule le rendement moyen final quand tous les calculs ont été finis

@@ -2,7 +2,7 @@ CPP=g++
 GCC=gcc
 EXEC=optimiseur
 CXXFLAGS= -Wall
-SRC=  List.cpp Paire.cpp ListPaires.cpp DoubleListPaires.cpp conversions.cpp main.cpp
+SRC=  List.cpp Paire.cpp ListPaires.cpp DoubleListPaires.cpp Moteur.cpp conversions.cpp main.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(EXEC)
@@ -23,6 +23,8 @@ ListPaires.o: ListPaires.cpp ListPaires.h Paire.h
 DoubleListPaires.o: DoubleListPaires.cpp DoubleListPaires.h List.h Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
+Moteur.o: Moteur.cpp Moteur.h
+	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
 conversions.o: conversions.cpp conversions.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)

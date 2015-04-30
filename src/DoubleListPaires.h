@@ -36,8 +36,15 @@ class DoubleListPaires
             int m_nbBarres;
             std::list<ListPaires> m_possibilites;
             std::list<ListPaires> m_resultatFinal;
-            std::vector<float>  m_copieTroncons;
+            std::vector<float>  m_tab;
             int m_exigence; // prend en compte à partir d'un certain pourcentage
+            int m_flag;       // différents cas de figure
 };
 
+/*
+Signification de m_flag :
+- 0 : Rien A Signaler
+- 1 : on a été obligé de baisser le niveau d'exigence
+- 2 : il n'y a pas assez de barres pour le nombre de tronçons demandés
+- 3 : il y a un tronçon qui est plus grand que la longueur des barres (pas encore fait)*/
 #endif // DOUBLELISTPAIRES_H

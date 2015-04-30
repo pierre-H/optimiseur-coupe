@@ -2,7 +2,7 @@ CPP=g++
 GCC=gcc
 EXEC=optimiseur
 CXXFLAGS= -Wall
-SRC=  List.cpp Paire.cpp ListPaires.cpp DoubleListPaires.cpp Combinaison.cpp Barre.cpp conversions.cpp main.cpp
+SRC=  List.cpp Paire.cpp ListPaires.cpp DoubleListPaires.cpp conversions.cpp main.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(EXEC)
@@ -18,12 +18,6 @@ Paire.o: Paire.cpp Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
 ListPaires.o: ListPaires.cpp ListPaires.h Paire.h
-	$(CPP) -o $@ -c $< $(CXXFLAGS)
-	
-Combinaison.o: Combinaison.cpp Combinaison.h ListPaires.h Paire.h
-	$(CPP) -o $@ -c $< $(CXXFLAGS)
-	
-Barre.o: Barre.cpp Barre.h ListPaires.h Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
 DoubleListPaires.o: DoubleListPaires.cpp DoubleListPaires.h List.h Paire.h
