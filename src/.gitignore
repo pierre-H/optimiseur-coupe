@@ -1,7 +1,5 @@
-conversions.o
-DoubleListPaires.o
-List.o
-ListPaires.o
-main.o
-Paire.o
+# ignorer tous les fichiers .o
+*.o
+
+# ignorer le fichier compilé
 optimiseur
