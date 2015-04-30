@@ -1,5 +1,8 @@
 # ignorer tous les fichiers .o
 *.o
 
+#ignore les fichiers backup des éditeurs de texte
+*~
+
 # ignorer le fichier compilé
 optimiseur
