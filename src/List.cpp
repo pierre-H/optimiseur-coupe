@@ -67,6 +67,7 @@ int List::supprime ()
 		m_prochain = victime->m_prochain; 
 		victime = NULL;
 		delete victime;
+        return 0;
     }
     return 1;
 }
@@ -147,10 +148,30 @@ void List::affiche (bool premier) const
 			m_prochain->affiche (false);
 		}
 		else 
-			cout <<endl;
+			cout <<endl;	//fin de liste
 	}
-	else
-		m_prochain->affiche(false);
+	else    // premier élément de la liste ou liste vide
+	{
+		if (m_prochain)
+			m_prochain->affiche(false);
+		else
+			cout << endl;
+	}
+}
+
+// copie une liste dans un vecteur et le renvoie pour travailler par index
+void List::copie(vector<float> * v)
+{
+    List * pt = this;                // itérateur
+    while (true)
+    {
+        if (pt != NULL)
+        {
+            v->push_back(pt->m_element) ;
+            pt = pt->m_prochain;
+        }
+        else break;
+    }
 }
 
 // member retourne la position de a_chercher s'il est ds la liste et 0 sinon

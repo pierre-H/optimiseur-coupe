@@ -24,9 +24,6 @@ class List
         void supprimeExplicite (float ASupprimer);
         List& insere (float, int);
         void trie (float element);
-        
-        // définies ds moteur
-        int ordreCombinaison (float tailleBarres);
         void copie (std::vector<float> * v);
         
         // fonctions d'accès et d'information
