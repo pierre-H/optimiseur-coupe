@@ -6,8 +6,8 @@ GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : 
     QLabel * labelTitre = new QLabel(titre);
     labelTitre->setFont(fontTitre);
 
-    // Labels Dimension, Unité, Quantité
-    QLabel * labelDimension = new QLabel("Dimension");
+    // Labels Longueur, Unité, Quantité
+    QLabel * labelLongueur = new QLabel("Longueur");
     QLabel * labelUnite = new QLabel("Unité");
     QLabel * labelQuantite = new QLabel("Quantité");
 
@@ -42,7 +42,7 @@ GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : 
     QGridLayout * mainLayout = new QGridLayout;
     mainLayout->addWidget(labelTitre,0,0,1,3,Qt::AlignBottom);
     mainLayout->setRowMinimumHeight(0,25);
-    mainLayout->addWidget(labelDimension,1,0, Qt::AlignLeft);
+    mainLayout->addWidget(labelLongueur,1,0, Qt::AlignLeft);
     mainLayout->addWidget(labelUnite,1,1, Qt::AlignCenter);
     mainLayout->addWidget(labelQuantite,1,2, Qt::AlignLeft);
     mainLayout->addWidget(scrollSaisies,2,0,2,3, Qt::AlignCenter);

@@ -7,7 +7,8 @@ Saisie::Saisie(QWidget *parent) : QWidget(parent)
 
     // Ajout de la dimension
     m_dimension = new QDoubleSpinBox;
-    m_dimension->setMinimum(0);
+    m_dimension->setMinimum(0.01);
+    m_dimension->setValue(1);
     m_dimension->setMaximum(999.99);
 
     // Ajout de l'unité
@@ -18,10 +19,12 @@ Saisie::Saisie(QWidget *parent) : QWidget(parent)
     m_unite->addItem("inches");
     m_unite->addItem("feet");
     m_unite->addItem("yard");
+    m_unite->setInsertPolicy(QComboBox::NoInsert);
+    m_unite->setCurrentIndex(1);
 
     // Ajout de la quantite
     m_quantite = new QSpinBox;
-    m_quantite->setMinimum(0);
+    m_quantite->setMinimum(1);
     m_quantite->setMaximum(999);
     m_quantite->setMaximumWidth(70);
 

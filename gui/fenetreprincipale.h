@@ -21,11 +21,13 @@ public:
     ~FenetrePrincipale();
 
 private:
-
+    GroupeSaisie * m_groupeSaisieBarres;
+    GroupeSaisie * m_groupeSaisieTron;
+    QDoubleSpinBox * m_epaisseurLame;
+    QComboBox * m_uniteEpaisseurLame;
 signals:
 
 public slots:
-
 };
 
 #endif // FENETREPRINCIPALE_H
