@@ -9,9 +9,11 @@
 #include <QDoubleSpinBox>
 #include <QComboBox>
 #include <QFrame>
-#include <QFileDialog>
-#include <QTextEdit>
+#include <QMessageBox>
+#include <QVector>
 #include "groupesaisie.h"
+#include "saisie.h"
+#include "convertunit.h"
 
 class FenetrePrincipale : public QWidget
 {
@@ -28,6 +30,7 @@ private:
 signals:
 
 public slots:
+    void traiterFormulaire();
 };
 
 #endif // FENETREPRINCIPALE_H

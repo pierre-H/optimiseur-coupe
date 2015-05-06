@@ -81,6 +81,10 @@ void GroupeSaisie::supprSaisie(){
     m_labelNbSaisies->setText(strNbBarre);
 }
 
+QVector<Saisie *> GroupeSaisie::saisies() const{
+    return m_vectorSaisies;
+}
+
 GroupeSaisie::~GroupeSaisie()
 {
 

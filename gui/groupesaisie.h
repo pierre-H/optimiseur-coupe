@@ -16,6 +16,7 @@ class GroupeSaisie : public QWidget
 public:
     explicit GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent = 0);
     ~GroupeSaisie();
+    QVector<Saisie *> saisies() const;
 private:
     QVBoxLayout * m_layoutSaisies;
     QVector<Saisie *> m_vectorSaisies;

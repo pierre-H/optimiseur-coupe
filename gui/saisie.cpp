@@ -5,11 +5,11 @@ Saisie::Saisie(QWidget *parent) : QWidget(parent)
     // Layout
     QHBoxLayout * layoutH = new QHBoxLayout;
 
-    // Ajout de la dimension
-    m_dimension = new QDoubleSpinBox;
-    m_dimension->setMinimum(0.01);
-    m_dimension->setValue(1);
-    m_dimension->setMaximum(999.99);
+    // Ajout de la longueur
+    m_longueur = new QDoubleSpinBox;
+    m_longueur->setMinimum(0.01);
+    m_longueur->setValue(1);
+    m_longueur->setMaximum(999.99);
 
     // Ajout de l'unité
     m_unite = new QComboBox;
@@ -29,7 +29,7 @@ Saisie::Saisie(QWidget *parent) : QWidget(parent)
     m_quantite->setMaximumWidth(70);
 
     // ajout des widgets
-    layoutH->addWidget(m_dimension,0,Qt::AlignLeft);
+    layoutH->addWidget(m_longueur,0,Qt::AlignLeft);
     layoutH->addWidget(m_unite,0,Qt::AlignCenter);
     layoutH->addWidget(m_quantite,0, Qt::AlignRight);
     layoutH->addSpacing(20);
@@ -39,32 +39,20 @@ Saisie::Saisie(QWidget *parent) : QWidget(parent)
     setLayout(layoutH);
 }
 
+double Saisie::longueur() const{
+    return ConvertUnit::toMm(m_longueur->value(), m_unite->currentIndex());
+}
+
+int Saisie::unite() const{
+    return m_unite->currentIndex();
+}
+
+double Saisie::quantite() const{
+    return m_quantite->value();
+}
+
 Saisie::~Saisie()
 {
 
 }
 
-// Renvoie la dimension (double)
-double Saisie::dimension() const
-{
-    return m_dimension->value();
-}
-
-/* Renvoie un int correspondant à l'unité :
- * 1 -> m
- * 2 -> cm
- * 3 -> mm
- * 4 -> inches
- * 5 -> feet
- * 6 -> yard
- */
-int Saisie::unite() const
-{
-    return m_unite->currentIndex();
-}
-
-// Renvoie la quantité (int)
-int Saisie::quantite() const
-{
-    return m_quantite->value();
-}
