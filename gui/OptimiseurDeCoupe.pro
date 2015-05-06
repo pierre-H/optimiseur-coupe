@@ -2,7 +2,8 @@ SOURCES += \
     main.cpp \
     fenetreprincipale.cpp \
     saisie.cpp \
-    groupesaisie.cpp
+    groupesaisie.cpp \
+    convertunit.cpp
 
 DISTFILES += \
     readme.md
@@ -10,7 +11,7 @@ DISTFILES += \
 HEADERS += \
     fenetreprincipale.h \
     saisie.h \
-    groupesaisie.h
+    groupesaisie.h \
+    convertunit.h
 
 QT += widgets
-QT += webkitwidgets

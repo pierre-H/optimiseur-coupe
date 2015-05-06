@@ -9,9 +9,11 @@
 #include <QDoubleSpinBox>
 #include <QComboBox>
 #include <QFrame>
-#include <QFileDialog>
-#include <QTextEdit>
+#include <QMessageBox>
+#include <QVector>
 #include "groupesaisie.h"
+#include "saisie.h"
+#include "convertunit.h"
 
 class FenetrePrincipale : public QWidget
 {
@@ -21,11 +23,14 @@ public:
     ~FenetrePrincipale();
 
 private:
-
+    GroupeSaisie * m_groupeSaisieBarres;
+    GroupeSaisie * m_groupeSaisieTron;
+    QDoubleSpinBox * m_epaisseurLame;
+    QComboBox * m_uniteEpaisseurLame;
 signals:
 
 public slots:
-
+    void traiterFormulaire();
 };
 
 #endif // FENETREPRINCIPALE_H

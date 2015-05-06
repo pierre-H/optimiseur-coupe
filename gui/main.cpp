@@ -2,6 +2,7 @@
 
 #include <QApplication>
 #include "fenetreprincipale.h"
+#include "convertunit.h"
 
 using namespace std;
 

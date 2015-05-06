@@ -6,9 +6,10 @@
 #include <QLayout>
 #include <QSpinBox>
 #include <QComboBox>
+#include "convertunit.h"
 
 /* Une saisie est un widget qui contient :
- * - un champ DoubleSpinBox concernant la dimension
+ * - un champ DoubleSpinBox concernant la longueur
  * - un champ Combobox concernant l'unité
  * - un champ SpinBox concernant la quantité
  */
@@ -19,11 +20,11 @@ class Saisie : public QWidget
 public:
     explicit Saisie(QWidget *parent = 0);
     ~Saisie();
-    double dimension() const;
+    double longueur() const;
     int unite() const;
-    int quantite() const;
+    double quantite() const;
 private:
-    QDoubleSpinBox * m_dimension;
+    QDoubleSpinBox * m_longueur;
     QComboBox * m_unite;
     QSpinBox * m_quantite;
 signals:
