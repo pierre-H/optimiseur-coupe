@@ -13,21 +13,21 @@ class Combinaison
         virtual ~Combinaison();
         void affiche();
         void push (Paire);
-        void push (float , int);
-        float calculeRendement ();
-        float getRendement();
+        void push (double , int);
+        double calculeRendement ();
+        double getRendement();
         std::list<Paire> getList();
         std::list<Paire> getPaires();
-		float getBarre ();
-		float somme ();
+		double getBarre ();
+		double somme ();
 		int getPosDernier ();
-		float attacheBarre (List* barres);
+		double attacheBarre (List* barres);
 
 
 	protected:
-		float m_rendement; 	// rendement de la combinaison
+		double m_rendement; 	// rendement de la combinaison
 		std::list<Paire> m_liste;
-		float m_barre;		// barre à laquelle s'applique la combinaison
+		double m_barre;		// barre à laquelle s'applique la combinaison
 };
 
 

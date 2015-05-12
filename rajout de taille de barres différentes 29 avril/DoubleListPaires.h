@@ -19,7 +19,7 @@ class DoubleListPaires
             Combinaison& maxi (Combinaison * lp=NULL);
             bool rentreCombinaisonFinale ();
             void pilote();
-            float calculeRendementFinal ();
+            double calculeRendementFinal ();
 /*====================access=====================*/
             List *getTroncons () const;
             List * getBarres () const;
@@ -34,7 +34,7 @@ class DoubleListPaires
             List * m_barres;    // liste des barres dont on dispose   
             std::list<Combinaison> m_possibilites;
             std::list<Combinaison> m_resultatFinal;
-            std::vector<float>  m_copieTroncons;
+            std::vector<double>  m_copieTroncons;
             int m_exigence; // prend en compte à partir d'un certain pourcentage
 };
 

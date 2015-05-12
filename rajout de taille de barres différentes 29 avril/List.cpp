@@ -11,7 +11,7 @@ List::List() : m_prochain (NULL)
 }
 
 // surcharge du constructeur
-List::List(float premier)
+List::List(double premier)
 {
     m_element = 0;
     m_prochain = new List ();
@@ -31,7 +31,7 @@ List::~List()
 }
 
 // ajoute un element en première position de la liste
-List& List::cons (float premier)
+List& List::cons (double premier)
 {
     List * l = new List ();
     l->m_element = premier;
@@ -42,7 +42,7 @@ List& List::cons (float premier)
 
 // prend un nombre variable de parametres et les ajoute au debut de la liste
 // le dernier argument doit être 0
-List& List::append (float premier, ...)
+List& List::append (double premier, ...)
 {
     if (this != NULL) cons(premier);
     va_list ap;
@@ -87,7 +87,7 @@ int List::supprimeNieme (int n)
 
 // supprime de la liste un élément connu.
 // si cet élément n'existe pas, il ne se passe rien
-void List::supprimeExplicite (float ASupprimer)
+void List::supprimeExplicite (double ASupprimer)
 {
     int position = member(ASupprimer);
     if (position != 0) supprimeNieme(position);
@@ -97,7 +97,7 @@ void List::supprimeExplicite (float ASupprimer)
 // l.insere (5., 1) ou (5., 0)insere 5 en première position
 // si l'on dépasse la taille de la liste, ou que l'on rentre une
 // position négative,la fonction ne fait rien
-List& List::insere (float inserer, int position)
+List& List::insere (double inserer, int position)
 {
     if (position == 1 or position == 0) cons (inserer);
     else if (m_prochain) m_prochain->insere (inserer, position-1);
@@ -105,7 +105,7 @@ List& List::insere (float inserer, int position)
 }
 
 //insere un element à sa bonne place dans une liste en le triant par ordre croissant
-void List::trie (float element)
+void List::trie (double element)
 {
     if (m_prochain == NULL)
         cons(element);
@@ -161,7 +161,7 @@ void List::affiche (bool premier) const
 }
 
 // copie une liste dans un vecteur et le renvoie pour travailler par index
-void List::copie(vector<float> * v)
+void List::copie(vector<double> * v)
 {
     List * pt = this;                // itérateur
     while (true)
@@ -177,7 +177,7 @@ void List::copie(vector<float> * v)
 
 // member retourne la position de a_chercher s'il est ds la liste et 0 sinon
 // index commençant à 1 et non 0
-int List::member (float aChercher) const
+int List::member (double aChercher) const
 {
     int i=0;
     if (m_element == aChercher) return i;
@@ -191,7 +191,7 @@ int List::member (float aChercher) const
     return false/*false*/;
 }
 
-float List::getPremier () const
+double List::getPremier () const
 {return m_element;}
 
 List * List::getProchain () const
@@ -210,10 +210,10 @@ int List::length () const
 }
 
 // renvoie le plus grand élément de la liste
-float List::max ()
+double List::max ()
 {
     List * pt = this;
-    float max = m_element;
+    double max = m_element;
     while (pt != NULL)
     {
         if (pt->m_element > max)
@@ -224,10 +224,10 @@ float List::max ()
 }
 
 // renvoie le plus petit élément de la liste
-float List::min ()
+double List::min ()
 {
     List * pt = this->m_prochain;
-    float minimum;
+    double minimum;
     if (pt)
     	minimum = pt->m_element;
 	else

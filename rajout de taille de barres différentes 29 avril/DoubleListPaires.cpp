@@ -35,7 +35,7 @@ DoubleListPaires::~DoubleListPaires()
 // et 2 si < que exigence sur la plus petite barre
 int DoubleListPaires::push (Combinaison * l)
 {
-	float result = l->attacheBarre (m_barres);
+	double result = l->attacheBarre (m_barres);
     if (result == -1.)	//si dépasse la taille de la plus grande barre
     	return 1;
 	if (l->calculeRendement() < m_exigence)	// trop mauvais rendement pour le retenir
@@ -85,7 +85,7 @@ Combinaison&  DoubleListPaires::maxi(Combinaison *lp)
         cout <<"Liste des possibilités vide..."<<endl;
         return *lp;
     }
-    float rendement=0;
+    double rendement=0;
     list<Combinaison>::iterator it = m_possibilites.begin();
     lp = &(*it);
     for (it = m_possibilites.begin(); it != m_possibilites.end(); it++)
@@ -127,9 +127,9 @@ bool DoubleListPaires::rentreCombinaisonFinale ()
 }
 // calcule le rendement moyen final quand tous les calculs ont été finis
 // exprimé en pourcentage
-float DoubleListPaires::calculeRendementFinal ()
+double DoubleListPaires::calculeRendementFinal ()
 {
-    float sum = 0., sumBarres=0.;
+    double sum = 0., sumBarres=0.;
     list <Combinaison>::iterator it;
     for (it = m_resultatFinal.begin(); it != m_resultatFinal.end(); it++)
     {

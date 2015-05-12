@@ -34,22 +34,22 @@ void Combinaison::push (Paire p)
     m_liste.push_back(p);
 }
 
-void Combinaison::push (float e, int pos)
+void Combinaison::push (double e, int pos)
 {
     Paire *p =new Paire(e, pos);
     push(*p);
     delete p;
 }
 
-float Combinaison::somme ()
+double Combinaison::somme ()
 {
-	float sum = 0.;
+	double sum = 0.;
 	for (list<Paire>::iterator it = m_liste.begin() ; it != m_liste.end(); it++)
 		sum += it->m_longueur;
 	return sum;
 }
 
-float Combinaison::calculeRendement ()
+double Combinaison::calculeRendement ()
 {
     m_rendement = somme()/m_barre*100;
     return m_rendement;
@@ -60,9 +60,9 @@ float Combinaison::calculeRendement ()
 // des tronçons de la combinaison
 // retourne -1.0 s'il n'y a pas de barre assez grande pour cette combinaison
 
-float Combinaison::attacheBarre (List* barres)
+double Combinaison::attacheBarre (List* barres)
 {
-	float barreChoisie, diff;
+	double barreChoisie, diff;
 	List * pt;
 	if (barres)
 	{
@@ -91,13 +91,13 @@ float Combinaison::attacheBarre (List* barres)
 }
 
 
-float Combinaison::getRendement()
+double Combinaison::getRendement()
 {return m_rendement;}
 
 list<Paire> Combinaison::getPaires()
 {return m_liste;}
 
-float Combinaison::getBarre ()
+double Combinaison::getBarre ()
 {return m_barre;}
 
 // retourne la position ds la liste, de la dernière paire

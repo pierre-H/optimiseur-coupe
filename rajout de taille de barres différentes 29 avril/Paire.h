@@ -6,16 +6,16 @@ class Paire
 {
     public:
         Paire();
-        Paire (float, int);
+        Paire (double, int);
         virtual ~Paire();
         void affiche();
         int getPos();
-        float getLongueur();
+        double getLongueur();
         void setPosition (int);
-        void setLongueur(float);
+        void setLongueur(double);
 
 
-        float m_longueur;   // longueur du troncon
+        double m_longueur;   // longueur du troncon
         int m_position;     // position dans le tableau d'où le tronçon a été pris
 };
 
