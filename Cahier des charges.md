@@ -11,6 +11,7 @@ L’interface comportera un formulaire en 3 parties :
   * un champ SpinBox pour la quantité de ce type de barres
 2. La deuxième partie est identique à la première dans la forme sauf qu'elle concerne les tronçons désirés.
 3. La troisième partie est composée d'un champ DoubleSpinBox pour saisir l'épaisseur de la lame utilisée et un champ permettant de sélectionner l'unité de celle-ci.
+
 Un bouton **Appliquer** permet de lancer le moteur de calcul.
 Près du formulaire, un espace permettra d'afficher les résultats.di
 
