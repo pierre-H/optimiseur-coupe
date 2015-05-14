@@ -12,8 +12,7 @@ L’interface comportera un formulaire en 3 parties :
 2. La deuxième partie est identique à la première dans la forme sauf qu'elle concerne les tronçons désirés.
 3. La troisième partie est composée d'un champ DoubleSpinBox pour saisir l'épaisseur de la lame utilisée et un champ permettant de sélectionner l'unité de celle-ci.
 
-Un bouton **Appliquer** permet de lancer le moteur de calcul.
-Près du formulaire, un espace permettra d'afficher les résultats.di
+Près du formulaire, un bouton **Appliquer** lance le moteur de calcul et un espace  d'affiche les résultats.
 
 ###Présentation des résultats :
 Soit sous forme écrite : morceau1 : 12, 15,12.5,7	 morceau2 : 50 etc., soit sous forme graphique avec un schéma de découpe de chaque morceau. Il faudra aussi faire figurer le pourcentage de chutes et  le nombre de poutres non entamées.
