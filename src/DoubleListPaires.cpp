@@ -4,21 +4,19 @@
 #include "List.h"
 #include <iostream>
 
+
 using namespace std;
 //============================= DoubleListPaires ===============================
 
 // obligatoirement initialisé avec tous les membres, sauf la liste des
 //possibilités qui sera calculée au fur et à mesure
 
-DoubleListPaires::DoubleListPaires(List* troncons, float tailleBarres, int nbBarres)
+DoubleListPaires::DoubleListPaires(List* troncons, List *barres)
 {
     m_troncons = troncons;
-    m_tailleBarres =tailleBarres;
-    m_nbBarres = nbBarres;
-    m_nbTroncons = m_troncons->length();
-    m_troncons->copie(&m_tab);
+    m_barres = barres;
+    m_troncons->copie(&m_copieTroncons);
     m_exigence = 80;
-    m_flag = 0;
 }
 
 
@@ -31,44 +29,45 @@ DoubleListPaires::~DoubleListPaires()
 
 // ajoute une combinaison à la liste des possibilités
 // si cette combinaison ne dépasse pas la longueur des barres
-// et qu'elle est au dessus du niveau d'exigence de rendement
-// retourne 0 si on a ajouté à la liste de possibilités
-// 1 si c'était plus grand que la taille des barres, et 2 si < que exigence
-int DoubleListPaires::push (ListPaires * l)
+// et qu'elle est au dessus du niveau d'exigence de rendement.
+// Retourne 0 si on a ajouté à la liste de possibilités
+// 1 si c'était plus grand que la taille de la plus grande barre,
+// et 2 si < que exigence sur la plus petite barre
+int DoubleListPaires::push (Combinaison * l)
 {
-    if ((l->calculeRendement(m_tailleBarres) > 100))
+	double result = l->attacheBarre (m_barres);
+    if (result == -1.)	//si dépasse la taille de la plus grande barre
     	return 1;
-	if (l->getRendement() < m_exigence)
+	if (l->calculeRendement() < m_exigence)	// trop mauvais rendement pour le retenir
 		return 2;
     m_possibilites.push_back(*l);
     return 0;
 }
 
 // fonction récursive
-// à partir d'une ListPaires, calcule toutes les combinaisons possibles
+// à partir d'une Combinaison, calcule toutes les combinaisons possibles
 // et les rentre dans la liste des possibilités
 // renvoie le nombre de possibilités dans la liste
-int DoubleListPaires::moteurCombinaisons (ListPaires& l)
+int DoubleListPaires::moteurCombinaisons (Combinaison& l)
 {
     int cpt = 0, t;
     Paire * p = new Paire ();
-    ListPaires * lp = new ListPaires();
+    Combinaison * lp = new Combinaison();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
         *lp = l; 				// copie de la liste donnée en argument
-        p->setLongueur(m_tab[i]);
+        p->setLongueur(m_copieTroncons[i]);
         p->setPosition(i); 		// création d'1 nvelle paire
         lp->push (*p);             // rajout à la liste de paires
-        //lp->affiche();
         switch (t = push (lp))
         {
 			case 0 :
 				cpt++;    // nouvelle possibilité créé rajoutée à la liste
 				cpt += moteurCombinaisons(*lp);
 				break;
-			case 1 :
-				break;	// tailler la branche qui dépasse la longueur de la barre
-			default :
+			case 1 :	// tailler la branche qui dépasse la longueur de la barre
+				break;	
+			default :	// pas rajouter mais continuer de mouliner
 				cpt += moteurCombinaisons(*lp);
 				break;
 		}
@@ -76,19 +75,18 @@ int DoubleListPaires::moteurCombinaisons (ListPaires& l)
    return cpt;
 }
 
-
 // renvoie la liste de Paires qui a le plus haut rendement
 // de la liste des possibilités déjà calculées
 
-ListPaires&  DoubleListPaires::maxi(ListPaires *lp)
+Combinaison&  DoubleListPaires::maxi(Combinaison *lp)
 {
     if (m_possibilites.empty())
     {
         cout <<"Liste des possibilités vide..."<<endl;
         return *lp;
     }
-    float rendement=0;
-    list<ListPaires>::iterator it = m_possibilites.begin();
+    double rendement=0;
+    list<Combinaison>::iterator it = m_possibilites.begin();
     lp = &(*it);
     for (it = m_possibilites.begin(); it != m_possibilites.end(); it++)
     {
@@ -101,19 +99,18 @@ ListPaires&  DoubleListPaires::maxi(ListPaires *lp)
     return *lp;
 }
 
-// rentre la meilleure combinaison dans la ListPaires resultatFinal
+// rentre la meilleure combinaison dans la Combinaison resultatFinal
 // supprime les tronçons correspondants dans la liste des tronçons
-// recopie le vecteur m_tab avec les nouvelles valeurs de la liste de tronçons
+// supprime la barre correspondante dans la liste des barres
+// recopie le vecteur m_copieTroncons avec les nouvelles valeurs de la liste de tronçons
 // fait le ménage ds la liste des possibilités
 // vérifie s'il n'y a pas trop de tronçons pour le nombre de barres.
 bool DoubleListPaires::rentreCombinaisonFinale ()
 {
-    ListPaires * lp= new ListPaires ();
-
+    Combinaison * lp= new Combinaison ();
     if (m_possibilites.empty())
     {
         m_exigence -= 10;
-        m_flag = 1;
         return false;
     }
     lp = &maxi(lp);
@@ -122,44 +119,38 @@ bool DoubleListPaires::rentreCombinaisonFinale ()
     list<Paire> p = lp->getList();
     for (it = p.begin(); it != p.end(); it++)
         m_troncons->supprimeExplicite (it->getLongueur());
-    m_tab.clear();
-    m_troncons->copie (&m_tab);
+    m_barres->supprimeExplicite (lp->getBarre());
+    m_copieTroncons.clear();
+    m_troncons->copie (&m_copieTroncons);
     m_possibilites.clear();
-    if (m_resultatFinal.size() > m_nbBarres)
-        m_flag = 2;
     return true;
 }
 // calcule le rendement moyen final quand tous les calculs ont été finis
 // exprimé en pourcentage
-float DoubleListPaires::calculeRendementFinal ()
+double DoubleListPaires::calculeRendementFinal ()
 {
-    float rendement = 0.;
-    int cpt = 0;
-    list <ListPaires>::iterator it;
+    double sum = 0., sumBarres=0.;
+    list <Combinaison>::iterator it;
     for (it = m_resultatFinal.begin(); it != m_resultatFinal.end(); it++)
     {
-        cpt++;
-        rendement += it->getRendement();
+        sum += it->somme();
+        sumBarres += it->getBarre ();
     }
-
-    return rendement / cpt;
+    return sum / sumBarres *100;
 }
 
 // dirige tous les calculs en appelant les fonctions nécessaires
 // se charge de l'affichage
 
 void DoubleListPaires::pilote ()
- {
-   ListPaires *liste = new ListPaires ();
-    while (not getTroncons()->empty())
+{
+   Combinaison *liste = new Combinaison ();
+    while ((not getTroncons()->empty()) and (not getBarres()->empty()))
     {
 		moteurCombinaisons(*liste);
 		rentreCombinaisonFinale();
-		//getTroncons ()->affiche();
 	}
-	affiche();
-	cout << "Vous aurez besoin de "<<m_resultatFinal.size()<<" barres de "<< m_tailleBarres<< "cm" <<endl;
-	cout << "Vous avez un rendement moyen de " << calculeRendementFinal ()<<endl;
+	affiche ();
 }
 /*===================access=====================*/
 List* DoubleListPaires::getTroncons () const
@@ -167,28 +158,39 @@ List* DoubleListPaires::getTroncons () const
     return m_troncons;
 }
 
+List* DoubleListPaires::getBarres () const
+{
+    return m_barres;
+}
+
 /*===================affichage=====================*/
 
-void DoubleListPaires::afficheResultats ()
-{
-    list<ListPaires>::iterator it;
-    for (it=m_resultatFinal.begin(); it != m_resultatFinal.end(); it++)
-    {
-        it->affiche();
-    }
-}
 
 
 void DoubleListPaires::affiche()
 {
-    cout <<"Liste de troncons : ";
-    m_troncons->affiche();
-    cout << "Liste des possibilites :" <<endl;
-    for(list<ListPaires>::iterator it=m_possibilites.begin(); it!= m_possibilites.end(); ++it)
+	#if DEBUG
+	if (m_troncons->empty ())
+		cout <<"Vous avez réussi à couper tous les tronçons que vous désiriez." << endl;
+	else
+	{
+    	cout <<"Vous n'avez pas eu assez de matière première pour couper tous les tronçons que vous désiriez... Liste de troncons restants: ";
+    	m_troncons->affiche();
+    }
+    if (m_barres->empty ())
+		cout <<"Vous avez utilisé toutes vos barres." << endl;
+	else
+	{
+    	cout <<"Il vous reste des barres entières que vous n'avez pas utilisées : Liste des barres restantes: ";
+    	m_barres->affiche();
+    }
+    cout << "Voici la liste des coupes que vous devez effectuer : " << endl;
+    for(list<Combinaison>::iterator it=m_resultatFinal.begin(); it!= m_resultatFinal.end(); ++it)
     {
         it->affiche();
+        cout <<endl;
     }
     cout << "Exigence : "<<m_exigence<<endl;
-    cout <<endl<<"Liste des combinaisons finales : "<<endl;
-    afficheResultats();
+	cout << "Vous avez un rendement moyen de " << calculeRendementFinal ()<<"%"<<endl;
+	#endif
 }

@@ -14,7 +14,7 @@ Paire::~Paire()
     //dtor
 }
 //surcharge du constructeur
-Paire::Paire (float valeur, int position) : m_longueur(valeur), m_position(position)
+Paire::Paire (double valeur, int position) : m_longueur(valeur), m_position(position)
 {
 
 }
@@ -27,11 +27,11 @@ void Paire::affiche ()
 int Paire::getPos()
 {return m_position;}
 
-float Paire::getLongueur()
+double Paire::getLongueur()
 {return m_longueur;}
 
  void Paire::setPosition (int pos)
  {m_position = pos;}
 
- void Paire::setLongueur (float l)
+ void Paire::setLongueur (double l)
  {m_longueur=l;}

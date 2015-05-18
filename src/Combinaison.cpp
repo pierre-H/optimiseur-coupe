@@ -18,6 +18,7 @@ Combinaison::~Combinaison()
 
 void Combinaison::affiche()
 {
+	#if DEBUG
     cout <<"[";
     for (list<Paire>::iterator it = m_liste.begin(); it != m_liste.end(); it++)
     {
@@ -27,6 +28,7 @@ void Combinaison::affiche()
     }
     cout <<"]"<<endl;
     cout << "Rendement de "<< m_rendement <<"\% sur une barre de " << m_barre << endl;
+    #endif
 }
 
 void Combinaison::push (Paire p)

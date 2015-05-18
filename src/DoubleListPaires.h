@@ -2,7 +2,7 @@
 #define DOUBLELISTPAIRES_H
 
 #include <list>
-#include "ListPaires.h"
+#include "Combinaison.h"
 #include "List.h"
 #include <iostream>
 
@@ -11,40 +11,31 @@ using namespace std;
 class DoubleListPaires
 {
         public:
-            DoubleListPaires(List* troncons, float tailleBarres, int);
+            DoubleListPaires(List* troncons, List * barres);
             virtual ~DoubleListPaires();
-            int push (ListPaires *);
+            int push (Combinaison *);
 
-            int moteurCombinaisons (ListPaires&);
-            ListPaires& maxi (ListPaires * lp=NULL);
+            int moteurCombinaisons (Combinaison&);
+            Combinaison& maxi (Combinaison * lp=NULL);
             bool rentreCombinaisonFinale ();
             void pilote();
-            float calculeRendementFinal ();
+            double calculeRendementFinal ();
 /*====================access=====================*/
             List *getTroncons () const;
+            List * getBarres () const;
 
 /*====================affichage=====================*/
             void affiche() ;
-            void afficheResultats ();
 
 
 
         protected:
-            List * m_troncons;
-            int m_nbTroncons;
-            float m_tailleBarres;
-            int m_nbBarres;
-            std::list<ListPaires> m_possibilites;
-            std::list<ListPaires> m_resultatFinal;
-            std::vector<float>  m_tab;
+            List * m_troncons;	// liste des tronçons qu'on veut
+            List * m_barres;    // liste des barres dont on dispose   
+            std::list<Combinaison> m_possibilites;
+            std::list<Combinaison> m_resultatFinal;
+            std::vector<double>  m_copieTroncons;
             int m_exigence; // prend en compte à partir d'un certain pourcentage
-            int m_flag;       // différents cas de figure
 };
 
-/*
-Signification de m_flag :
-- 0 : Rien A Signaler
-- 1 : on a été obligé de baisser le niveau d'exigence
-- 2 : il n'y a pas assez de barres pour le nombre de tronçons demandés
-- 3 : il y a un tronçon qui est plus grand que la longueur des barres (pas encore fait)*/
 #endif // DOUBLELISTPAIRES_H

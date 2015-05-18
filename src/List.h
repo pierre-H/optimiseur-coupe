@@ -13,33 +13,37 @@ class List
     public:
     	// fonctions de construction et de destruction
         List();
-        List(float);
+        List(double);
         List (List* m_prochain);
         virtual ~List();
         
-        List& cons (float);
-        List& append (float , ...);
+        List& cons (double);
+        List& append (double , ...);
         int supprime ();
         int supprimeNieme (int);
-        void supprimeExplicite (float ASupprimer);
-        List& insere (float, int);
-        void trie (float element);
-        void copie (std::vector<float> * v);
+        void supprimeExplicite (double ASupprimer);
+        List& insere (double, int);
+        void trie (double element);
+        void copie (std::vector<double> * v);
         
         // fonctions d'accès et d'information
         void affiche (bool premier = true) const ;
-        int member (float);
-        float getPremier ();
-        List * getProchain ();
-        bool empty();
-        int length ();
+        int member (double)const;
+        double getPremier ()const;
+        List * getProchain ()const;
+        bool empty()const;
+        int length ()const;
+        double max () ;
+        double min ();
+
+
 
     protected:
-        float m_element;
+        double m_element;
         List * m_prochain;
 };
 
 //ex
-List * createSortedList (List * l= new List(), ...);
+List * createSortedList (List * l, double tab []);
 
 #endif // List_H
