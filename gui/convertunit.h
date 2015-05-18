@@ -4,8 +4,8 @@
 #include <QString>
 
 /* Classe permettant la conversion d'un nombre en mm et inversement.
- * Elle contient uniquement les 2 méthodes statiques de conversion.
- * Par convention, l'argument unite désigne :
+ * Elle contient uniquement les 4 méthodes statiques de conversion.
+ * L'argument unité peut être soit le string de l'unité soit l'int suivant :
  * 0 -> m
  * 1 -> cm
  * 2 -> mm

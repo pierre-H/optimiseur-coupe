@@ -4,10 +4,15 @@ L'utilisateur possède un certain nombre de barres/cylindres/baguettes de même 
 Le programme doit calculer la meilleure combinaison des coupes de manière à obtenir le moins de chutes possible.
 
 ###Interface :
-L’interface comportera 3 champs :
-* "de combien de pièces disposez-vous ?"
-* "quelle en est leur taille" (taille unique de toutes les barres)
-* "veuillez entrer les tailles des morceaux que vous voulez obtenir, séparés par des virgules.Vous pouvez utiliser le symbole * pour indiquer que vous en voulez plusieurs de cette taille. Exemple de format : 12.5, 7.8*3, 9 ,47, 36*2"
+L’interface comportera un formulaire en 3 parties :
+1. La première concerne la saisie barres avant la découpe. L'utilisateur peut ajouter ou supprimer via des boutons, des groupes de champs où chaque groupe possède :
+  * un champ DoubleSpinBox pour la longueur
+  * un champ de sélection pour l'unité
+  * un champ SpinBox pour la quantité de ce type de barres
+2. La deuxième partie est identique à la première dans la forme sauf qu'elle concerne les tronçons désirés.
+3. La troisième partie est composée d'un champ DoubleSpinBox pour saisir l'épaisseur de la lame utilisée et un champ permettant de sélectionner l'unité de celle-ci.
+
+Près du formulaire, un bouton **Appliquer** lance le moteur de calcul et un espace  d'affiche les résultats.
 
 ###Présentation des résultats :
 Soit sous forme écrite : morceau1 : 12, 15,12.5,7	 morceau2 : 50 etc., soit sous forme graphique avec un schéma de découpe de chaque morceau. Il faudra aussi faire figurer le pourcentage de chutes et  le nombre de poutres non entamées.

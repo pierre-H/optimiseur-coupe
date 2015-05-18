@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QFont>
 #include <QLayout>
+#include <QString>
 #include "saisie.h"
 
 class GroupeSaisie : public QWidget
@@ -22,6 +23,7 @@ private:
     QVector<Saisie *> m_vectorSaisies;
     QLabel * m_labelNbSaisies;
     QPushButton * m_buttonSupprSaisies;
+    QString m_stringNbSaisies;
 signals:
 
 public slots:
