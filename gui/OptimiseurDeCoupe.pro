@@ -1,17 +1,23 @@
 SOURCES += \
     main.cpp \
-    fenetreprincipale.cpp \
     saisie.cpp \
     groupesaisie.cpp \
-    convertunit.cpp
+    convertunit.cpp \
+    formulaireSaisie.cpp \
+    fenetreprincipale.cpp \
+    widgetresultats.cpp
 
 DISTFILES += \
     readme.md
 
 HEADERS += \
-    fenetreprincipale.h \
     saisie.h \
     groupesaisie.h \
-    convertunit.h
+    convertunit.h \
+    formulaireSaisie.h \
+    fenetreprincipale.h \
+    widgetresultats.h
 
 QT += widgets
+
+TRANSLATIONS = optimiseurdecoupe_en.ts
