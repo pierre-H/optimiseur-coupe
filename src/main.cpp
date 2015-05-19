@@ -3,7 +3,7 @@
 #include "List.h"
 #include "Paire.h"
 #include "Combinaison.h"
-#include "DoubleListPaires.h"
+#include "MoteurCalculs.h"
 #include <list>
 
 using namespace std;
@@ -16,7 +16,7 @@ int main()
     double barresTab [] = {60., 100., 200.,100., 70., 120.,0.};
     createSortedList(tronconsList, tronconsTab);
     createSortedList (barresList, barresTab);
-    DoubleListPaires * d = new DoubleListPaires(tronconsList,barresList);
+    MoteurCalculs * d = new MoteurCalculs(tronconsList,barresList);
     d->pilote ();
     return 0;
 }

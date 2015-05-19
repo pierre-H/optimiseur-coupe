@@ -20,89 +20,33 @@ Pour l'instant, les différents messages sont :
 - Le rendement moyen de toute la coupe.
 
 En gros, après le calcul, on a ce gros objet DoubleListPaires
-Pour info, voici le contenu de cet objet expliqué :
+Pour info, voici tous les champs de cet objet dont on a besoin pour l'affichage :
 
-        protected:
-            **List * m_troncons;**	
+1. List * m_troncons
             
-            /* liste des tronçons qu'on veut. 
-            Pour vérifier si tous ont pu être coupés et qu'il n'y a pas de manque de matière première, tester 
-            m_troncons->empty (), si empty, c'est qu'ils ont tous pu être coupés*/
+liste des tronçons qu'on veut. 
+Pour vérifier si tous ont pu être coupés et qu'il n'y a pas de manque de matière première, tester 
+m_troncons->empty (), si empty, c'est qu'ils ont tous pu être coupés
            
-           **List * m_barres;**
+2. List * m_barres;
            
-           /* liste des barres dont on dispose.
-           Pour vérifier si toutes les barres de départ ont été utilisées, tester m_barres.empty ()
-           si empty (), c'est qu'on a tout utilisé. Sinon, c'est qu'il en reste.
-           */
-            
-            **std::list<Combinaison> m_possibilites;**
-            
-            /* pas d'utilité pour l'affichage des résultats*/
-            
-            **std::list<Combinaison> m_resultatFinal;**
-            
-            /*Contient les combinaisons retenues pour chaque barre
-            Utiliser la fonction Combinaison::affiche qui affiche tout ce qu'il faut sur une barre*/
-            
-            **std::vector<double>  m_copieTroncons;**
-            
-            /* pas d'utilité pour l'affichage des résultats*/
-            
-            int m_exigence; 
-            /* pas d'utilité pour l'affichage des résultats*/
+liste des barres dont on dispose.
+Pour vérifier si toutes les barres de départ ont été utilisées, tester m_barres.empty ()
+si empty (), c'est qu'on a tout utilisé. Sinon, c'est qu'il en reste.
 
-Je ne sais pas si c'est possible de réutiliser mes fonctions affiche (), mais de manière générale, le principe est que j'ai une fonction affiche pour chaque classe. Et que chaque classe d'un niveau supérieur utilise la fonction affiche du niveau inférieur : la classe Paire a une fonction affiche qui affiche un tronçon et sa position dans la liste des tronçons. La classe Combinaison a aussi une fonction affiche qui affiche les différentes Paire (s) de la combianison et le rendement attaché à la barre. Enfin, la classe doubleListPaires a sa propre fonction affiche qui utilise celle de Combinaison.
-
-Pour se charger de tout ce qui est affichage, il faut donc étudier vite fait le code de ces trois fonctions et le trafiquer un peu pour indiquer les mêmes éléments, mais sur un support autre que la sortie standard. Je recopie ici ces trois fonctions :
-
-void Paire::affiche ()
-{
-    cout <<"(" <<m_longueur << ", " << m_position << ")";
-}
-
-void Combinaison::affiche()
-{
-	#if DEBUG
-    cout <<"[";
-    for (list<Paire>::iterator it = m_liste.begin(); it != m_liste.end(); it++)
-    {
-        if (it != m_liste.begin())
-            cout <<", ";
-        it->affiche();
-    }
-    cout <<"]"<<endl;
-    cout << "Rendement de "<< m_rendement <<"\% sur une barre de " << m_barre << endl;
-    #endif
-}
+            
+3. std::list<Combinaison> m_resultatFinal;**
+            
+Contient les combinaisons retenues pour chaque barre
+Utiliser la fonction Combinaison::affiche qui affiche tout ce qu'il faut sur une barre
+            
 
 
-void DoubleListPaires::affiche()
-{
-	#if DEBUG
-	if (m_troncons->empty ())
-		cout <<"Vous avez réussi à couper tous les tronçons que vous désiriez." << endl;
-	else
-	{
-    	cout <<"Vous n'avez pas eu assez de matière première pour couper tous les tronçons que vous désiriez... Liste de troncons restants: ";
-    	m_troncons->affiche();
-    }
-    if (m_barres->empty ())
-		cout <<"Vous avez utilisé toutes vos barres." << endl;
-	else
-	{
-    	cout <<"Il vous reste des barres entières que vous n'avez pas utilisées : Liste des barres restantes: ";
-    	m_barres->affiche();
-    }
-    cout << "Voici la liste des coupes que vous devez effectuer : " << endl;
-    for(list<Combinaison>::iterator it=m_resultatFinal.begin(); it!= m_resultatFinal.end(); ++it)
-    {
-        it->affiche();
-        cout <<endl;
-    }
-    cout << "Exigence : "<<m_exigence<<endl;
-	cout << "Vous avez un rendement moyen de " << calculeRendementFinal ()<<"%"<<endl;
-	#endif
-}
+Pour gérer l'affichage, il faudra donc adapter les fonctions suivantes :
 
-A part ça, il y a une dernière fonction affiche de la classe List qui permet d'afficher ce qu'il reste dans la liste des tronçons si on ne les a pas tous utilisés, et ce qu'il reste dans la liste des barres.
+1. La fonction affiche de la classe Combinaison, qui affiche toutes les informations relatives à une combinaison, à savoir les tronçons utilisés dans cette combinaison, à quelle taille de barre cette combinaison s'applique, et le rendement de coupe sur cette barre
+
+2. La fonction affiche de la classe moteurCalcul qui est censé afficher les résutats finaux.
+
+3. La fonction affiche de la classe List qui va servir à afficher les barres inutilisées à la fin, ou les troncons restants qu'on n'a pas réusii à couper par manque de matière première.
+

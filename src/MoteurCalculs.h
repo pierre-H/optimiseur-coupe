@@ -1,5 +1,5 @@
-#ifndef DOUBLELISTPAIRES_H
-#define DOUBLELISTPAIRES_H
+#ifndef MOTEURCALCULS_H
+#define MOTEURCALCULS_H
 
 #include <list>
 #include "Combinaison.h"
@@ -8,11 +8,11 @@
 
 using namespace std;
 // liste de listes de paires
-class DoubleListPaires
+class MoteurCalculs
 {
         public:
-            DoubleListPaires(List* troncons, List * barres);
-            virtual ~DoubleListPaires();
+            MoteurCalculs(List* troncons, List * barres);
+            virtual ~MoteurCalculs();
             int push (Combinaison *);
 
             int moteurCombinaisons (Combinaison&);
@@ -38,4 +38,4 @@ class DoubleListPaires
             int m_exigence; // prend en compte à partir d'un certain pourcentage
 };
 
-#endif // DOUBLELISTPAIRES_H
+#endif // MoteurCalculs_H

@@ -2,7 +2,7 @@ CPP=g++
 GCC=gcc
 EXEC=optimiseur
 CXXFLAGS= -Wall -DDEBUG
-SRC=  List.cpp Paire.cpp DoubleListPaires.cpp Combinaison.cpp main.cpp
+SRC=  List.cpp Paire.cpp MoteurCalculs.cpp Combinaison.cpp main.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(EXEC)
@@ -21,7 +21,7 @@ Paire.o: Paire.cpp Paire.h
 Combinaison.o: Combinaison.cpp Combinaison.h  Paire.h List.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
-DoubleListPaires.o: DoubleListPaires.cpp DoubleListPaires.h List.h Paire.h
+MoteurCalculs.o: MoteurCalculs.cpp MoteurCalculs.h List.h Paire.h
 	$(CPP) -o $@ -c $< $(CXXFLAGS)
 
 # pour forcer clean/cleanall même s'il existe un fichier de même nom
