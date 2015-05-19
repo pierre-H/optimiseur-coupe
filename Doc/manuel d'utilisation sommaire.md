@@ -1,8 +1,16 @@
-## Ce que le moteur attend :
+# Manuel d'utilisation du Moteur de Calcul
 
-Le moteur n'a besoin de la part de l'interface que de deux tableaux se terminant par 0 :
-Un qui contient les barres disponibles et l'autre qui contient les tronçons demandés.
-NE PAS OUBLIER LE 0 A LA FIN DE CHACUN DE CES DEUX TABLEAUX !
+## Lancement du moteur
+
+Créer un objet MoteurCalculs. Son constructeur doit prendre en argument :
+1. Une List des barres désirées dont le dernier élément doit être 0.
+2. Une List des tronçons désirés dont le dernier élément doit être 0.
+
+On peut créer ces deux List via la fonction createSortedList qui prend en argument :
+1. la List finale
+2. un tableau de double contenant les longueurs des barres/tronçons
+
+Les longueurs doivent être en mm. Ne pas oublier de prendre en compte la quantité en ajoutant plusieurs fois la même valeur dans le tableau.
 
 ## Affichage des résultats :
 
