@@ -4,8 +4,8 @@
 
 Créer un objet MoteurCalculs. Son constructeur doit prendre en argument :
 
-1. Une List des barres désirées dont le dernier élément doit être 0.
-2. Une List des tronçons désirés dont le dernier élément doit être 0.
+1. Un pointeur d'une List des barres désirées dont le dernier élément doit être 0.
+2. Un pointeur d'une List des tronçons désirés dont le dernier élément doit être 0.
 
 On peut créer ces deux List via la fonction createSortedList qui prend en argument :
 
@@ -16,11 +16,11 @@ Les longueurs doivent être en mm. Ne pas oublier de prendre en compte la quanti
 
 ## Affichage des résultats :
 
-Le moteur tourne sur un espèce de gros objet qui porte le nom de DoubleListPaires.
+Le moteur tourne sur un espèce de gros objet qui porte le nom de MoteurCalculs.
 A la fin des calculs, cet objet contient tout ce dont on a besoin pour afficher les résultats.
 
 Pour ce qui est de l'affichage des résultats :
-Pour l'instant, j'ai délégué cette partie à une fonction affiche, membre de la classe DoubleListPaires.
+Pour l'instant, j'ai délégué cette partie à une fonction affiche, membre de la classe MoteurCalculs.
 Cette fonction est appelée par pilote () (qui est la fonction directrice du moteur)
 
 Pour l'instant, les différents messages sont :
@@ -29,7 +29,7 @@ Pour l'instant, les différents messages sont :
 - L'explication des coupes avec le rendement associé à chaque barre.
 - Le rendement moyen de toute la coupe.
 
-En gros, après le calcul, on a ce gros objet DoubleListPaires
+En gros, après le calcul, on a ce gros objet MoteurCalculs
 Pour info, voici tous les champs de cet objet dont on a besoin pour l'affichage :
 
 1. List * m_troncons
