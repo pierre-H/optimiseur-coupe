@@ -3,10 +3,12 @@
 ## Lancement du moteur
 
 Créer un objet MoteurCalculs. Son constructeur doit prendre en argument :
+
 1. Une List des barres désirées dont le dernier élément doit être 0.
 2. Une List des tronçons désirés dont le dernier élément doit être 0.
 
 On peut créer ces deux List via la fonction createSortedList qui prend en argument :
+
 1. la List finale
 2. un tableau de double contenant les longueurs des barres/tronçons
 
