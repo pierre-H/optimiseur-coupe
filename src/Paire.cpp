@@ -6,12 +6,12 @@ using namespace std;
 
 Paire::Paire() : m_longueur(0), m_position (0)
 {
-    //ctor
+	//ctor
 }
 
 Paire::~Paire()
 {
-    //dtor
+	//dtor
 }
 //surcharge du constructeur
 Paire::Paire (double valeur, int position) : m_longueur(valeur), m_position(position)
@@ -21,7 +21,7 @@ Paire::Paire (double valeur, int position) : m_longueur(valeur), m_position(posi
 
 void Paire::affiche ()
 {
-    cout <<"(" <<m_longueur << ", " << m_position << ")";
+	cout <<m_longueur ;
 }
 
 int Paire::getPos()

@@ -4,19 +4,19 @@
 // cette classe est juste un conteneur donc tout est public
 class Paire
 {
-    public:
-        Paire();
-        Paire (double, int);
-        virtual ~Paire();
-        void affiche();
-        int getPos();
-        double getLongueur();
-        void setPosition (int);
-        void setLongueur(double);
+	public:
+		Paire();
+		Paire (double, int);
+		virtual ~Paire();
+		void affiche();
+		int getPos();
+		double getLongueur();
+		void setPosition (int);
+		void setLongueur(double);
 
 
-        double m_longueur;   // longueur du troncon
-        int m_position;     // position dans le tableau d'où le tronçon a été pris
+		double m_longueur;   // longueur du troncon
+		int m_position;     // position dans le tableau d'où le tronçon a été pris
 };
 
 

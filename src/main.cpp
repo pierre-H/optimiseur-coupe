@@ -10,13 +10,13 @@ using namespace std;
 
 int main()
 {
-    List * tronconsList = new List();
-    List * barresList =  new List ();
-    double tronconsTab [] = {45.,23.,12.,54.,97.,45.6,87.,52.,41., 78.,1., 6., 7., 87., 25.,0.};
-    double barresTab [] = {60., 100., 200.,100., 70., 120.,0.};
-    createSortedList(tronconsList, tronconsTab);
-    createSortedList (barresList, barresTab);
-    MoteurCalculs * d = new MoteurCalculs(tronconsList,barresList);
-    d->pilote ();
-    return 0;
+	List * tronconsList = new List();
+	List * barresList =  new List ();
+	double tronconsTab [] = {45.,5., 40., 1., 2., 3.,5., 0.};
+	double barresTab [] = {100.,200.,0.};
+	createSortedList(tronconsList, tronconsTab);
+	createSortedList (barresList, barresTab);
+	MoteurCalculs * d = new MoteurCalculs(tronconsList,barresList, 0.7);
+	d->pilote ();
+	return 0;
 }

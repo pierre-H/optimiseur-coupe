@@ -10,7 +10,7 @@ Combinaison::Combinaison() : m_rendement(0.0), m_barre (0.1)
 
 Combinaison::Combinaison(Paire& p) : m_rendement(0.0), m_barre (0.1)
 {
-    m_liste.push_back(p);
+	m_liste.push_back(p);
 }
 
 Combinaison::~Combinaison()
@@ -19,30 +19,31 @@ Combinaison::~Combinaison()
 void Combinaison::affiche()
 {
 	#if DEBUG
-    cout <<"[";
-    for (list<Paire>::iterator it = m_liste.begin(); it != m_liste.end(); it++)
-    {
-        if (it != m_liste.begin())
-            cout <<", ";
-        it->affiche();
-    }
-    cout <<"]"<<endl;
-    cout << "Rendement de "<< m_rendement <<"\% sur une barre de " << m_barre << endl;
-    #endif
+	cout <<"[";
+	for (list<Paire>::iterator it = m_liste.begin(); it != m_liste.end(); it++)
+	{
+		if (it != m_liste.begin())
+			cout <<", ";
+		it->affiche();
+	}
+	cout <<"]"<<endl;
+	cout << "Rendement de "<< m_rendement <<"\% sur une barre de " << m_barre << endl;
+	#endif
 }
 
 void Combinaison::push (Paire p)
 {
-    m_liste.push_back(p);
+	m_liste.push_back(p);
 }
 
 void Combinaison::push (double e, int pos)
 {
-    Paire *p =new Paire(e, pos);
-    push(*p);
-    delete p;
+	Paire *p =new Paire(e, pos);
+	push(*p);
+	delete p;
 }
 
+// retourne la somme des longueurs des troncons de la combinaison
 double Combinaison::somme ()
 {
 	double sum = 0.;
@@ -51,39 +52,42 @@ double Combinaison::somme ()
 	return sum;
 }
 
-double Combinaison::calculeRendement ()
+// calcule le rendement de la combinaison
+// tient compte de la perte à la coupe
+// c'est à dire que l'enlève avant de calculer
+double Combinaison::calculeRendement (double perte)
 {
-    m_rendement = somme()/m_barre*100;
-    return m_rendement;
+	m_rendement = (somme() - perte * m_liste.size())/m_barre*100;
+	return m_rendement;
 }
 
 
 // attacheBarre choisit dans la liste des barres la barre la plus proche de la somme
 // des tronçons de la combinaison
 // retourne -1.0 s'il n'y a pas de barre assez grande pour cette combinaison
-
-double Combinaison::attacheBarre (List* barres)
+// vérifie la cas d'une combinaison de 100% où il faut compter une coupe en moins
+double Combinaison::attacheBarre (List* barres, double perte)
 {
 	double barreChoisie, diff;
 	List * pt;
 	if (barres)
 	{
 		pt = barres->getProchain();
-		diff =  pt->getPremier () - somme(); // différence
+		diff =  pt->getPremier () - somme(); // différence entre barre et somme des tronçons
 		barreChoisie = pt->getPremier();
 	}
 	else 
 		cout <<"Liste des barres vide !"<<endl;
 	while (pt)
 	{
-		if ((pt->getPremier() - somme()) < diff and (pt->getPremier() - somme() >= 0 ))
+		if ((pt->getPremier() - somme()) < diff and (pt->getPremier() - somme() >= (perte-2*perte) ))
 		{
 			barreChoisie = pt->getPremier();
 			diff = pt->getPremier () - somme();
 		}
 		pt = pt->getProchain ();
 	}
-	if (barreChoisie >= somme ())
+	if (barreChoisie >= somme ()-(perte-2*perte)) 
 	{
 		m_barre = barreChoisie;
 		return barreChoisie;
@@ -92,6 +96,15 @@ double Combinaison::attacheBarre (List* barres)
 		return -1.;	// il n'y a pas de barre assez grande pour cette combinaison
 }
 
+// Dans chacun des tronçons d'une combinaison, retranche la perte due 
+// à la coupe
+// utilisé dans rentreCombinaisonFinale
+void Combinaison::retranchePerte (double perte)
+{
+	list<Paire>::iterator it;
+	for (it = m_liste.begin(); it != m_liste.end() ; it++)
+		if (it->getLongueur() -perte >=0) it->setLongueur(it->getLongueur() - perte);
+}
 
 double Combinaison::getRendement()
 {return m_rendement;}
@@ -106,25 +119,14 @@ double Combinaison::getBarre ()
 // de la liste des possibilités
 int Combinaison::getPosDernier ()
 {
-    int a=0;
-    list<Paire>::iterator it;
-    for (it = m_liste.begin(); it != m_liste.end(); it++)
-        a = it->getPos();
-    return a;
+	int a=0;
+	list<Paire>::iterator it;
+	for (it = m_liste.begin(); it != m_liste.end(); it++)
+		a = it->getPos();
+	return a;
 }
 
 
 
 list<Paire> Combinaison::getList()
 {return m_liste;}
-#if DEBUG_COMB
-int main ()
-{
-	Paire p (56., 1); Paire q (120., 2); Paire r (130.5,3);
-	Combinaison c (p);
-	c.push (q); c.push (r);
-	cout << "Somme = "<< c.somme() <<", rendement = " << c.calculeRendement ()<< endl;
-	c.affiche ();
-	return 0;
-}
-#endif

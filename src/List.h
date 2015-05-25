@@ -10,37 +10,38 @@
 
 class List
 {
-    public:
-    	// fonctions de construction et de destruction
-        List();
-        List(double);
-        List (List* m_prochain);
-        virtual ~List();
-        
-        List& cons (double);
-        List& append (double , ...);
-        int supprime ();
-        int supprimeNieme (int);
-        void supprimeExplicite (double ASupprimer);
-        List& insere (double, int);
-        void trie (double element);
-        void copie (std::vector<double> * v);
-        
-        // fonctions d'accès et d'information
-        void affiche (bool premier = true) const ;
-        int member (double)const;
-        double getPremier ()const;
-        List * getProchain ()const;
-        bool empty()const;
-        int length ()const;
-        double max () ;
-        double min ();
+	public:
+		// fonctions de construction et de destruction
+		List();
+		List(double);
+		List (List* m_prochain);
+		virtual ~List();
+		
+		List& cons (double);
+		List& append (double , ...);
+		int supprime ();
+		int supprimeNieme (int);
+		void supprimeExplicite (double ASupprimer);
+		List& insere (double, int);
+		void trie (double element);
+		void copie (std::vector<double> * v);
+		void setPremier (double e);
+		
+		// fonctions d'accès et d'information
+		void affiche (bool premier = true) const ;
+		int member (double)const;
+		double getPremier ()const;
+		List * getProchain ()const;
+		bool empty()const;
+		int length ()const;
+		double max () ;
+		double min ();
 
 
 
-    protected:
-        double m_element;
-        List * m_prochain;
+	protected:
+		double m_element;
+		List * m_prochain;
 };
 
 //ex
