@@ -38,7 +38,6 @@ class List
 		double min ();
 
 
-
 	protected:
 		double m_element;
 		List * m_prochain;

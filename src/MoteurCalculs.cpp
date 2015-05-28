@@ -187,6 +187,12 @@ double MoteurCalculs::getPerte () const
 	return m_perteCoupe;
 }
 
+list<Combinaison> MoteurCalculs:: getResultatFinal () const
+{
+	return m_resultatFinal;
+}
+
+
 /*===================affichage=====================*/
 
 

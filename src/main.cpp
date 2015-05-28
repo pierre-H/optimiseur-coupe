@@ -16,6 +16,7 @@ int main()
 	double barresTab [] = {100.,200.,0.};
 	createSortedList(tronconsList, tronconsTab);
 	createSortedList (barresList, barresTab);
+	barresList->affiche();
 	MoteurCalculs * d = new MoteurCalculs(tronconsList,barresList, 0.7);
 	d->pilote ();
 	return 0;

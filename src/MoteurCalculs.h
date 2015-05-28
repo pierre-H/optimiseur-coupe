@@ -24,6 +24,7 @@ class MoteurCalculs
 			List *getTroncons () const;
 			List * getBarres () const;
 			double getPerte () const;
+			std::list<Combinaison> getResultatFinal () const;
 
 /*====================affichage=====================*/
 			void affiche() ;
@@ -34,7 +35,7 @@ class MoteurCalculs
 			std::list<Combinaison> m_possibilites;
 			std::list<Combinaison> m_resultatFinal;
 			std::vector<double>  m_copieTroncons;
-			int m_exigence; 	// prend en compte à partir d'un certain pourcentage
+			int m_exigence; 		// prend en compte à partir d'un certain pourcentage
 			double m_perteCoupe;	// perte occasionnée à chaque coupe
 };
 
