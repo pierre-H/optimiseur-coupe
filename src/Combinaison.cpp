@@ -106,13 +106,13 @@ void Combinaison::retranchePerte (double perte)
 		if (it->getLongueur() -perte >=0) it->setLongueur(it->getLongueur() - perte);
 }
 
-double Combinaison::getRendement()
+double Combinaison::getRendement() const
 {return m_rendement;}
 
-list<Paire> Combinaison::getPaires()
+list<Paire> Combinaison::getPaires() const
 {return m_liste;}
 
-double Combinaison::getBarre ()
+double Combinaison::getBarre () const
 {return m_barre;}
 
 // retourne la position ds la liste, de la dernière paire
@@ -125,8 +125,3 @@ int Combinaison::getPosDernier ()
 		a = it->getPos();
 	return a;
 }
-
-
-
-list<Paire> Combinaison::getList()
-{return m_liste;}

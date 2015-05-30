@@ -15,10 +15,9 @@ class Combinaison
 		void push (Paire);
 		void push (double , int);
 		double calculeRendement (double perte);
-		double getRendement();
-		std::list<Paire> getList();
-		std::list<Paire> getPaires();
-		double getBarre ();
+		double getRendement() const;
+		std::list<Paire> getPaires() const;
+		double getBarre () const;
 		double somme ();
 		int getPosDernier ();
 		double attacheBarre (List* barres, double perte);

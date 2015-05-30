@@ -131,7 +131,7 @@ bool MoteurCalculs::rentreCombinaisonFinale ()
 	}
 	lp = &maxi(lp);
 	list<Paire>::iterator it;
-	list<Paire> p = lp->getList();
+	list<Paire> p = lp->getPaires();
 	for (it = p.begin(); it != p.end(); it++)
 		m_troncons->supprimeExplicite (it->getLongueur());
 	lp->retranchePerte (m_perteCoupe);
