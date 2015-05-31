@@ -168,7 +168,9 @@ void MoteurCalculs::pilote ()
 		rentreCombinaisonFinale();
 		//retranchePertes ();
 	}
+	#if DEBUG
 	affiche ();
+	#endif
 }
 /*===================access=====================*/
 
@@ -195,11 +197,9 @@ list<Combinaison> MoteurCalculs:: getResultatFinal () const
 
 /*===================affichage=====================*/
 
-
-
+#if DEBUG
 void MoteurCalculs::affiche()
 {
-	#if DEBUG
 	if (m_troncons->empty ())
 		cout <<"Vous avez réussi à couper tous les tronçons que vous désiriez." << endl;
 	else
@@ -222,5 +222,5 @@ void MoteurCalculs::affiche()
 	}
 	cout << "Exigence : "<<m_exigence<<endl;
 	cout << "Vous avez un rendement moyen de " << calculeRendementFinal ()<<"%"<<endl;
-	#endif
 }
+#endif
