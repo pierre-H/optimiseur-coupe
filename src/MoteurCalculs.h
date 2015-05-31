@@ -26,8 +26,10 @@ class MoteurCalculs
 			double getPerte () const;
 			std::list<Combinaison> getResultatFinal () const;
 
+#if DEBUG
 /*====================affichage=====================*/
 			void affiche() ;
+#endif
 
 		protected:
 			List * m_troncons;	// liste des tronçons qu'on veut
