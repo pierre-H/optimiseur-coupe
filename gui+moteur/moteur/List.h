@@ -10,7 +10,6 @@
 #include <iostream>
 #include <stdarg.h>
 #include <list>
-#include <vector>
 #include <QVector>
 #include "../saisie.h"
 #include "../convertunit.h"
@@ -37,7 +36,7 @@ class List
 		void supprimeExplicite (double ASupprimer);
 		List& insere (double, int);
 		void trie (double element);
-		void copie (std::vector<double> * v);
+        void copie (QVector<double> * v);
 		void setPremier (double e);
 		
 		// fonctions d'accès et d'information

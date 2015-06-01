@@ -38,7 +38,7 @@ class MoteurCalculs
 			List * m_barres;    // liste des barres dont on dispose   
 			std::list<Combinaison> m_possibilites;
 			std::list<Combinaison> m_resultatFinal;
-			std::vector<double>  m_copieTroncons;
+            QVector<double>  m_copieTroncons;
 			int m_exigence; 		// prend en compte à partir d'un certain pourcentage
 			double m_perteCoupe;	// perte occasionnée à chaque coupe
 };

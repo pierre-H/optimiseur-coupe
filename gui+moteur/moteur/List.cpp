@@ -192,7 +192,7 @@ QString List::toStr(bool premier) const
 #endif
 
 // copie une liste dans un vecteur et le renvoie pour travailler par index
-void List::copie(vector<double> * v)
+void List::copie(QVector<double> * v)
 {
 	List * pt = this;                // itérateur
 	while (true)
