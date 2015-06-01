@@ -1,7 +1,7 @@
 # Optimiseur de coupe
 
 ## Description
-Ceci est la GUI de l'optimiseur de coupe avec le moteur de calcul
+Ceci est la GUI de l'optimiseur de coupe
 
 ## Installation et compilation
 1. Installer QtCreator : http://www.qt.io/download-open-source/

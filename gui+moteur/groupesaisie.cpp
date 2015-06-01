@@ -12,7 +12,7 @@ GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : 
     QLabel * labelQuantite = new QLabel(tr("Quantité"));
 
     // Création du Widget contenant les saisies
-    QScrollArea * scrollSaisies = new QScrollArea;
+    m_scrollSaisies = new QScrollArea;
     QWidget * widgetSaisies = new QWidget;
     m_layoutSaisies = new QVBoxLayout;
     Saisie * premiereSaisie = new Saisie(1);
@@ -25,11 +25,11 @@ GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : 
     m_layoutSaisies->setSizeConstraint(QLayout::SetMinAndMaxSize);
     m_layoutSaisies->setMargin(0);
     widgetSaisies->setLayout(m_layoutSaisies);
-    scrollSaisies->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    scrollSaisies->setWidgetResizable(true);
-    scrollSaisies->setMaximumHeight(100);
-    scrollSaisies->setFrameShape(QFrame::NoFrame);
-    scrollSaisies->setWidget(widgetSaisies);
+    m_scrollSaisies->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_scrollSaisies->setWidgetResizable(true);
+    m_scrollSaisies->setMaximumHeight(100);
+    m_scrollSaisies->setFrameShape(QFrame::NoFrame);
+    m_scrollSaisies->setWidget(widgetSaisies);
 
     // Boutons d'ajout et de suppresion de saisie pour les barres avant la découpe
     QPushButton * buttonAjoutSaisie = new QPushButton(tr("Ajouter une saisie"));
@@ -43,7 +43,7 @@ GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : 
     mainLayout->addWidget(labelLongueur,1,0, Qt::AlignRight);
     mainLayout->addWidget(labelUnite,1,1, Qt::AlignCenter);
     mainLayout->addWidget(labelQuantite,1,2, Qt::AlignLeft);
-    mainLayout->addWidget(scrollSaisies,2,0,2,3, Qt::AlignCenter);
+    mainLayout->addWidget(m_scrollSaisies,2,0,2,3, Qt::AlignCenter);
     mainLayout->addWidget(buttonAjoutSaisie, 2,4);
     mainLayout->addWidget(m_buttonSupprSaisies, 2,5);
     mainLayout->addWidget(m_labelNbSaisies,3,4,1,2,Qt::AlignRight|Qt::AlignTop);
@@ -61,6 +61,7 @@ void GroupeSaisie::ajoutSaisie(){
     m_layoutSaisies->addWidget(m_vectorSaisies.last());
     m_buttonSupprSaisies->setDisabled(false);
     m_labelNbSaisies->setText(m_stringNbSaisies + QString::number(m_vectorSaisies.size()));
+    m_scrollSaisies->verticalScrollBar()->setValue(m_scrollSaisies->verticalScrollBar()->maximum());
 }
 
 // Slot permettant la suppression de saisie
@@ -73,6 +74,8 @@ void GroupeSaisie::supprSaisie(){
     if(m_vectorSaisies.size()==1)
         m_buttonSupprSaisies->setDisabled(true);
     m_labelNbSaisies->setText(m_stringNbSaisies + QString::number(m_vectorSaisies.size()));
+    m_scrollSaisies->update();
+    m_scrollSaisies->verticalScrollBar()->setValue(m_scrollSaisies->verticalScrollBar()->maximum());
 }
 
 QVector<Saisie *> GroupeSaisie::saisies() const{

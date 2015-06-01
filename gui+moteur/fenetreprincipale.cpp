@@ -30,14 +30,18 @@ void FenetrePrincipale::traiterFormulaire(){
     //Déclarations diverses
     QVector <Saisie *> resultatsBarres = m_formulaireSaisie->groupeSaisieBarres()->saisies();
     QVector <Saisie *> resultatsTron = m_formulaireSaisie->groupeSaisieTron()->saisies();
-    int i, erreur=0;
+    int i,j, erreur=0;
 
     // Détection de l'erreur : total longueur des barres av découpe < total longueur tronçons demandés
     double totalBarre = 0, totalTron = 0;
-    for(i = 0; i != resultatsBarres.size();i++)
-        totalBarre += resultatsBarres[i]->longueur();
-    for(i = 0; i != resultatsTron.size();i++)
-        totalTron += resultatsTron[i]->longueur();
+    for(i = 0; i != resultatsBarres.size();i++){
+        for(j=0; j!= resultatsBarres[i]->quantite();j++)
+            totalBarre += resultatsBarres[i]->longueur();
+    }
+    for(i = 0; i != resultatsTron.size();i++){
+        for(j=0; j!= resultatsTron[i]->quantite();j++)
+            totalTron += resultatsTron[i]->longueur();
+    }
     if(totalBarre < totalTron){
         QMessageBox::warning(this, tr("Erreur"),
                              tr("La longueur totale des barres avant la découpe "

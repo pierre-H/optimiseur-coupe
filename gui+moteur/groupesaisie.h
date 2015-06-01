@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QVector>
 #include <QScrollArea>
+#include <QScrollBar>
 #include <QPushButton>
 #include <QFont>
 #include <QLayout>
@@ -24,6 +25,7 @@ private:
     QLabel * m_labelNbSaisies;
     QPushButton * m_buttonSupprSaisies;
     QString m_stringNbSaisies;
+    QScrollArea * m_scrollSaisies;
 signals:
 
 public slots:

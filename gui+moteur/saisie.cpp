@@ -11,7 +11,7 @@ Saisie::Saisie(int numero, QWidget *parent) : QWidget(parent)
     // Ajout de la longueur
     m_longueur = new QDoubleSpinBox;
     m_longueur->setMinimum(0.01);
-    m_longueur->setValue(1);
+    m_longueur->setValue(10);
     m_longueur->setMaximum(999.99);
 
     // Ajout de l'unité

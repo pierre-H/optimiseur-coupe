@@ -30,3 +30,5 @@ QT += widgets
 QT += core
 
 TRANSLATIONS = optimiseurdecoupe_en.ts
+
+RC_ICONS = mainIcon.ico
