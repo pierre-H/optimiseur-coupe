@@ -1,5 +1,7 @@
 #include "groupesaisie.h"
 
+#include <QMessageBox>
+
 GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : QWidget(parent), m_stringNbSaisies(tr("Nombre de saisies : "))
 {
     // Label : titre
@@ -61,7 +63,10 @@ void GroupeSaisie::ajoutSaisie(){
     m_layoutSaisies->addWidget(m_vectorSaisies.last());
     m_buttonSupprSaisies->setDisabled(false);
     m_labelNbSaisies->setText(m_stringNbSaisies + QString::number(m_vectorSaisies.size()));
-    m_scrollSaisies->verticalScrollBar()->setValue(m_scrollSaisies->verticalScrollBar()->maximum());
+
+    QScrollBar * p = m_scrollSaisies->verticalScrollBar();
+    p->setMaximum(p->maximum()+33);
+    p->setSliderPosition(p->maximum());
 }
 
 // Slot permettant la suppression de saisie
@@ -75,7 +80,7 @@ void GroupeSaisie::supprSaisie(){
         m_buttonSupprSaisies->setDisabled(true);
     m_labelNbSaisies->setText(m_stringNbSaisies + QString::number(m_vectorSaisies.size()));
     m_scrollSaisies->update();
-    m_scrollSaisies->verticalScrollBar()->setValue(m_scrollSaisies->verticalScrollBar()->maximum());
+    m_scrollSaisies->verticalScrollBar()->setSliderPosition(m_scrollSaisies->verticalScrollBar()->maximum());
 }
 
 QVector<Saisie *> GroupeSaisie::saisies() const{
