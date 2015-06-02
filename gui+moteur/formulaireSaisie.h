@@ -10,7 +10,7 @@
 #include <QComboBox>
 #include <QMessageBox>
 #include <QVector>
-#include "groupesaisie.h"
+#include "saisies/groupesaisie.h"
 #include "convertunit.h"
 
 /* Fenêtre principale du programme
@@ -21,7 +21,7 @@ class FormulaireSaisie : public QWidget
 {
     Q_OBJECT
 public:
-    explicit FormulaireSaisie(QWidget *parent = 0);
+    explicit FormulaireSaisie(QFont & fontTitre, QWidget *parent = 0);
     ~FormulaireSaisie();
     QPushButton * buttonAppliquer() const;
     GroupeSaisie * groupeSaisieBarres() const;

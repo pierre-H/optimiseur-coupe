@@ -3,18 +3,21 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QTextEdit>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QApplication>
+#include <QScrollArea>
+#include <QPalette>
 
 class WidgetResultats : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WidgetResultats(QWidget *parent = 0);
+    explicit WidgetResultats(QFont & fontTitre, QWidget *parent = 0);
     void updateResultats(QString & text);
 private:
-    QLabel * m_labelResultat;
+    QTextEdit * m_labelResultat;
 signals:
 
 public slots:

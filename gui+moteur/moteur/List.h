@@ -11,7 +11,7 @@
 #include <stdarg.h>
 #include <list>
 #include <QVector>
-#include "../saisie.h"
+#include "../saisies/saisie.h"
 #include "../convertunit.h"
 
 #if DEBUG

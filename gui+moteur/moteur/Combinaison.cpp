@@ -29,15 +29,15 @@ void Combinaison::affiche()
 }
 #else
 QString Combinaison::toStr(){
-    QString text("[");
+    QString text = "<li>Sur une barre de " + ConvertUnit::toStrSimplifie(m_barre) + " :<br>";
     for (list<Paire>::iterator it = m_liste.begin(); it != m_liste.end(); it++)
     {
         if (it != m_liste.begin())
             text+= ", ";
         text+=it->toStr();
     }
-    text+= "]<br>";
-    text+= QObject::tr("Rendement de ") + QString::number(m_rendement,'g', 4) + QObject::tr("\% sur une barre de ") + ConvertUnit::toStrSimplifie(m_barre)+"<br>";
+    text+= "<br>";
+    text+= QObject::tr("Le rendement est de ") + QString::number(m_rendement,'g', 4) + "\%.<br></li>";
     return text;
 }
 #endif
