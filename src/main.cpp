@@ -12,8 +12,8 @@ int main()
 {
 	List * tronconsList = new List();
 	List * barresList =  new List ();
-	double tronconsTab [] = {45.,5., 40., 1., 2., 3.,5., 0.};
-	double barresTab [] = {100.,200.,0.};
+	double tronconsTab [] = {9., 3., 3.,0.};
+	double barresTab [] = {15.,6.,6.,0.};
 	createSortedList(tronconsList, tronconsTab);
 	createSortedList (barresList, barresTab);
 	barresList->affiche();

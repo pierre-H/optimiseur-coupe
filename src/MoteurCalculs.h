@@ -7,6 +7,11 @@
 #include <iostream>
 
 using namespace std;
+
+// pour détecter les boucles infinies
+extern int limite;
+extern int * lim;
+
 // liste de listes de paires
 class MoteurCalculs
 {

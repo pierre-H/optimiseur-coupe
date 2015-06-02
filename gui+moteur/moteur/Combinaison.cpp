@@ -99,7 +99,7 @@ double Combinaison::attacheBarre (List* barres, double perte)
         }
         pt = pt->getProchain ();
     }
-    if (barreChoisie >= somme ()-(perte-2*perte))
+    if (barreChoisie >= somme () - (perte-2*perte))
     {
         m_barre = barreChoisie;
         return barreChoisie;

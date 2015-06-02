@@ -7,6 +7,11 @@
 #include <iostream>
 #include "Paire.h"
 
+// pour détecter les boucles infinies
+extern int limite;
+extern int * lim;
+
+
 using namespace std;
 // liste de listes de paires
 class MoteurCalculs

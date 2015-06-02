@@ -1,6 +1,10 @@
 #include "MoteurCalculs.h"
+#include <cstdlib>
+
 
 using namespace std;
+int limite = 0;
+int * lim = &limite;
 //============================= MoteurCalculs ===============================
 
 // obligatoirement initialisé avec tous les membres, sauf la liste des
@@ -66,6 +70,8 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
 	Combinaison * lp = new Combinaison();
 	for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
 	{
+		if (limite > 5000) exit (1);
+		*lim=*lim + 1;
 		*lp = l; 				// copie de la liste donnée en argument
 		p->setLongueur(m_copieTroncons[i]);
 		p->setPosition(i); 		// création d'1 nvelle paire
