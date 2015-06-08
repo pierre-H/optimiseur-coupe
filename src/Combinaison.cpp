@@ -61,39 +61,45 @@ double Combinaison::calculeRendement (double perte)
 	return m_rendement;
 }
 
-
 // attacheBarre choisit dans la liste des barres la barre la plus proche de la somme
 // des tronçons de la combinaison
 // retourne -1.0 s'il n'y a pas de barre assez grande pour cette combinaison
 // vérifie la cas d'une combinaison de 100% où il faut compter une coupe en moins
 double Combinaison::attacheBarre (List* barres, double perte)
 {
-	double barreChoisie, diff;
-	List * pt;
-	if (barres)
-	{
-		pt = barres->getProchain();
-		diff =  pt->getPremier () - somme(); // différence entre barre et somme des tronçons
-		barreChoisie = pt->getPremier();
-	}
-	else 
-		cout <<"Liste des barres vide !"<<endl;
-	while (pt)
-	{
-		if ((pt->getPremier() - somme()) < diff and (pt->getPremier() - somme() >= (perte-2*perte) ))
+    double barreChoisie, diff;
+    List * pt;
+    if (barres)
+    {
+        pt = barres->getProchain();
+        diff =  pt->getPremier () - somme(); // différence entre barre et somme des tronçons
+        barreChoisie = pt->getPremier();
+    }
+    else
+        cout <<"Liste des barres vide !"<<endl;
+    while (pt)
+    {
+		if (diff <= perte-2*perte)
 		{
 			barreChoisie = pt->getPremier();
-			diff = pt->getPremier () - somme();
+			diff =  pt->getPremier () - somme();
+		    pt = pt->getProchain ();
+			continue;
 		}
-		pt = pt->getProchain ();
-	}
-	if (barreChoisie >= somme ()-(perte-2*perte)) 
-	{
-		m_barre = barreChoisie;
-		return barreChoisie;
-	}
-	else
-		return -1.;	// il n'y a pas de barre assez grande pour cette combinaison
+    	if ((pt->getPremier() - somme() >= perte-2*perte) and (pt->getPremier() - somme() <= diff))
+        {
+            barreChoisie = pt->getPremier();
+            diff = pt->getPremier () - somme();
+        }
+        pt = pt->getProchain ();
+    }
+    if (barreChoisie - somme () >= perte-2*perte )
+    {
+        m_barre = barreChoisie;
+        return barreChoisie;
+    }
+    else
+        return -1.;	// il n'y a pas de barre assez grande pour cette combinaison
 }
 
 // Dans chacun des tronçons d'une combinaison, retranche la perte due 

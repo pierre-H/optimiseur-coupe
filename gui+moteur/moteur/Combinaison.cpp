@@ -92,14 +92,21 @@ double Combinaison::attacheBarre (List* barres, double perte)
         cout <<"Liste des barres vide !"<<endl;
     while (pt)
     {
-        if ((pt->getPremier() - somme()) < diff and (pt->getPremier() - somme() >= (perte-2*perte) ))
+        if (diff <= perte-2*perte)
+        {
+            barreChoisie = pt->getPremier();
+            diff =  pt->getPremier () - somme();
+            pt = pt->getProchain ();
+            continue;
+        }
+        if ((pt->getPremier() - somme() >= perte-2*perte) and (pt->getPremier() - somme() <= diff))
         {
             barreChoisie = pt->getPremier();
             diff = pt->getPremier () - somme();
         }
         pt = pt->getProchain ();
     }
-    if (barreChoisie >= somme () - (perte-2*perte))
+    if (barreChoisie - somme () >= perte-2*perte )
     {
         m_barre = barreChoisie;
         return barreChoisie;

@@ -12,12 +12,12 @@ int main()
 {
 	List * tronconsList = new List();
 	List * barresList =  new List ();
-	double tronconsTab [] = {9., 3., 3.,0.};
-	double barresTab [] = {15.,6.,6.,0.};
+	double barresTab [] = {15.,6., 6., 0.};
+	double tronconsTab [] = {9., 3., 3., 0.};
 	createSortedList(tronconsList, tronconsTab);
 	createSortedList (barresList, barresTab);
 	barresList->affiche();
-	MoteurCalculs * d = new MoteurCalculs(tronconsList,barresList, 0.7);
+	MoteurCalculs * d = new MoteurCalculs(tronconsList,barresList, 0.);
 	d->pilote ();
 	return 0;
 }

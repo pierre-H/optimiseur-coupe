@@ -171,7 +171,11 @@ void MoteurCalculs::pilote ()
 	{
 		moteurCombinaisons(*liste);
 		rentreCombinaisonFinale();
-		//retranchePertes ();
+		if (m_exigence == 0)
+		{
+			cout << "Exigence nulle !" << endl;
+			break;
+		}
 	}
 	#if DEBUG
 	affiche ();
