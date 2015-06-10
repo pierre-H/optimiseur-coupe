@@ -11,7 +11,6 @@
 extern int limite;
 extern int * lim;
 
-
 using namespace std;
 // liste de listes de paires
 class MoteurCalculs
@@ -30,7 +29,8 @@ class MoteurCalculs
 			List *getTroncons () const;
 			List * getBarres () const;
 			double getPerte () const;
-			std::list<Combinaison> getResultatFinal () const;
+            std::list<Combinaison> getResultatFinal() const;
+            std::list<Combinaison> * getPointResultatFinal();
             int getExigence() const;
 
 #if DEBUG

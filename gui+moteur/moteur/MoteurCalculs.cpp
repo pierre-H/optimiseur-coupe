@@ -1,7 +1,6 @@
 #include "MoteurCalculs.h"
 #include <cstdlib>
 
-
 using namespace std;
 int limite = 0;
 int * lim = &limite;
@@ -12,9 +11,11 @@ int * lim = &limite;
 
 MoteurCalculs::MoteurCalculs(List* troncons, List *barres, double perte)
 {
+    if (limite > 5000) exit (1);
+    *lim=*lim + 1;
 	m_perteCoupe = perte;
 	m_troncons = troncons;
-    ajoutePerte ();
+	ajoutePerte ();
 	m_barres = barres;
 	m_troncons->copie(&m_copieTroncons);
 	m_exigence = 80;
@@ -55,23 +56,24 @@ double MoteurCalculs::calculeRendementFinal ()
 	return sum / sumBarres *100;
 }
 
+
 // dirige tous les calculs en appelant les fonctions nécessaires
 // se charge de l'affichage
 void MoteurCalculs::pilote ()
 {
-	Combinaison *liste = new Combinaison ();
+    Combinaison *liste = new Combinaison ();
     while ((not getTroncons()->empty()) and (not getBarres()->empty()) and (m_exigence != 0))
-	{
+    {
         cout << moteurCombinaisons(*liste) << endl;
-		rentreCombinaisonFinale();
-	}
+        rentreCombinaisonFinale();
+    }
     if (m_exigence == 0)
     {
         cout << "On tourne en rond" << endl;
         return;
     }
     #if DEBUG
-	affiche ();
+    affiche ();
     #endif
 }
 
@@ -178,7 +180,6 @@ Combinaison&  MoteurCalculs::maxi(Combinaison *lp)
     }
     return *lp;
 }
-
 /*===================access=====================*/
 
 List* MoteurCalculs::getTroncons () const
@@ -196,9 +197,14 @@ double MoteurCalculs::getPerte () const
 	return m_perteCoupe;
 }
 
-list<Combinaison> MoteurCalculs:: getResultatFinal () const
+std::list<Combinaison> MoteurCalculs::getResultatFinal() const
 {
-	return m_resultatFinal;
+    return m_resultatFinal;
+}
+
+std::list<Combinaison> *MoteurCalculs::getPointResultatFinal()
+{
+    return & m_resultatFinal;
 }
 
 int MoteurCalculs::getExigence() const
