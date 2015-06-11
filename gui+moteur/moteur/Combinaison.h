@@ -31,7 +31,7 @@ class Combinaison
 		void push (double , int);
 		double calculeRendement (double perte);
 		double getRendement() const;
-		std::list<Paire> getPaires() const;
+        std::list<Paire> getPaires() const;
 		double getBarre () const;
 		double somme ();
 		int getPosDernier ();

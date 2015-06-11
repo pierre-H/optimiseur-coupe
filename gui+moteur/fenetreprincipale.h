@@ -8,7 +8,8 @@
 #include "formulaireSaisie.h"
 #include "widgetresultats.h"
 #include "moteur/Combinaison.h"
-#include <convertunit.h>
+#include "convertunit.h"
+#include "./graphique/wigetgraphique.h"
 
 // Moteur
 #include "moteur/List.h"
@@ -26,6 +27,7 @@ private:
     QTabWidget * m_tabs;
     FormulaireSaisie * m_formulaireSaisie;
     WidgetResultats * m_widgetResultats;
+    WidgetGraphique * m_widgetGraphique;
 public slots:
     void traiterFormulaire();
 };

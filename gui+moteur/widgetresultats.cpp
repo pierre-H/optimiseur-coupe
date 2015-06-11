@@ -1,32 +1,26 @@
 #include "widgetresultats.h"
 
-WidgetResultats::WidgetResultats(QWidget *parent) : QWidget(parent)
+WidgetResultats::WidgetResultats(QFont & fontTitre, QWidget *parent) : QWidget(parent)
 {
     // Label Titre
     QLabel * labelTitre = new QLabel(tr("Résultats"));
-    QFont fontTitre1("Droid Sans", 12);
-    fontTitre1.setBold(true);
-    labelTitre->setFont(fontTitre1);
+    labelTitre->setFont(fontTitre);
 
     // Label Résultats
-    m_labelResultat = new QLabel(tr("Veuillez remplir le formulaire de saisie et cliquer sur \"Appliquer\"."));
-    m_labelResultat->setTextFormat(Qt::RichText);
+    m_labelResultat = new QTextEdit(tr("Veuillez remplir le formulaire de saisie et cliquer sur \"Appliquer\"."));
+    m_labelResultat->setReadOnly(true);
+    m_labelResultat->setMinimumSize(530,310);
+    m_labelResultat->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    m_labelResultat->setFrameShape(QFrame::NoFrame);
 
     // Bouton quitter
     QPushButton * buttonQuitter = new QPushButton(tr("Quitter"));
-    QPushButton * buttonSaveHTML = new QPushButton(tr("Enregistrer en HTML"));
-    QHBoxLayout * layoutBouttons = new QHBoxLayout;
-    QWidget * widgetBouttons = new QWidget();
-    layoutBouttons->addWidget(buttonSaveHTML);
-    layoutBouttons->addWidget(buttonQuitter);
-    widgetBouttons->setLayout(layoutBouttons);
 
     // Layout
     QVBoxLayout * mainLayout = new QVBoxLayout;
     mainLayout->addWidget(labelTitre,0, Qt::AlignTop);
-    mainLayout->addWidget(m_labelResultat,0,Qt::AlignTop);
-    mainLayout->addStretch();
-    mainLayout->addWidget(widgetBouttons, 0, Qt::AlignBottom | Qt::AlignRight);
+    mainLayout->addWidget(m_labelResultat);
+    mainLayout->addWidget(buttonQuitter, 0, Qt::AlignBottom | Qt::AlignRight);
 
     setLayout(mainLayout);
 

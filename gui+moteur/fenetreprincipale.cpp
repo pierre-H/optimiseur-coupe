@@ -6,14 +6,24 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QWidget(parent)
     setWindowTitle(tr("Optimiseur de coupe"));
     setWindowIcon(QIcon("mainIcon.ico"));
 
-    // Tabs
+    // Police titre
+    QFont fontTitre;
+    fontTitre.setPointSize(12);
+    fontTitre.setBold(true);
+    fontTitre.setStyleHint(QFont::SansSerif);
+
+    // Formulaire
     m_tabs = new QTabWidget(this);
-    m_formulaireSaisie = new FormulaireSaisie;
+    m_formulaireSaisie = new FormulaireSaisie(fontTitre);
     m_tabs->addTab(m_formulaireSaisie, tr("Formulaire de saisie"));
 
     // Résultats
-    m_widgetResultats = new WidgetResultats;
+    m_widgetResultats = new WidgetResultats(fontTitre);
     m_tabs->addTab(m_widgetResultats, tr("Résultats"));
+
+    // Graphique
+    m_widgetGraphique = new WidgetGraphique(fontTitre);
+    m_tabs->addTab(m_widgetGraphique, tr("Graphique des résultats"));
 
     //Layout
     QVBoxLayout * mainLayout = new QVBoxLayout;
@@ -76,8 +86,8 @@ void FenetrePrincipale::traiterFormulaire(){
         List * listFinaletroncons = moteur->getTroncons();
         if(not listFinaletroncons->empty()){
             erreur=10;
-            text = tr("Vous n'avez pas eu assez de matière première pour "
-                              "couper tous les tronçons que vous désiriez.<br>Liste de troncons restants:<br>");
+            text = tr("Vous n'avez pas assez de matière première pour "
+                              "couper tous les tronçons désirés.<br>Liste des troncons restants:<br>");
             text += listFinaletroncons->toStr(true);
             QMessageBox::warning(this, tr("Erreur"), text);
         }
@@ -86,7 +96,7 @@ void FenetrePrincipale::traiterFormulaire(){
 
         List * listFinaleBarres = moteur->getBarres();
         if(not listFinaleBarres->empty()){
-            text = tr("Il vous reste des barres entières que vous n'avez pas utilisées :<br>Liste des barres restantes :<br>");
+            text = tr("Il vous reste une/des barre(s) entière(s) non utilisée(s) :<br>Liste de la/des barre(s) restante(s) :<br>");
             text += listFinaleBarres->toStr(true) + "<hr>";
         }
 
@@ -96,16 +106,17 @@ void FenetrePrincipale::traiterFormulaire(){
             text += listFinaletroncons->toStr(true) + "<hr>";
         }
 
-        text += tr("<br>Voici la liste des coupes que vous devez effectuer :<br>");
-        list<Combinaison> listResultats = moteur->getResultatFinal();
-        for(list<Combinaison>::iterator it=listResultats.begin();
-            it != listResultats.end();
+        text += tr("<br>Voici la liste des coupes que vous devez effectuer :<ul>");
+        list<Combinaison> * listResultats = moteur->getPointResultatFinal();
+        for(list<Combinaison>::iterator it=listResultats->begin();
+            it != listResultats->end();
             ++it){
-            text+=it->toStr()+"<br>";
+            text+=it->toStr();
         }
-        text += tr("Exigence : ") + QString::number(moteur->getExigence()) + "<br>";
+        text += tr("</ul>Exigence : ") + QString::number(moteur->getExigence()) + "<br>";
         text += tr("Vous avez un rendement moyen de ") + QString::number(moteur->calculeRendementFinal(),'g', 4) + "%.";
         m_widgetResultats->updateResultats(text);
+        m_widgetGraphique->updateGraphique(listResultats);
         m_tabs->setCurrentIndex(1);
         delete tronconsList;
         delete barresList;

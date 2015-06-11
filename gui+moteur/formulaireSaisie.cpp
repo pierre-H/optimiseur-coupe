@@ -1,18 +1,17 @@
 #include "formulaireSaisie.h"
 
-FormulaireSaisie::FormulaireSaisie(QWidget *parent) : QWidget(parent)
+FormulaireSaisie::FormulaireSaisie(QFont & fontTitre, QWidget *parent) : QWidget(parent)
 {
     // Layout principal
     QVBoxLayout * layoutPrincipal = new QVBoxLayout;
 
     // Label : demande de remplir les infos
     QLabel * labelRemplirInfos = new QLabel(tr("Veuillez remplir les informations suivantes :"));
-    QFont fontTitre1("Droid Sans", 12);
-    fontTitre1.setBold(true);
-    labelRemplirInfos->setFont(fontTitre1);
+    labelRemplirInfos->setFont(fontTitre);
 
     // Groupes de saisie
-    QFont fontTitre2("Droid Sans", 10);
+    QFont fontTitre2;
+    fontTitre2.setPointSize(11);
     fontTitre2.setBold(true);
     m_groupeSaisieBarres = new GroupeSaisie(tr("Barres avant la découpe :"), fontTitre2);
     m_groupeSaisieTron = new GroupeSaisie(tr("Tronçons désirés :"), fontTitre2);
