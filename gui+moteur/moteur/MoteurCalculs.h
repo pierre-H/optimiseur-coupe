@@ -23,7 +23,7 @@ class MoteurCalculs
 			int moteurCombinaisons (Combinaison&);
 			Combinaison& maxi (Combinaison * lp=NULL);
 			bool rentreCombinaisonFinale ();
-			void pilote();
+            int pilote();
 			double calculeRendementFinal ();
 /*====================access=====================*/
 			List *getTroncons () const;

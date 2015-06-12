@@ -59,19 +59,19 @@ double MoteurCalculs::calculeRendementFinal ()
 
 // dirige tous les calculs en appelant les fonctions nécessaires
 // se charge de l'affichage
-void MoteurCalculs::pilote ()
+int MoteurCalculs::pilote ()
 {
     Combinaison *liste = new Combinaison ();
     while ((not getTroncons()->empty()) and (not getBarres()->empty()) and (m_exigence != 0))
     {
-        cout << moteurCombinaisons(*liste) << endl;
+        if (moteurCombinaisons(*liste) == -1) return (-1);
         rentreCombinaisonFinale();
     }
     if (m_exigence == 0)
     {
-        cout << "On tourne en rond" << endl;
-        return;
+        return -1;
     }
+    return 0;
     #if DEBUG
     affiche ();
     #endif
@@ -89,7 +89,7 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
     Combinaison * lp = new Combinaison();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
-        if (limite > 3000000) exit (1);
+        if (limite > 3000000) return (-1);
         *lim=*lim + 1;
         *lp = l; 				// copie de la liste donnée en argument
         p->setLongueur(m_copieTroncons[i]);
