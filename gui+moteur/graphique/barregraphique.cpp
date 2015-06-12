@@ -15,7 +15,7 @@ void BarreGraphique::paintEvent(QPaintEvent *e)
     QPainter painter(this);
 
     // Affiche "Sur une barre de ...
-    painter.drawText(QPoint(0,10), "Sur une barre de " + ConvertUnit::toStrSimplifie(m_barre) + " :");
+    painter.drawText(QPoint(0,10), tr("Sur une barre de ") + ConvertUnit::toStrSimplifie(m_barre) + " :");
 
     // Calcul le nb de pixels dispos
     int longueur = 0, i;

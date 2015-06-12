@@ -12,24 +12,45 @@ WidgetGraphique::WidgetGraphique(QFont & fontTitre, QWidget *parent) : QWidget(p
     QWidget * widgetBarres = new QWidget;
     m_layoutBarres = new QVBoxLayout;
     m_layoutBarres->addWidget(m_labelNoResults, 0, Qt::AlignTop | Qt::AlignLeft);
-    m_layoutBarres->setMargin(0);
+    m_layoutBarres->setMargin(5);
+    m_layoutBarres->setAlignment(Qt::AlignTop);
     widgetBarres->setLayout(m_layoutBarres);
+
+    // QScrollArea
+    QScrollArea * scrollArea = new QScrollArea;
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setMinimumHeight(330);
+    scrollArea->setFrameShape(QFrame::NoFrame);
+    scrollArea->setAlignment(Qt::AlignTop);
+    scrollArea->setWidget(widgetBarres);
+    scrollArea->setBackgroundRole(QPalette::Base);
 
     // Bouton quitter
     QPushButton * buttonQuitter = new QPushButton(tr("Quitter"));
+    QPushButton * buttonAide = new QPushButton(tr("Aide"));
+    QHBoxLayout * layoutButtons = new QHBoxLayout;
+    layoutButtons->addWidget(buttonAide);
+    layoutButtons->addWidget(buttonQuitter);
+    QWidget * widgetButtons = new QWidget;
+    widgetButtons->setLayout(layoutButtons);
 
     // Layout
     QVBoxLayout * mainLayout = new QVBoxLayout;
     mainLayout->addWidget(labelTitre,0, Qt::AlignTop);
-    mainLayout->addWidget(widgetBarres);
+    mainLayout->addWidget(scrollArea);
     mainLayout->addStretch();
-    mainLayout->addWidget(buttonQuitter, 0, Qt::AlignBottom | Qt::AlignRight);
+    mainLayout->addWidget(widgetButtons, 0, Qt::AlignBottom | Qt::AlignRight);
 
     setLayout(mainLayout);
 
     // Connexion
     QObject::connect(buttonQuitter, SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(buttonAide, SIGNAL(clicked()), this, SLOT(afficheAide()));
+}
 
+void WidgetGraphique::afficheAide(){
+    QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath() + tr("/help/index.fr.html")));
 }
 
 void WidgetGraphique::updateGraphique(std::list<Combinaison> * combinaison)
@@ -52,7 +73,7 @@ void WidgetGraphique::updateGraphique(std::list<Combinaison> * combinaison)
         ++it){
         m_vectorBarres.resize(m_vectorBarres.size()+1);
         m_vectorBarres.last() = new BarreGraphique(&(*it));
-        m_layoutBarres->addWidget(m_vectorBarres.last());
+        m_layoutBarres->addWidget(m_vectorBarres.last(), 0, Qt::AlignTop);
     }
 }
 

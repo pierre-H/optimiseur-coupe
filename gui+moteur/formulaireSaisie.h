@@ -10,6 +10,9 @@
 #include <QComboBox>
 #include <QMessageBox>
 #include <QVector>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QDir>
 #include "saisies/groupesaisie.h"
 #include "convertunit.h"
 
@@ -39,6 +42,7 @@ private:
 signals:
 
 public slots:
+    void afficheAide();
 };
 
 #endif // FORMULAIRESAISIE_H

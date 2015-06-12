@@ -29,9 +29,10 @@ FormulaireSaisie::FormulaireSaisie(QFont & fontTitre, QWidget *parent) : QWidget
     m_uniteEpaisseurLame->addItem("mm");
     m_uniteEpaisseurLame->addItem("in");
 
-    // Bouton Appliquer et Quitter et changement de mode
+    // Bouton Appliquer, Aide et Quitter et changement de mode
     m_buttonAppliquer = new QPushButton(tr("Appliquer"));
     m_buttonAppliquer->setDefault(true);
+    QPushButton * buttonAide = new QPushButton(tr("Aide"));
     m_buttonQuitter = new QPushButton(tr("Quitter"));
 
     // Layout pour Epaisseur et les boutons Appliquer/Quitter
@@ -40,6 +41,7 @@ FormulaireSaisie::FormulaireSaisie(QFont & fontTitre, QWidget *parent) : QWidget
     layoutEpaiButt->addWidget(m_uniteEpaisseurLame);
     layoutEpaiButt->addStretch();
     layoutEpaiButt->addWidget(m_buttonAppliquer);
+    layoutEpaiButt->addWidget(buttonAide);
     layoutEpaiButt->addWidget(m_buttonQuitter);
 
     // ajout des widgets au  Layout Principal
@@ -54,6 +56,11 @@ FormulaireSaisie::FormulaireSaisie(QFont & fontTitre, QWidget *parent) : QWidget
 
     // Connexion signaux/slots
     QObject::connect(m_buttonQuitter, SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(buttonAide, SIGNAL(clicked()), this, SLOT(afficheAide()));
+}
+
+void FormulaireSaisie::afficheAide(){
+    QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath() + tr("/help/index.fr.html")));
 }
 
 QPushButton * FormulaireSaisie::buttonAppliquer() const{

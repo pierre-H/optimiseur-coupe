@@ -13,19 +13,31 @@ WidgetResultats::WidgetResultats(QFont & fontTitre, QWidget *parent) : QWidget(p
     m_labelResultat->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     m_labelResultat->setFrameShape(QFrame::NoFrame);
 
-    // Bouton quitter
+    // Bouton Aide et Quitter
     QPushButton * buttonQuitter = new QPushButton(tr("Quitter"));
+    QPushButton * buttonAide = new QPushButton(tr("Aide"));
+    QHBoxLayout * layoutButtons = new QHBoxLayout;
+    layoutButtons->addWidget(buttonAide);
+    layoutButtons->addWidget(buttonQuitter);
+    QWidget * widgetButtons = new QWidget;
+    widgetButtons->setLayout(layoutButtons);
 
     // Layout
     QVBoxLayout * mainLayout = new QVBoxLayout;
     mainLayout->addWidget(labelTitre,0, Qt::AlignTop);
     mainLayout->addWidget(m_labelResultat);
-    mainLayout->addWidget(buttonQuitter, 0, Qt::AlignBottom | Qt::AlignRight);
+    mainLayout->addWidget(widgetButtons, 0, Qt::AlignBottom | Qt::AlignRight);
 
     setLayout(mainLayout);
 
     // Connexion
     QObject::connect(buttonQuitter, SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(buttonAide, SIGNAL(clicked()), this, SLOT(afficheAide()));
+
+}
+
+void WidgetResultats::afficheAide(){
+    QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath() + tr("/help/index.fr.html")));
 }
 
 void WidgetResultats::updateResultats(QString & text){

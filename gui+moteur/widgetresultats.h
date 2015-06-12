@@ -9,6 +9,8 @@
 #include <QApplication>
 #include <QScrollArea>
 #include <QPalette>
+#include <QDesktopServices>
+#include <QDir>
 
 class WidgetResultats : public QWidget
 {
@@ -21,6 +23,7 @@ private:
 signals:
 
 public slots:
+    void afficheAide();
 };
 
 #endif // WIDGETRESULTATS_H
