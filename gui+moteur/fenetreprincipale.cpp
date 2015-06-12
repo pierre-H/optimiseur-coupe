@@ -106,6 +106,7 @@ void FenetrePrincipale::traiterFormulaire(){
             text += listFinaletroncons->toStr(true) + "<hr>";
         }
 
+        // Liste des coupes
         text += tr("<br>Voici la liste des coupes que vous devez effectuer :<ul>");
         list<Combinaison> * listResultats = moteur->getPointResultatFinal();
         for(list<Combinaison>::iterator it=listResultats->begin();

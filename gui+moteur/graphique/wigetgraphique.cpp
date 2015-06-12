@@ -36,7 +36,7 @@ void WidgetGraphique::updateGraphique(std::list<Combinaison> * combinaison)
 {
     // Vide le widget des barres
     if(m_vectorBarres.size()==0){
-        m_layoutBarres->removeWidget(m_labelNoResults);
+        m_labelNoResults->setText("");
     }
     else{
         int i;
@@ -46,6 +46,7 @@ void WidgetGraphique::updateGraphique(std::list<Combinaison> * combinaison)
         }
         m_vectorBarres.resize(0);
     }
+
     for(std::list<Combinaison>::iterator it=combinaison->begin();
         it != combinaison->end();
         ++it){

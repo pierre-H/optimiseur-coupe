@@ -5,6 +5,8 @@
 #include <QPainter>
 #include <list>
 #include <QString>
+#include <QVector>
+#include <QMessageBox>
 #include "../convertunit.h"
 #include "../moteur/Paire.h"
 #include "../moteur/Combinaison.h"
@@ -17,8 +19,8 @@ public:
 
 private:
     Combinaison * m_combinaison;
-    int m_height;
-
+    std::list<Paire> m_liste;
+    double m_barre;
 signals:
 
 public slots:

@@ -1,38 +1,43 @@
 #include "barregraphique.h"
 
-BarreGraphique::BarreGraphique(Combinaison * combinaison, QWidget *parent) :m_combinaison(combinaison), m_height(55), QWidget(parent)
+BarreGraphique::BarreGraphique(Combinaison * combinaison, QWidget *parent) :QWidget(parent), m_combinaison(combinaison)
 {
-    setMinimumHeight(m_height);
+    setMinimumHeight(65);
+    setMinimumWidth(500);
+    m_liste = m_combinaison->getPaires();
+    m_barre = m_combinaison->getBarre();
 }
 
 
 // Dessine la découpe d'une barre
 void BarreGraphique::paintEvent(QPaintEvent *e)
 {
-    std::list<Paire> liste = m_combinaison->getPaires();
-    int compteur = 0, longueur = 500;
-    double carreLongueur;
-
-    // Compte le nombre de coupe
-    for (std::list<Paire>::iterator it = liste.begin(); it != liste.end(); it++){
-        compteur++;
-    }
-    longueur -= compteur*15;
-
-    // Painter
     QPainter painter(this);
-    QPoint topLeft, bottomRight;
-    QString text = "Sur une barre de " + ConvertUnit::toStrSimplifie(m_combinaison->getBarre()) + ".";
-    painter.drawText(0,10, text);
-    topLeft.setX(10);
-    topLeft.setY(15);
-    bottomRight.setY(m_height-10);
-    for (std::list<Paire>::iterator it = liste.begin(); it != liste.end(); it++){
-        carreLongueur = ( longueur * it->getLongueur() ) / m_combinaison->getBarre();
-        bottomRight.setX(((int) carreLongueur) + topLeft.x());
-        QRect rec(topLeft, bottomRight);
+
+    // Affiche "Sur une barre de ...
+    painter.drawText(QPoint(0,10), "Sur une barre de " + ConvertUnit::toStrSimplifie(m_barre) + " :");
+
+    // Calcul le nb de pixels dispos
+    int longueur = 0, i;
+    std::list<Paire>::iterator it;
+    for (it = m_liste.begin(); it != m_liste.end(); it++)
+        longueur++;
+    longueur = 500 - (longueur*5);
+
+    // QPoints
+    QPoint a(0,20), b;
+    b.setY(55);
+
+    QRect rec;
+
+    // Affichage des rectangles
+    for (it = m_liste.begin(); it != m_liste.end(); it++){
+        i = (longueur * (int) it->getLongueur()) / m_barre;
+        b.setX(a.x() + i);
+        rec.setTopLeft(a);
+        rec.setBottomRight(b);
         painter.drawRect(rec);
         painter.drawText(rec, Qt::AlignCenter, it->toStr());
-        topLeft.setX(bottomRight.x()+15);
+        a.setX(b.x() + 5);
     }
 }
