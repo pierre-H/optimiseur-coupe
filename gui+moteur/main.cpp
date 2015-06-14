@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QTranslator>
 #include "fenetreprincipale.h"
+#include <QMessageBox>
 
 using namespace std;
 
@@ -16,8 +17,9 @@ int main(int argc, char * argv[])
 
     // Chargement de la traduction
     QString locale = QLocale::system().name().section('_', 0, 0);
+    //locale = "en";
     QTranslator translator;
-    translator.load("optimiseurdecoupe_en"+locale);
+    translator.load("optimiseurdecoupe_"+locale);
     app.installTranslator(&translator);
 
     FenetrePrincipale mafenetre;
