@@ -10,6 +10,7 @@
 #include <QScrollArea>
 #include <QPalette>
 #include <QDesktopServices>
+#include <QUrl>
 #include <QDir>
 
 class WidgetResultats : public QWidget
