@@ -81,7 +81,10 @@ void FenetrePrincipale::traiterFormulaire(){
         createSortedList(barresList, resultatsBarres);
         MoteurCalculs * moteur = new MoteurCalculs(tronconsList, barresList, m_formulaireSaisie->epaisseurLame());
 
-        moteur->pilote();
+        if(moteur->pilote() == -1){
+            QMessageBox::warning(this, tr("Calculs arrétés"), tr("Les calculs demandés sont trop grands. Aucun résultat ne sera affiché."));
+            return;
+        }
 
         List * listFinaletroncons = moteur->getTroncons();
         if(not listFinaletroncons->empty()){
@@ -114,8 +117,7 @@ void FenetrePrincipale::traiterFormulaire(){
             ++it){
             text+=it->toStr();
         }
-        text += tr("</ul>Exigence : ") + QString::number(moteur->getExigence()) + "<br>";
-        text += tr("Vous avez un rendement moyen de ") + QString::number(moteur->calculeRendementFinal(),'g', 4) + "%.";
+        text += tr("</ul>Vous avez un rendement moyen de ") + QString::number(moteur->calculeRendementFinal(),'g', 4) + "%.";
         m_widgetResultats->updateResultats(text);
         m_widgetGraphique->updateGraphique(listResultats);
         m_tabs->setCurrentIndex(1);
