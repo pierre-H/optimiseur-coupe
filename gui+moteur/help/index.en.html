@@ -1,13 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
-
 <head>
-	<title>Mode d'emploi - Optimiseur de Coupe</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 1.24.1" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20150530;0">
+	<meta name="changed" content="20150614;182956556663938">
+	<meta name="sdfootnote" content=";;;;P">
+	<style type="text/css">
+	<!--
+		@page { margin-left: 2cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.4cm }
+		p { margin-left: 3cm; margin-bottom: 0.25cm; color: #000000; line-height: 120%; text-align: justify; page-break-before: auto; page-break-after: auto }
+		p.western { font-size: 16pt }
+		p.cjk { font-size: 10pt }
+		h2 { margin-left: 1cm; color: #6666ff; text-decoration: underline }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-size: 24pt }
+		h2.cjk { font-family: "Droid Sans Fallback"; font-size: 16pt }
+		h2.ctl { font-family: "FreeSans"; font-size: 16pt; font-weight: normal }
+		h3 { margin-left: 2cm; color: #6666ff; text-decoration: underline }
+		h3.western { font-family: "Liberation Sans", sans-serif; font-size: 20pt }
+		h3.cjk { font-family: "Droid Sans Fallback" }
+		h3.ctl { font-family: "FreeSans"; font-weight: normal }
+		h4 { margin-left: 3cm; font-variant: normal; color: #000000; text-decoration: underline; page-break-before: auto; page-break-after: auto }
+		h4.western { font-size: 18pt; font-style: normal }
+		h4.cjk { font-family: "Droid Sans Fallback"; font-style: italic }
+		h4.ctl { font-family: "FreeSans"; font-style: italic; font-weight: normal }
+		a:link { so-language: zxx }
+	-->
+	</style>
 </head>
-
-<body>
-	<h1>Optimiseur de Coupe</h1>
+<body lang="fr-FR" text="#000000" dir="ltr" style="background: transparent">
+<p class="western" align="center" style="margin-left: 0cm; margin-top: 0.42cm; margin-bottom: 0.5cm; line-height: 100%; page-break-after: avoid">
+<br><br>
+</p>
+<p class="western" align="left" style="margin-left: 0cm; margin-top: 0.42cm; margin-bottom: 0.5cm; line-height: 100%; page-break-before: auto; page-break-after: avoid">
+<font color="#6666ff"><font face="Albany, sans-serif"><font size="7" style="font-size: 60pt"><b>Cut
+optimizer</b></font></font></font></p>
+<p class="western" align="left" style="margin-left: 9.75cm"><br><br>
+</p>
+<p class="western" align="center" style="margin-left: 0cm; margin-top: 0.11cm; margin-bottom: 0.21cm; line-height: 100%; page-break-before: auto; page-break-after: avoid">
+<font color="#6666ff"><font face="Albany, sans-serif"><font size="7" style="font-size: 40pt">Instruction
+manual</font></font></font></p>
+<p class="western"><br><br>
+</p>
+<h2 class="western"><a name="__RefHeading__2007_1409345813"></a><a name="__RefHeading__224_1313788544"></a>
+<u>Summary</u></h2>
+<p class="western"><br><br>
+</p>
+<p class="western"><br><br>
+</p>
+<h2 class="western"><font color="#6666ff"><u>Goal of this software</u></font></h2>
+<p class="western" align="justify"><br><br>
+</p>
+<p class="western"><font face="Liberation Serif, serif"><font size="4" style="font-size: 16pt">The
+user has a certain amount of bars that can have different dimensions,
+and wants to cut them in of different section length.</font></font></p>
+<p class="western"><font face="Liberation Serif, serif"><font size="4" style="font-size: 16pt">This
+program helps defining which cut combination will be the best, (which
+combination will have the biggest section remaining).</font></font></p>
+<p class="western"><br><br>
+</p>
+<h2 class="western">Langage choice</h2>
+<p class="western"><br><br>
+</p>
+<p class="western" style="text-decoration: none">The software detects
+when starting which langage is natively used by OS. If the french
+langage is detected, it will then choose the french. If not, if will
+choose english.</p>
+<p class="western"><br><br>
+</p>
+<h2 class="western"><a name="__RefHeading__2021_1409345813"></a>Global
+overview of the user's interface.</h2>
+<p class="western"><br><br>
+</p>
+<p class="western">The interface has 3 tabs &nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<p class="western">- One tab is dedicated to key-in&nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><font size="4" style="font-size: 16pt"><font color="#000000"><span style="text-decoration: none">-
+One tab where the results will be displayed as text&nbsp;:</span></font></font></p>
+<p class="western"><br><br>
+</p>
+<p class="western"><font color="#000000"><span style="text-decoration: none">-
+One tab where the results will be displayed as graphic / charts&nbsp;:</span></font></p>
+<p class="western"><br><br>
+</p>
+<p class="western" style="page-break-before: always"><br><br>
+</p>
+<h3 class="western">TAB «&nbsp;Data entry Form&nbsp;»</h3>
+<p class="western"><br><br>
+</p>
+<p class="western" align="justify">There are 3 subsections, one for
+the bar length before cutting, one for the wished sections
+dimensions, the last one to choose the thickness of the blade. 
+</p>
+<p class="western" align="justify">Once the data entered, the button
+«&nbsp;apply&nbsp;» will launch the calculation&nbsp;:</p>
+<p class="western" align="justify"><br><br>
+</p>
+<p class="western" align="justify">Clicking on the «&nbsp;help&nbsp;»
+button will open this user guide&nbsp;:</p>
+<p class="western" align="justify"><br><br>
+</p>
+<p class="western" align="justify">By clicking on the button
+«&nbsp;QUIT&nbsp;», the user will exit from the application&nbsp;:</p>
+<p class="western" align="justify"><br><br>
+</p>
+<h4 class="western"><font size="5" style="font-size: 18pt">Collecting
+the length before cutting </font>
+</h4>
+<p class="western"><br><br>
+</p>
+<p class="western">Each data entry line has 3 datas fields&nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Lenght&nbsp;:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A spinbox enables the user to choose either a
+manual entry or increase or decrease the value displayed in the
+field. Thanks this, it is possible to choose the length of one or
+several bars.</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Unit of measure&nbsp;:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A drop down list enables the user to choose among
+6 bar unit of measure : mm, cm, m, inch, foot and yard.</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Quantity&nbsp;:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A spinbox enables to choose either a manual data
+entry, or to increase or decrease the default value from the field.</p>
+<p class="western"><br><br>
+</p>
+<p class="western">Eventually, clicking on this button will create a
+new line to enter data&nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<p class="western">Another button is here to delete the last line
+entered&nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<h4 class="western"><a name="__RefHeading__237_1409345813"></a>Enter
+the wished length of the section</h4>
+<p class="western"><br><br>
+</p>
+<p class="western"><br><br>
+</p>
+<p class="western">Each line has 3 fields where data can be entered&nbsp;:
+</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Length:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A spinbox enables to choose either to enter the
+data manually or to increase or decrease the default value of the
+field. The user can therefore choose the length of one or several
+sections.</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Unit of measure&nbsp;:</u></p>
+<p class="western">Thanks to a drop down list the user can choose
+between 6 different section unit of measures&nbsp;&nbsp;: mm, cm, m,
+inch, foot and the yard.</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Quantity&nbsp;:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A spinbox enables the user to choose either to
+enter the data manually or to increase or decrease the default value
+of this field. 
+</p>
+<p class="western"><br><br>
+</p>
+<p class="western">Eventually, clicking on this button will create a
+new line to enter data&nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<p class="western">This other button will delete the last line&nbsp;:</p>
+<p class="western"><br><br>
+</p>
+<h4 class="western"><a name="__RefHeading__122_1409345813"></a><a name="__RefHeading__251_1313788544"></a>
+Enter the thickness of the blade 
+</h4>
+<p class="western"><br><br>
+</p>
+<p class="western"><br><br>
+</p>
+<p class="western">This tab has only 2 fields:</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Thickness of the blade &nbsp;:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A spinbox enables the user to choose either to
+enter the data manually or to increase or decrease the default value
+of this field. 
+</p>
+<p class="western"><br><br>
+</p>
+<p class="western"><u>- Unit of measure&nbsp;:</u></p>
+<p class="western"><br><br>
+</p>
+<p class="western">A drop down list enable to choose between two
+thickness unit of measures&nbsp;: mm and the inch.</p>
+<p class="western"><br><br>
+</p>
+<h3 class="western">Tab «&nbsp;results&nbsp;»</h3>
+<p class="western"><br><br>
+</p>
+<p class="western">The results can either be shown like text or
+graphically.</p>
+<p class="western"><br><br>
+</p>
+<h4 class="western">The text&nbsp;: 
+</h4>
+<p class="western"><br><br>
+</p>
+<p class="western">- The list of the cut, for each bar, in the native
+unity of measure entered 
+</p>
+<p class="western">- The yield on each raw material bar 
+</p>
+<p class="western">- The average yield 
+</p>
+<p class="western"><br><br>
+</p>
+<p class="western">Just like in the tab «&nbsp;data enter tab&nbsp;»,
+the user will find a button «&nbsp;Help&nbsp;» to reach this user
+guide, as well as a button «&nbsp;Quit&nbsp;», to exit from the
+application .</p>
+<p class="western"><br><br>
+</p>
+<h4 class="western"><a name="__RefHeading__2011_1409345813"></a>The
+cutting drawing results&nbsp;: 
+</h4>
+<p class="western"><br><br>
+</p>
+<p class="western">For each raw material bar, there will be a drawing
+for the cutting, showing the size of the section to cut. 
+</p>
+<p class="western">Just like in the tab «&nbsp;data enter tab&nbsp;»,
+the user will find a button «&nbsp;Help&nbsp;» to reach this user
+guide, as well as a button «&nbsp;Quit&nbsp;», to exit from the
+application .</p>
+<p class="western"><br><br>
+</p>
+<h2 class="western">Error pop ups</h2>
+<p class="western"><br><br>
+</p>
+<h3 class="western"><font color="#6666ff">Raw material shortage</font></h3>
+<p class="western"><br><br>
+</p>
+<p class="western">The following error message will pop up when there
+will not be enough raw material bar length to cut the required cuts
+quantity.</p>
+<p class="western"><br><br>
+</p>
+<h3 class="western"><a name="__RefHeading__2015_1409345813"></a>Raw
+material to short 
+</h3>
+<p class="western"><br><br>
+</p>
+<p class="western">This error message will pop up when no raw
+material bar is long enough to make the required cut .</p>
+<p class="western"><br><br>
+</p>
+<h3 class="western"><a name="__RefHeading__2127_1409345813"></a>Wrong
+yield causing raw material shortage&nbsp;:</h3>
+<p class="western"><br><br>
+</p>
+<p class="western">This error message will pop up if, inspite of a
+quantity looking sufficient, wrong yields are preventing from getting
+the required sections.</p>
 </body>
-
 </html>
