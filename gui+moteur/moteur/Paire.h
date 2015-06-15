@@ -1,9 +1,15 @@
+/* Paire.h
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #ifndef PAIRE_H
 #define PAIRE_H
 
 #include <iostream>
 #include <list>
 #include "../convertunit.h"
+#include <iostream>
 
 #if DEBUG
 //Rien

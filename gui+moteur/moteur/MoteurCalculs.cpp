@@ -1,5 +1,9 @@
+/* MoteurCalculs.cpp
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #include "MoteurCalculs.h"
-#include <cstdlib>
 
 using namespace std;
 int limite = 0;

@@ -1,4 +1,7 @@
-// Optimiseur de coupe
+/* main.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
 
 #include <QApplication>
 #include <QTranslator>

@@ -1,3 +1,8 @@
+/* formulaireSaisie.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #include "formulaireSaisie.h"
 
 FormulaireSaisie::FormulaireSaisie(QFont & fontTitre, QWidget *parent) : QWidget(parent)

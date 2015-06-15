@@ -1,3 +1,8 @@
+/* List.cpp
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #include "List.h"
 
 using namespace std;

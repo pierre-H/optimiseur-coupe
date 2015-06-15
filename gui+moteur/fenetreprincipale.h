@@ -1,3 +1,8 @@
+/* fenetreprincipale.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef FENETREPRINCIPALE_H
 #define FENETREPRINCIPALE_H
 
@@ -14,6 +19,11 @@
 // Moteur
 #include "moteur/List.h"
 #include "moteur/MoteurCalculs.h"
+
+/* Cette classe est la fenètre principale.
+ * C'est elle qui gère les tabs, les widgets de formulaire, résultat et graphique.
+ * C'est aussi elle qui lance le moteur et génère le texte des résultats.
+ */
 
 class FenetrePrincipale : public QWidget
 {

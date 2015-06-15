@@ -1,3 +1,8 @@
+/* Combinaison.cpp
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #include "Combinaison.h"
 
 using namespace std;

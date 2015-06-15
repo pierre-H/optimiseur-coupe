@@ -1,3 +1,8 @@
+/* barregraphique.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef BARREGRAPHIQUE_H
 #define BARREGRAPHIQUE_H
 
@@ -10,6 +15,8 @@
 #include "../convertunit.h"
 #include "../moteur/Paire.h"
 #include "../moteur/Combinaison.h"
+
+// Un tronçons sous forme graphique
 
 class BarreGraphique : public QWidget
 {

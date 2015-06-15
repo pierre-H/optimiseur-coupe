@@ -1,3 +1,8 @@
+/* widgetresultats.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #include "widgetresultats.h"
 
 WidgetResultats::WidgetResultats(QFont & fontTitre, QWidget *parent) : QWidget(parent)

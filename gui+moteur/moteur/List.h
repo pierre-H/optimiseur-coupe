@@ -1,3 +1,8 @@
+/* List.h
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #ifndef MYLIST_H
 #define MYLIST_H
 

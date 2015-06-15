@@ -1,3 +1,8 @@
+/* groupesaisie.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef GROUPESAISIE_H
 #define GROUPESAISIE_H
 
@@ -11,6 +16,11 @@
 #include <QLayout>
 #include <QString>
 #include "saisie.h"
+
+/* Cette classe gère les saisies. Elle contient
+ * l'affichage des saisies ainsi que les boutons
+ * d'ajout et de suppression de saisie.
+ */
 
 class GroupeSaisie : public QWidget
 {

@@ -1,3 +1,8 @@
+/* saisie.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #include "saisie.h"
 
 Saisie::Saisie(int numero, QWidget *parent) : QWidget(parent)

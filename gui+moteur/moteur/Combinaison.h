@@ -1,3 +1,8 @@
+/* Combinaison.h
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #ifndef COMBINAISON_H
 #define COMBINAISON_H
 

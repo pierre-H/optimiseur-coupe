@@ -1,6 +1,9 @@
+/* Paire.h
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #include "Paire.h"
-#include <iostream>
-#include <list>
 
 using namespace std;  
 

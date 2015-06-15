@@ -1,7 +1,17 @@
+/* barregraphique.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #include "barregraphique.h"
 
 BarreGraphique::BarreGraphique(Combinaison * combinaison, QWidget *parent) :QWidget(parent), m_combinaison(combinaison)
 {
+    /* On fait tout cela dans le constructeur et
+     * des copies simples des membres de m_combinaison car
+     * utiliser directement les méthodes d'accès dans paintEvent
+     * cause une erreur de segmentation dont l'origine m'est inconnu.
+     */
     setMinimumHeight(65);
     setMinimumWidth(500);
     m_liste = m_combinaison->getPaires();
@@ -25,11 +35,16 @@ void BarreGraphique::paintEvent(QPaintEvent *e)
         longueur++;
     longueur = 500 - ((longueur-1)*5); // 5 px d'espace entre les carrés
 
+    // Calcul la longueur réellement utilisée
+    for (it = m_liste.begin(); it != m_liste.end(); it++)
+        longueurUtilisee += it->getLongueur();
+
     // Calcul la façon dont sera affiché le graphique
+    // 1 : on essaye d'afficher les restes
+    // 0 : on affiche juste les coupes à faire sans prendre en compte les restes
+    // Ceci permet d'éviter les cas ou la découpe est trop petite pour afficher le label longueur
     it = m_liste.begin();
     if((longueur * (int) it->getLongueur() / m_barre) < 45){
-        for (it = m_liste.begin(); it != m_liste.end(); it++)
-            longueurUtilisee += it->getLongueur();
         typeAffichage = 0;
     }
     else
@@ -53,5 +68,18 @@ void BarreGraphique::paintEvent(QPaintEvent *e)
         painter.drawRect(rec);
         painter.drawText(rec, Qt::AlignCenter, it->toStr());
         a.setX(b.x() + 5);
+    }
+
+    // Affichage des restes
+    if(typeAffichage == 1 && longueurUtilisee < m_barre){
+        i = (longueur * (int) (m_barre - longueurUtilisee) / m_barre);
+        if(i > 55){
+            painter.setPen(Qt::DashLine);
+            b.setX(500);
+            rec.setTopLeft(a);
+            rec.setBottomRight(b);
+            painter.drawRect(rec);
+            painter.drawText(rec, Qt::AlignCenter, ConvertUnit::toStrSimplifie(m_barre-longueurUtilisee)+tr("\nrestants"));
+        }
     }
 }

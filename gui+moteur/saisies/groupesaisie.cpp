@@ -1,6 +1,9 @@
-#include "groupesaisie.h"
+/* groupesaisie.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
 
-#include <QMessageBox>
+#include "groupesaisie.h"
 
 GroupeSaisie::GroupeSaisie(QString titre, QFont & fontTitre, QWidget *parent) : QWidget(parent), m_stringNbSaisies(tr("Nombre de saisies : "))
 {

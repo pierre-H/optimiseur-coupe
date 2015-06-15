@@ -1,3 +1,8 @@
+/* formulaireSaisie.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef FORMULAIRESAISIE_H
 #define FORMULAIRESAISIE_H
 
@@ -16,9 +21,7 @@
 #include "saisies/groupesaisie.h"
 #include "convertunit.h"
 
-/* Fenêtre principale du programme
- * Elle inclut le formulaire et les résultats (pas encore codée)
- */
+// Onglet formulaire de saisie
 
 class FormulaireSaisie : public QWidget
 {

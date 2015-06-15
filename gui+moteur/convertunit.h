@@ -1,3 +1,8 @@
+/* convertunit.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef CONVERTUNIT_H
 #define CONVERTUNIT_H
 

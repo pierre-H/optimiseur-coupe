@@ -1,3 +1,8 @@
+/* widgetgraphique.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #include "wigetgraphique.h"
 
 WidgetGraphique::WidgetGraphique(QFont & fontTitre, QWidget *parent) : QWidget(parent)

@@ -1,3 +1,8 @@
+/* widgetgraphique.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef WIGETGRAPHIQUE_H
 #define WIGETGRAPHIQUE_H
 
@@ -15,6 +20,8 @@
 #include <QUrl>
 #include "../moteur/Combinaison.h"
 #include "barregraphique.h"
+
+// Onglet des résultats graphique
 
 class WidgetGraphique : public QWidget
 {

@@ -1,3 +1,8 @@
+/* MoteurCalculs.h
+ * Optimiseur de Coupe
+ * 2015 - Rebecca Charbit
+ */
+
 #ifndef MOTEURCALCULS_H
 #define MOTEURCALCULS_H
 
@@ -6,6 +11,7 @@
 #include "List.h"
 #include <iostream>
 #include "Paire.h"
+#include <cstdlib>
 
 // pour détecter les boucles infinies
 extern int limite;

@@ -1,3 +1,8 @@
+/* fenetreprincipale.cpp
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #include "fenetreprincipale.h"
 
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QWidget(parent)

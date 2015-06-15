@@ -1,3 +1,8 @@
+/* widgetresultats.h
+ * Optimiseur de Coupe
+ * 2015 - Pierre-Emmanuel PIRNAY 11296315
+ */
+
 #ifndef WIDGETRESULTATS_H
 #define WIDGETRESULTATS_H
 
@@ -12,6 +17,8 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QDir>
+
+// Onglet résultats texte
 
 class WidgetResultats : public QWidget
 {
