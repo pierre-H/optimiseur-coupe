@@ -71,12 +71,6 @@ int MoteurCalculs::pilote ()
         if (moteurCombinaisons(*liste) == -1) return (-1);
         rentreCombinaisonFinale();
     }
-    if (m_exigence == 0)
-    {
-        // remet à zero
-        m_exigence=0;
-        return -1;
-    }
     return 0;
     #if DEBUG
     affiche ();
