@@ -15,14 +15,12 @@ int * lim = &limite;
 
 MoteurCalculs::MoteurCalculs(List* troncons, List *barres, double perte)
 {
-    if (limite > 5000) exit (1);
-    *lim=*lim + 1;
     m_perteCoupe = perte;
     m_troncons = troncons;
     ajoutePerte ();
     m_barres = barres;
     m_troncons->copie(&m_copieTroncons);
-    m_exigence = 80;
+    m_exigence = 100;
 }
 
 
@@ -89,7 +87,9 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
     Combinaison * lp = new Combinaison();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
-        if (limite > 3000000) return(-1);
+        if (limite > 2000000) return(-1);
+        if (doublons (m_copieTroncons[i], i))
+            break;
         *lim=*lim + 1;
         *lp = l; 				// copie de la liste donnée en argument
         p->setLongueur(m_copieTroncons[i]);
@@ -109,6 +109,21 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
         }
    }
    return cpt;
+}
+
+// renvoie 1 s'il on a déjà effectué des combinaisons commençant par un tronçon différent, mais de même taille
+// c'est à dire un doublon. Renvoie 0 sinon
+int MoteurCalculs::doublons (double longueur, int position)
+{
+    list<Combinaison>::iterator itComb;
+    list<Paire>::iterator itPair;
+    for (itComb = m_possibilites.begin(); itComb != m_possibilites.end(); itComb++)
+    {
+        itPair = itComb->getPaires().begin();
+        if (itPair->getLongueur() == longueur && itPair->getPos() != position)
+            return 1;
+    }
+    return 0;
 }
 
 

@@ -27,6 +27,7 @@ class MoteurCalculs
 			int push (Combinaison *);
 			void ajoutePerte ();
 			int moteurCombinaisons (Combinaison&);
+            int doublons (double longueur, int position);
 			Combinaison& maxi (Combinaison * lp=NULL);
 			bool rentreCombinaisonFinale ();
             int pilote();
