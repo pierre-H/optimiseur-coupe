@@ -88,7 +88,7 @@ void FenetrePrincipale::traiterFormulaire(){
 
         if(moteur->pilote() == -1){
             QMessageBox::warning(this, tr("Calculs arrétés"), tr("Les calculs demandés sont trop grands. Aucun résultat ne sera affiché."));
-            return;
+            //return;
         }
 
         List * listFinaletroncons = moteur->getTroncons();

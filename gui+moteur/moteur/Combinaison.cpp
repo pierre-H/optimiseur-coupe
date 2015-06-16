@@ -34,7 +34,7 @@ void Combinaison::affiche()
 }
 #else
 QString Combinaison::toStr(){
-    QString text = "<li>Sur une barre de " + ConvertUnit::toStrSimplifie(m_barre) + " :<br>";
+    QString text = QObject::tr("<li>Sur une barre de ") + ConvertUnit::toStrSimplifie(m_barre) + " :<br>";
     for (list<Paire>::iterator it = m_liste.begin(); it != m_liste.end(); it++)
     {
         if (it != m_liste.begin())

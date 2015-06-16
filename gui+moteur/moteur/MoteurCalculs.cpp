@@ -17,47 +17,47 @@ MoteurCalculs::MoteurCalculs(List* troncons, List *barres, double perte)
 {
     if (limite > 5000) exit (1);
     *lim=*lim + 1;
-	m_perteCoupe = perte;
-	m_troncons = troncons;
-	ajoutePerte ();
-	m_barres = barres;
-	m_troncons->copie(&m_copieTroncons);
-	m_exigence = 80;
+    m_perteCoupe = perte;
+    m_troncons = troncons;
+    ajoutePerte ();
+    m_barres = barres;
+    m_troncons->copie(&m_copieTroncons);
+    m_exigence = 80;
 }
 
 
 MoteurCalculs::~MoteurCalculs()
 {
-	m_possibilites.clear();
-	m_resultatFinal.clear();
+    m_possibilites.clear();
+    m_resultatFinal.clear();
    //dtor
 }
 
-// ajoutePerte ajoute la longueur de perte à la coupe de 
+// ajoutePerte ajoute la longueur de perte à la coupe de
 // chacun des tronçons de la liste de tronçons
 // utilisée dans pilote avant toute opération
 void MoteurCalculs::ajoutePerte ()
 {
-	List * it = m_troncons; // itérateur
-	while (it)
-	{
-		it->setPremier (it->getPremier () + m_perteCoupe);
-		it = it->getProchain ();
-	}
+    List * it = m_troncons; // itérateur
+    while (it)
+    {
+        it->setPremier (it->getPremier () + m_perteCoupe);
+        it = it->getProchain ();
+    }
 }
 
 // calcule le rendement moyen final quand tous les calculs ont été finis
 // exprimé en pourcentage
 double MoteurCalculs::calculeRendementFinal ()
 {
-	double sum = 0., sumBarres=0.;
-	list <Combinaison>::iterator it;
-	for (it = m_resultatFinal.begin(); it != m_resultatFinal.end(); it++)
-	{
-		sum += it->somme();
-		sumBarres += it->getBarre ();
-	}
-	return sum / sumBarres *100;
+    double sum = 0., sumBarres=0.;
+    list <Combinaison>::iterator it;
+    for (it = m_resultatFinal.begin(); it != m_resultatFinal.end(); it++)
+    {
+        sum += it->somme();
+        sumBarres += it->getBarre ();
+    }
+    return sum / sumBarres *100;
 }
 
 
@@ -184,17 +184,17 @@ Combinaison&  MoteurCalculs::maxi(Combinaison *lp)
 
 List* MoteurCalculs::getTroncons () const
 {
-	return m_troncons;
+    return m_troncons;
 }
 
 List* MoteurCalculs::getBarres () const
 {
-	return m_barres;
+    return m_barres;
 }
 
 double MoteurCalculs::getPerte () const
 {
-	return m_perteCoupe;
+    return m_perteCoupe;
 }
 
 std::list<Combinaison> MoteurCalculs::getResultatFinal() const
@@ -219,28 +219,28 @@ int MoteurCalculs::getExigence() const
 
 void MoteurCalculs::affiche()
 {
-	if (m_troncons->empty ())
-		cout <<"Vous avez réussi à couper tous les tronçons que vous désiriez." << endl;
-	else
-	{
-		cout <<"Vous n'avez pas eu assez de matière première pour couper tous les tronçons que vous désiriez... Liste de troncons restants: ";
-		m_troncons->affiche();
-	}
-	if (m_barres->empty ())
-		cout <<"Vous avez utilisé toutes vos barres." << endl;
-	else
-	{
-		cout <<"Il vous reste des barres entières que vous n'avez pas utilisées : Liste des barres restantes: ";
-		m_barres->affiche();
-	}
-	cout << "Voici la liste des coupes que vous devez effectuer : " << endl;
-	for(list<Combinaison>::iterator it=m_resultatFinal.begin(); it!= m_resultatFinal.end(); ++it)
-	{
-		it->affiche();
-		cout <<endl;
-	}
-	cout << "Exigence : "<<m_exigence<<endl;
-	cout << "Vous avez un rendement moyen de " << calculeRendementFinal ()<<"%"<<endl;
+    if (m_troncons->empty ())
+        cout <<"Vous avez réussi à couper tous les tronçons que vous désiriez." << endl;
+    else
+    {
+        cout <<"Vous n'avez pas eu assez de matière première pour couper tous les tronçons que vous désiriez... Liste de troncons restants: ";
+        m_troncons->affiche();
+    }
+    if (m_barres->empty ())
+        cout <<"Vous avez utilisé toutes vos barres." << endl;
+    else
+    {
+        cout <<"Il vous reste des barres entières que vous n'avez pas utilisées : Liste des barres restantes: ";
+        m_barres->affiche();
+    }
+    cout << "Voici la liste des coupes que vous devez effectuer : " << endl;
+    for(list<Combinaison>::iterator it=m_resultatFinal.begin(); it!= m_resultatFinal.end(); ++it)
+    {
+        it->affiche();
+        cout <<endl;
+    }
+    cout << "Exigence : "<<m_exigence<<endl;
+    cout << "Vous avez un rendement moyen de " << calculeRendementFinal ()<<"%"<<endl;
 }
 
 #endif
