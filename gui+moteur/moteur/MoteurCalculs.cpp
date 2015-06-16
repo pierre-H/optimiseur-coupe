@@ -66,7 +66,7 @@ double MoteurCalculs::calculeRendementFinal ()
 int MoteurCalculs::pilote ()
 {
     Combinaison *liste = new Combinaison ();
-    while ((not getTroncons()->empty()) and (not getBarres()->empty()) and (m_exigence != 0))
+    while ((not getTroncons()->empty()) and (not getBarres()->empty()) and (m_exigence >= 0))
     {
         if (moteurCombinaisons(*liste) == -1) return (-1);
         rentreCombinaisonFinale();
