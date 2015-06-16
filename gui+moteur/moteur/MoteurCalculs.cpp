@@ -69,10 +69,12 @@ int MoteurCalculs::pilote ()
         if (moteurCombinaisons(*liste) == -1) return (-1);
         rentreCombinaisonFinale();
     }
+#if DEBUG
+affiche ();
+#endif
+    *lim=0;
     return 0;
-    #if DEBUG
-    affiche ();
-    #endif
+
 }
 
 
@@ -87,7 +89,8 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
     Combinaison * lp = new Combinaison();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
-        if (limite > 2000000) return(-1);
+        cout << limite << endl;
+        if (limite > 1000000) return(-1);
         if (doublons (m_copieTroncons[i], i))
             break;
         *lim=*lim + 1;
