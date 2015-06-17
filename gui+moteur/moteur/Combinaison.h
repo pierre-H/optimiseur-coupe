@@ -36,9 +36,9 @@ class Combinaison
 		void push (double , int);
 		double calculeRendement (double perte);
 		double getRendement() const;
-        std::list<Paire> getPaires() const;
+        std::list<Paire> getTroncons() const;
 		double getBarre () const;
-		double somme ();
+        double somme ();
 		int getPosDernier ();
 		double attacheBarre (List* barres, double perte);
 		void retranchePerte (double perte);

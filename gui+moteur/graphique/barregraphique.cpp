@@ -14,7 +14,7 @@ BarreGraphique::BarreGraphique(Combinaison * combinaison, QWidget *parent) :QWid
      */
     setMinimumHeight(65);
     setMinimumWidth(500);
-    m_liste = m_combinaison->getPaires();
+    m_liste = m_combinaison->getTroncons();
     m_barre = m_combinaison->getBarre();
 }
 

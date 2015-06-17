@@ -7,6 +7,7 @@
 #define MOTEURCALCULS_H
 
 #include <list>
+#include <vector>
 #include "Combinaison.h"
 #include "List.h"
 #include <iostream>
@@ -28,7 +29,7 @@ class MoteurCalculs
 			void ajoutePerte ();
 			int moteurCombinaisons (Combinaison&);
             int doublons (double longueur, int position);
-			Combinaison& maxi (Combinaison * lp=NULL);
+            Combinaison& maxi (Combinaison * lp=NULL);
 			bool rentreCombinaisonFinale ();
             int pilote();
 			double calculeRendementFinal ();
@@ -36,6 +37,7 @@ class MoteurCalculs
 			List *getTroncons () const;
 			List * getBarres () const;
 			double getPerte () const;
+            vector<Paire> getMemo() const;
             std::list<Combinaison> getResultatFinal() const;
             std::list<Combinaison> * getPointResultatFinal();
             int getExigence() const;
@@ -51,6 +53,7 @@ class MoteurCalculs
 			std::list<Combinaison> m_possibilites;
 			std::list<Combinaison> m_resultatFinal;
             QVector<double>  m_copieTroncons;
+            std::vector<Paire> m_memo;// se rappelle des tronçons à partir desquels on a déjà combiné
 			int m_exigence; 		// prend en compte à partir d'un certain pourcentage
 			double m_perteCoupe;	// perte occasionnée à chaque coupe
 };

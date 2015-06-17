@@ -42,7 +42,7 @@ class List
 		List& insere (double, int);
 		void trie (double element);
         void copie (QVector<double> * v);
-		void setPremier (double e);
+        void setElement (double e);
 		
 		// fonctions d'accès et d'information
 #if DEBUG
@@ -51,12 +51,12 @@ class List
         QString toStr(bool premier = true) const;
 #endif
 		int member (double)const;
-		double getPremier ()const;
+        double getElement ()const;
 		List * getProchain ()const;
 		bool empty()const;
 		int length ()const;
-		double max () ;
-		double min ();
+        double max ();
+        double min ();
 
 
 	protected:

@@ -39,7 +39,7 @@ void MoteurCalculs::ajoutePerte ()
     List * it = m_troncons; // itérateur
     while (it)
     {
-        it->setPremier (it->getPremier () + m_perteCoupe);
+        it->setElement(it->getElement () + m_perteCoupe);
         it = it->getProchain ();
     }
 }
@@ -66,7 +66,7 @@ int MoteurCalculs::pilote ()
     Combinaison *liste = new Combinaison ();
     while ((not getTroncons()->empty()) and (not getBarres()->empty()) and (m_exigence >= 0))
     {
-        if (moteurCombinaisons(*liste) == -1) return (-1);
+        if (moteurCombinaisons(*liste) == -1) {*lim = 0 ; return (-1);}
         rentreCombinaisonFinale();
     }
 #if DEBUG
@@ -74,7 +74,6 @@ affiche ();
 #endif
     *lim=0;
     return 0;
-
 }
 
 
@@ -122,8 +121,8 @@ int MoteurCalculs::doublons (double longueur, int position)
     list<Paire>::iterator itPair;
     for (itComb = m_possibilites.begin(); itComb != m_possibilites.end(); itComb++)
     {
-        itPair = itComb->getPaires().begin();
-        if (itPair->getLongueur() == longueur && itPair->getPos() != position)
+        itPair = itComb->getTroncons().begin();
+        if (itPair->getLongueur() == longueur && itPair->getPosition() != position)
             return 1;
     }
     return 0;
@@ -163,7 +162,7 @@ bool MoteurCalculs::rentreCombinaisonFinale ()
     }
     lp = &maxi(lp);
     list<Paire>::iterator it;
-    list<Paire> p = lp->getPaires();
+    list<Paire> p = lp->getTroncons();
     for (it = p.begin(); it != p.end(); it++)
         m_troncons->supprimeExplicite (it->getLongueur());
     lp->retranchePerte (m_perteCoupe);
@@ -214,6 +213,7 @@ double MoteurCalculs::getPerte () const
 {
     return m_perteCoupe;
 }
+
 
 std::list<Combinaison> MoteurCalculs::getResultatFinal() const
 {

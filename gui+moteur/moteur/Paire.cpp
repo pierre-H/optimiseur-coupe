@@ -33,7 +33,7 @@ QString Paire::toStr() const{
 }
 #endif
 
-int Paire::getPos()
+int Paire::getPosition()
 {return m_position;}
 
 double Paire::getLongueur()
