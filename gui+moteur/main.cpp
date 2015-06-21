@@ -1,6 +1,8 @@
-/* main.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file main.cpp
+ * \brief Chef d'orchestre du programme
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include <QApplication>

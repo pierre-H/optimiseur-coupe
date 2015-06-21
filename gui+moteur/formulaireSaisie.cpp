@@ -1,6 +1,8 @@
-/* formulaireSaisie.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file formulaireSaisie.cpp
+ * \brief Source de la classe FormulaireSaisie
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "formulaireSaisie.h"

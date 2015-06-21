@@ -1,6 +1,8 @@
-/* convertunit.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file convertunit.cpp
+ * \brief source de la classe ConvertUnit chargée de convertir les unités
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "convertunit.h"
@@ -10,17 +12,6 @@ ConvertUnit::ConvertUnit()
 
 }
 
-/* L'argument unité peut être soit le string de l'unité soit l'int suivant :
-* 0 -> m
-* 1 -> cm
-* 2 -> mm
-* 3 -> inches
-* 4 -> feet
-* 5 -> yard
-*/
-
-// Convertit nb en mm. L'unité de nb est unite.
-// retourne 0 si unite n'est pas compris entre 1 et 6.
 double ConvertUnit::toMm(double nb, int unite){
     double a;
     switch (unite)
@@ -49,8 +40,6 @@ double ConvertUnit::toMm(double nb, int unite){
     return a;
 }
 
-// Convertit nb en unite. L'unité de nb est le mm.
-// retourne 0 si unite n'est pas compris entre 1 et 6.
 double ConvertUnit::toUnit(double nb, int unite){
     double a;
     switch(unite)
@@ -79,8 +68,6 @@ double ConvertUnit::toUnit(double nb, int unite){
     return a;
 }
 
-// Convertit nb en mm. L'unité de nb est unite.
-// retourne 0 si unite n'est pas une unité supportée
 double ConvertUnit::toMm(double nb, QString unite){
     double a;
     if(unite=="m")
@@ -100,8 +87,6 @@ double ConvertUnit::toMm(double nb, QString unite){
     return a;
 }
 
-// Convertit nb en unite. L'unité de nb est le mm.
-// retourne 0 si unite n'est pas une unité supportée
 double ConvertUnit::toUnit(double nb, QString unite){
     double a;
     if(unite=="m")
@@ -121,10 +106,6 @@ double ConvertUnit::toUnit(double nb, QString unite){
     return a;
 }
 
-/* Renvoie un QString d'un nombe à l'origine en mm,
- * en utilisant une unité plus facile à lire, plus l'unité elle-même.
- * Ex : ConvertUnit::toStrSimplifie(24) => "2,4 cm"
-*/
 QString ConvertUnit::toStrSimplifie(double nb){
     QString text("");
     if(QLocale::system().measurementSystem() == QLocale::MetricSystem){

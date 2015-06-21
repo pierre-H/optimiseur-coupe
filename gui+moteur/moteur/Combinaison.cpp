@@ -69,7 +69,7 @@ double Combinaison::somme ()
     return sum;
 }
 
-// calcule et renvoie le rendement de la combinaison
+// calcule le rendement de la combinaison
 // tient compte de la perte à la coupe
 // c'est à dire que l'enlève avant de calculer
 double Combinaison::calculeRendement (double perte)
@@ -79,31 +79,36 @@ double Combinaison::calculeRendement (double perte)
 }
 
 
+
 // attacheBarre choisit dans la liste des barres la barre la plus proche de la somme
 // des tronçons de la combinaison
 // retourne -1.0 s'il n'y a pas de barre assez grande pour cette combinaison
 // vérifie la cas d'une combinaison de 100% où il faut compter une coupe en moins
-// appelée par MoteurCalculs::push
 double Combinaison::attacheBarre (List* barres, double perte)
 {
     double barreChoisie, diff;
     List * pt;
-    pt = barres->getProchain();
-    diff =  pt->getElement () - somme(); // différence entre barre et somme des tronçons
-    barreChoisie = pt->getElement();
+    if (barres)
+    {
+        pt = barres->getProchain();
+        diff =  pt->getPremier () - somme(); // différence entre barre et somme des tronçons
+        barreChoisie = pt->getPremier();
+    }
+    else
+        cout <<"Liste des barres vide !"<<endl;
     while (pt)
     {
         if (diff <= perte-2*perte)
         {
-            barreChoisie = pt->getElement();
-            diff =  pt->getElement () - somme();
+            barreChoisie = pt->getPremier();
+            diff =  pt->getPremier () - somme();
             pt = pt->getProchain ();
             continue;
         }
-        if ((pt->getElement() - somme() >= perte-2*perte) and (pt->getElement() - somme() <= diff))
+        if ((pt->getPremier() - somme() >= perte-2*perte) and (pt->getPremier() - somme() <= diff))
         {
-            barreChoisie = pt->getElement();
-            diff = pt->getElement () - somme();
+            barreChoisie = pt->getPremier();
+            diff = pt->getPremier () - somme();
         }
         pt = pt->getProchain ();
     }
@@ -129,7 +134,7 @@ void Combinaison::retranchePerte (double perte)
 double Combinaison::getRendement() const
 {return m_rendement;}
 
-list<Paire> Combinaison::getTroncons() const
+list<Paire> Combinaison::getPaires() const
 {return m_liste;}
 
 double Combinaison::getBarre () const
@@ -142,6 +147,6 @@ int Combinaison::getPosDernier ()
     int a=0;
     list<Paire>::iterator it;
     for (it = m_liste.begin(); it != m_liste.end(); it++)
-        a = it->getPosition();
+        a = it->getPos();
     return a;
 }

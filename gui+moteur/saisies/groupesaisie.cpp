@@ -1,6 +1,8 @@
-/* groupesaisie.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file groupesaisie.cpp
+ * \brief Source de la classe GroupeSaisie
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "groupesaisie.h"

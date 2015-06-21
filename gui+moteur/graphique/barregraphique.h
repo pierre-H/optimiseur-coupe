@@ -1,6 +1,8 @@
-/* barregraphique.h
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file barregraphique.h
+ * \brief Header de la classe BarreGraphique
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #ifndef BARREGRAPHIQUE_H
@@ -16,12 +18,14 @@
 #include "../moteur/Paire.h"
 #include "../moteur/Combinaison.h"
 
-// Un tronçons sous forme graphique
-
+// \class BarreGraphique barregraphique.h
+// \brief Classe chargée de la création d'un graphique représentant un tronçon
 class BarreGraphique : public QWidget
 {
     Q_OBJECT
 public:
+    // \brief Constructeur de la classe BarreGraphique
+    // \param combinaison Le pointeur vers la combinaison des tronçons
     explicit BarreGraphique(Combinaison * combinaison ,QWidget *parent = 0);
 
 private:
@@ -33,6 +37,7 @@ signals:
 public slots:
 
 protected:
+    // \brief Slot, spécial Qt, qui est chargé de dessiner le graphique
     void paintEvent(QPaintEvent * e);
 };
 

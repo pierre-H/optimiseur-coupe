@@ -29,7 +29,7 @@ class Paire
 #else
         QString toStr() const;
 #endif
-        int getPosition();
+		int getPos();
 		double getLongueur();
 		void setPosition (int);
 		void setLongueur(double);
