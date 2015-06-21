@@ -1,6 +1,8 @@
-/* widgetgraphique.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file wigetgraphique.cpp
+ * \brief Source de la classe WidgetGraphique
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "wigetgraphique.h"

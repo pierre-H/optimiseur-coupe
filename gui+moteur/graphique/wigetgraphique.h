@@ -1,6 +1,8 @@
-/* widgetgraphique.h
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file widgetgraphique.h
+ * \brief Header de la classe WidgetGraphique
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #ifndef WIGETGRAPHIQUE_H
@@ -21,13 +23,18 @@
 #include "../moteur/Combinaison.h"
 #include "barregraphique.h"
 
-// Onglet des résultats graphique
-
+// \class WidgetGraphique widgetgraphique.h
+// \brief Classe chargée d'afficher le résultat sour forme graphique
 class WidgetGraphique : public QWidget
 {
     Q_OBJECT
 public:
+    // \brief Constructeur de la classe WidgetGraphique
+    // \param fontTitre Police du titre
     explicit WidgetGraphique(QFont & fontTitre ,QWidget *parent = 0);
+
+    // \brief Créé ou met à jour le graphique
+    // \param combinaison La combinaison des tronçons désirés
     void updateGraphique(std::list<Combinaison> *combinaison);
 private:
     QVBoxLayout * m_layoutBarres;
@@ -36,6 +43,7 @@ private:
 signals:
 
 public slots:
+    // \brief Slot lance l'affichage de l'aire
     void afficheAide();
 };
 

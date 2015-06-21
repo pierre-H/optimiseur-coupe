@@ -1,6 +1,8 @@
-/* fenetreprincipale.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file fenetreprincipale.cpp
+ * \brief Source de la classe FenetrePrincipale
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "fenetreprincipale.h"

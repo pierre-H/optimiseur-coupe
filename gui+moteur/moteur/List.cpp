@@ -227,12 +227,12 @@ int List::member (double aChercher) const
 	return false/*false*/;
 }
 
-void List::setElement (double valeur)
+void List::setPremier (double valeur)
 {
 	m_element = valeur;
 }
 
-double List::getElement () const
+double List::getPremier () const
 {return m_element;}
 
 List * List::getProchain () const

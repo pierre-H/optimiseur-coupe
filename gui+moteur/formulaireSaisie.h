@@ -1,6 +1,9 @@
-/* formulaireSaisie.h
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file formulaireSaisie.h
+ * \brief Header de la classe FormulaireSaisie
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
+ *
  */
 
 #ifndef FORMULAIRESAISIE_H
@@ -21,18 +24,38 @@
 #include "saisies/groupesaisie.h"
 #include "convertunit.h"
 
-// Onglet formulaire de saisie
+// \class FormulaireSaisie formulaireSaisie.h
+// \brief Créer le formulaire de saisie
 
 class FormulaireSaisie : public QWidget
 {
     Q_OBJECT
 public:
+    // \brief Constructeur de la classe FormulaireSaisie
+    // \param fontTitre la police du titre principal
     explicit FormulaireSaisie(QFont & fontTitre, QWidget *parent = 0);
+
+    // \brief Déconstructeur de la classe FormulaireSaisie
     ~FormulaireSaisie();
+
+    // \brief Méthode d'accès au bouton 'Appliquer'
+    // \return pointeur vers le bouton 'Appliquer'
     QPushButton * buttonAppliquer() const;
+
+    // \brief Méthode d'accès au groupe de saisies des barres avant la découpe
+    // \return pointeur vers le groupe de saisies des barres avant la découpe
     GroupeSaisie * groupeSaisieBarres() const;
+
+    // \brief Méthode d'accès au groupe de saisies des tronçons demandés
+    // \return pointeur vers le groupe de saisies des tronçons demandés
     GroupeSaisie * groupeSaisieTron() const;
+
+    // \brief Méthode d'accès à l'épaisseur de la lame
+    // \return l'épaisseur de la lame
     double epaisseurLame() const;
+
+    // \brief Méthode d'accès à l'unité de la l'épaisseur de la lame
+    // \return un pointeur vers le QComboBox gérant l'unité de l'épaisseur de la lame
     QComboBox * uniteEpaisseurLame() const;
 
 private:
@@ -45,6 +68,7 @@ private:
 signals:
 
 public slots:
+    // \brief Slot lançant l'affichage de l'aire
     void afficheAide();
 };
 

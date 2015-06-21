@@ -1,6 +1,8 @@
-/* barregraphique.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file barregraphique.cpp
+ * \brief Source de la classe BarreGraphique
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "barregraphique.h"
@@ -14,7 +16,7 @@ BarreGraphique::BarreGraphique(Combinaison * combinaison, QWidget *parent) :QWid
      */
     setMinimumHeight(65);
     setMinimumWidth(500);
-    m_liste = m_combinaison->getTroncons();
+    m_liste = m_combinaison->getPaires();
     m_barre = m_combinaison->getBarre();
 }
 
