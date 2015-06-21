@@ -88,7 +88,6 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
     Combinaison * lp = new Combinaison();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
-        cout << limite << endl;
         if (limite > 1000000) return(-1);
         if (doublons (m_copieTroncons[i], i))
             break;
