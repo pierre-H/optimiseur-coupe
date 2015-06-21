@@ -1,6 +1,8 @@
-/* widgetresultats.cpp
- * Optimiseur de Coupe
- * 2015 - Pierre-Emmanuel PIRNAY 11296315
+/*
+ * \file widgetresultats.cpp
+ * \brief Source de la classe WidgetResultats
+ * \author Pierre-Emmanuel PIRNAY 11296315
+ * \date 2015
  */
 
 #include "widgetresultats.h"
