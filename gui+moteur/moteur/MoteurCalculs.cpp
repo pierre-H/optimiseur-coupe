@@ -21,6 +21,7 @@ MoteurCalculs::MoteurCalculs(List* troncons, List *barres, double perte)
     m_barres = barres;
     m_troncons->copie(&m_copieTroncons);
     m_exigence = 100;
+    *lim = 0;
 }
 
 
