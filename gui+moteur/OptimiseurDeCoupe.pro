@@ -9,7 +9,6 @@ HEADERS += \
     fenetreprincipale.h \
     formulaireSaisie.h \
     widgetresultats.h \
-    wigetgraphique.h \
     graphique/barregraphique.h \
     graphique/wigetgraphique.h \
     ongletinfo.h
