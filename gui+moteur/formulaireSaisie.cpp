@@ -67,7 +67,7 @@ FormulaireSaisie::FormulaireSaisie(QFont & fontTitre, QWidget *parent) : QWidget
 }
 
 void FormulaireSaisie::afficheAide(){
-    QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath() + tr("/help/index.fr.html")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(tr("/usr/share/cutting_optimizer/help/index.fr.html")));
 }
 
 QPushButton * FormulaireSaisie::buttonAppliquer() const{

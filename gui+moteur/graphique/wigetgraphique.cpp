@@ -57,7 +57,7 @@ WidgetGraphique::WidgetGraphique(QFont & fontTitre, QWidget *parent) : QWidget(p
 }
 
 void WidgetGraphique::afficheAide(){
-    QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath() + tr("/help/index.fr.html")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(tr("/usr/share/cutting_optimizer/help/index.fr.html")));
 }
 
 void WidgetGraphique::updateGraphique(std::list<Combinaison> * combinaison)

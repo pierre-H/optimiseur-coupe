@@ -129,8 +129,8 @@ restants</source>
     </message>
     <message>
         <location filename="formulaireSaisie.cpp" line="68"/>
-        <source>/help/index.fr.html</source>
-        <translation>/help/index.en.html</translation>
+        <source>/usr/share/cutting_optimizer/help/index.fr.html</source>
+        <translation>/usr/share/cutting_optimizer/help/index.en.html</translation>
     </message>
 </context>
 <context>
@@ -203,8 +203,8 @@ restants</source>
     </message>
     <message>
         <location filename="graphique/wigetgraphique.cpp" line="58"/>
-        <source>/help/index.fr.html</source>
-        <translation>/help/index.en.html</translation>
+        <source>/usr/share/cutting_optimizer/help/index.fr.html</source>
+        <translation>/usr/share/cutting_optimizer/help/index.en.html</translation>
     </message>
 </context>
 <context>
@@ -231,8 +231,8 @@ restants</source>
     </message>
     <message>
         <location filename="widgetresultats.cpp" line="45"/>
-        <source>/help/index.fr.html</source>
-        <translation>/help/index.en.html</translation>
+        <source>/usr/share/cutting_optimizer/help/index.fr.html</source>
+        <translation>/usr/share/cutting_optimizer/help/index.en.html</translation>
     </message>
 </context>
 </TS>

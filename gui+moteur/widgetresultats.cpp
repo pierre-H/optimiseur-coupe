@@ -44,7 +44,7 @@ WidgetResultats::WidgetResultats(QFont & fontTitre, QWidget *parent) : QWidget(p
 }
 
 void WidgetResultats::afficheAide(){
-    QDesktopServices::openUrl(QUrl::fromLocalFile(QDir::currentPath() + tr("/help/index.fr.html")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(tr("/usr/share/cutting_optimizer/help/index.fr.html")));
 }
 
 void WidgetResultats::updateResultats(QString & text){
