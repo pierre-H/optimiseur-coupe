@@ -1,0 +1,9 @@
+In order to install cutting-optimizer application, just type following command in terminal :
+sudo gdebi -n cutting_optimizer-1.0.0-amd64.deb
+or :
+sudo dpkg -i cutting_optimizer-1.0.0-amd64.deb
+
+If dependencies cannot be satisfied, add repository dedicated to Qt5 libs by running ./add_Qt_ppa script
+
+In order to uninstall this application, just type following command in terminal :
+sudo dpkg -r cutting-optimizer
