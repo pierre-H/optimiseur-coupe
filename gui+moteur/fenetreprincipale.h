@@ -15,8 +15,8 @@
 #include "formulaireSaisie.h"
 #include "widgetresultats.h"
 #include "moteur/Combinaison.h"
-#include "convertunit.h"
 #include "./graphique/wigetgraphique.h"
+#include "ongletinfo.h"
 
 // Moteur
 #include "moteur/List.h"

@@ -21,6 +21,7 @@ MoteurCalculs::MoteurCalculs(List* troncons, List *barres, double perte)
     m_barres = barres;
     m_troncons->copie(&m_copieTroncons);
     m_exigence = 100;
+    *lim = 0;
 }
 
 
@@ -87,7 +88,7 @@ int MoteurCalculs::moteurCombinaisons (Combinaison& l)
     Combinaison * lp = new Combinaison();
     for (int i= l.getPosDernier()+1; i <= m_troncons->length(); i++)
     {
-        if (limite > 1000000) return(-1);
+        if (limite > 2000000) return(-1);
         if (doublons (m_copieTroncons[i], i))
             break;
         *lim=*lim + 1;

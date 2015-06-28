@@ -25,7 +25,7 @@
 #include "convertunit.h"
 
 // \class FormulaireSaisie formulaireSaisie.h
-// \brief Créer le formulaire de saisie
+// \brief Créé le formulaire de saisie
 
 class FormulaireSaisie : public QWidget
 {

@@ -1,5 +1,5 @@
 /*
- * \file convertunit.h
+ * \file widgetresultats.h
  * \brief Header de la classe WidgetResultats
  * \author Pierre-Emmanuel PIRNAY 11296315
  * \date 2015

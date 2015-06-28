@@ -32,6 +32,9 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QWidget(parent)
     m_widgetGraphique = new WidgetGraphique(fontTitre);
     m_tabs->addTab(m_widgetGraphique, tr("Graphique des résultats"));
 
+    // Infos
+    OngletInfo * infos = new OngletInfo;
+    m_tabs->addTab(infos, tr("A propos"));
     //Layout
     QVBoxLayout * mainLayout = new QVBoxLayout;
     mainLayout->addWidget(m_tabs);

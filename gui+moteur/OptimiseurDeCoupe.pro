@@ -11,7 +11,8 @@ HEADERS += \
     widgetresultats.h \
     wigetgraphique.h \
     graphique/barregraphique.h \
-    graphique/wigetgraphique.h
+    graphique/wigetgraphique.h \
+    ongletinfo.h
 
 SOURCES += \
     moteur/Combinaison.cpp \
@@ -26,7 +27,8 @@ SOURCES += \
     main.cpp \
     widgetresultats.cpp \
     graphique/barregraphique.cpp \
-    graphique/wigetgraphique.cpp
+    graphique/wigetgraphique.cpp \
+    ongletinfo.cpp
 
 QT += widgets
 QT += core
