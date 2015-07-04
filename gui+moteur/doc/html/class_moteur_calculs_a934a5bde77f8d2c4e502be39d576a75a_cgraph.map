@@ -1,0 +1,5 @@
+<map id="MoteurCalculs::rentreCombinaisonFinale" name="MoteurCalculs::rentreCombinaisonFinale">
+<area shape="rect" id="node2" href="$class_combinaison.html#aa08c8f6dcb9c16d7b138a8a776b20bc9" title="Combinaison::getPaires" alt="" coords="293,5,454,32"/>
+<area shape="rect" id="node3" href="$class_combinaison.html#a569bffacf5862c334c9c5fa02fab57c8" title="Combinaison::retranchePerte" alt="" coords="278,56,469,83"/>
+<area shape="rect" id="node4" href="$class_combinaison.html#adf0fafeea3017283aa1b03c4f89521b0" title="Combinaison::getBarre" alt="" coords="296,107,451,133"/>
+</map>

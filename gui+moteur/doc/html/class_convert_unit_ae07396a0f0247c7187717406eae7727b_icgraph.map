@@ -1,0 +1,6 @@
+<map id="ConvertUnit::toMm" name="ConvertUnit::toMm">
+<area shape="rect" id="node2" href="$class_formulaire_saisie.html#a3ec8be21b0ff94e849b14550b36aa900" title="FormulaireSaisie::epaisseurLame" alt="" coords="187,12,402,39"/>
+<area shape="rect" id="node5" href="$class_saisie.html#a465bf55efb60c2a8162e664a7a241e6e" title="Saisie::longueur" alt="" coords="237,63,352,89"/>
+<area shape="rect" id="node3" href="$class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70" title="FenetrePrincipale::\ltraiterFormulaire" alt="" coords="451,5,581,46"/>
+<area shape="rect" id="node4" href="$class_fenetre_principale.html#aab8cf15535ca6934db27e5e45e2b6d7b" title="FenetrePrincipale::\lFenetrePrincipale" alt="" coords="629,5,760,46"/>
+</map>

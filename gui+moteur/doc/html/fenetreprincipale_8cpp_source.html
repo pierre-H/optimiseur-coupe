@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Cutting optimizer:  Fichier source de fenetreprincipale.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="mainIcon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Cutting optimizer
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('fenetreprincipale_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">fenetreprincipale.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="fenetreprincipale_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * \file fenetreprincipale.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * \brief Source de la classe FenetrePrincipale</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * \author Pierre-Emmanuel PIRNAY 11296315</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * \date 2015</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fenetreprincipale_8h.html">fenetreprincipale.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_fenetre_principale.html#aab8cf15535ca6934db27e5e45e2b6d7b">   10</a></span>&#160;<a class="code" href="class_fenetre_principale.html#aab8cf15535ca6934db27e5e45e2b6d7b">FenetrePrincipale::FenetrePrincipale</a>(QWidget *parent) : QWidget(parent)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// Titre de la fenêtre</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    setWindowTitle(tr(<span class="stringliteral">&quot;Optimiseur de coupe&quot;</span>));</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    setWindowIcon(QIcon(<span class="stringliteral">&quot;mainIcon.ico&quot;</span>));</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// Police titre</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    QFont fontTitre;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    fontTitre.setPointSize(12);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    fontTitre.setBold(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    fontTitre.setStyleHint(QFont::SansSerif);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Formulaire</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_tabs = <span class="keyword">new</span> QTabWidget(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_formulaireSaisie = <span class="keyword">new</span> <a class="code" href="class_formulaire_saisie.html">FormulaireSaisie</a>(fontTitre);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_tabs-&gt;addTab(m_formulaireSaisie, tr(<span class="stringliteral">&quot;Formulaire de saisie&quot;</span>));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Résultats</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_widgetResultats = <span class="keyword">new</span> <a class="code" href="class_widget_resultats.html">WidgetResultats</a>(fontTitre);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_tabs-&gt;addTab(m_widgetResultats, tr(<span class="stringliteral">&quot;Résultats&quot;</span>));</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Graphique</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_widgetGraphique = <span class="keyword">new</span> <a class="code" href="class_widget_graphique.html">WidgetGraphique</a>(fontTitre);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_tabs-&gt;addTab(m_widgetGraphique, tr(<span class="stringliteral">&quot;Graphique des résultats&quot;</span>));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Infos</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_onglet_info.html">OngletInfo</a> * infos = <span class="keyword">new</span> <a class="code" href="class_onglet_info.html">OngletInfo</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_tabs-&gt;addTab(infos, tr(<span class="stringliteral">&quot;A propos&quot;</span>));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//Layout</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QVBoxLayout * mainLayout = <span class="keyword">new</span> QVBoxLayout;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    mainLayout-&gt;addWidget(m_tabs);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    setLayout(mainLayout);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Connexions</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    QObject::connect(m_formulaireSaisie-&gt;<a class="code" href="class_formulaire_saisie.html#abeb5b82ab2099bae7a3f1d0d1aebf15f">buttonAppliquer</a>(), SIGNAL(clicked()),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                     <span class="keyword">this</span>, SLOT(<a class="code" href="class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70">traiterFormulaire</a>()) );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70">FenetrePrincipale::traiterFormulaire</a>(){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//Déclarations diverses</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QVector &lt;Saisie *&gt; resultatsBarres = m_formulaireSaisie-&gt;<a class="code" href="class_formulaire_saisie.html#a1a9d346aed65c44558ca811c6981dfd5">groupeSaisieBarres</a>()-&gt;<a class="code" href="class_groupe_saisie.html#a4b64ac08bc98acd627bee72c4a7b45aa">saisies</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QVector &lt;Saisie *&gt; resultatsTron = m_formulaireSaisie-&gt;<a class="code" href="class_formulaire_saisie.html#a485732932bd02c5744b15d430e858d33">groupeSaisieTron</a>()-&gt;<a class="code" href="class_groupe_saisie.html#a4b64ac08bc98acd627bee72c4a7b45aa">saisies</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span> i,j, erreur=0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Détection de l&#39;erreur : total longueur des barres av découpe &lt; total longueur tronçons demandés</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> totalBarre = 0, totalTron = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span>(i = 0; i != resultatsBarres.size();i++){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span>(j=0; j!= resultatsBarres[i]-&gt;quantite();j++)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            totalBarre += resultatsBarres[i]-&gt;longueur();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span>(i = 0; i != resultatsTron.size();i++){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span>(j=0; j!= resultatsTron[i]-&gt;quantite();j++)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            totalTron += resultatsTron[i]-&gt;longueur();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span>(totalBarre &lt; totalTron){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Erreur&quot;</span>),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                             tr(<span class="stringliteral">&quot;La longueur totale des barres avant la découpe &quot;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                             <span class="stringliteral">&quot;est plus petite que la longueur totale des tronçons demandés.&quot;</span>));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        erreur++;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Détection de l&#39;erreur : épaisseur de la lame &gt; + petite longueur</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> temp = resultatsBarres.at(0)-&gt;longueur();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span>(i=1;i!=resultatsBarres.size();i++){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span>(resultatsBarres.at(i)-&gt;longueur() &lt; temp)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            temp = resultatsBarres.at(i)-&gt;longueur();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span>(m_formulaireSaisie-&gt;<a class="code" href="class_formulaire_saisie.html#a3ec8be21b0ff94e849b14550b36aa900">epaisseurLame</a>() &gt; temp){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        QMessageBox::warning(<span class="keyword">this</span>,tr(<span class="stringliteral">&quot;Erreur&quot;</span>),</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                             tr(<span class="stringliteral">&quot;L&#39;épaisseur de la lame est plus grande que la plus &quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                             <span class="stringliteral">&quot;petite longueur des barres avant la découpe.&quot;</span>));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        erreur++;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Pas d&#39;erreur détectée : lancement du moteur</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span>(erreur==0){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        QString text(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="class_list.html">List</a> * tronconsList = <span class="keyword">new</span> <a class="code" href="class_list.html">List</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="class_list.html">List</a> * barresList =  <span class="keyword">new</span> <a class="code" href="class_list.html">List</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="_list_8cpp.html#a44615aecc0545a0924250e8d2f141505">createSortedList</a>(tronconsList, resultatsTron);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="_list_8cpp.html#a44615aecc0545a0924250e8d2f141505">createSortedList</a>(barresList, resultatsBarres);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="class_moteur_calculs.html">MoteurCalculs</a> * moteur = <span class="keyword">new</span> <a class="code" href="class_moteur_calculs.html">MoteurCalculs</a>(tronconsList, barresList, m_formulaireSaisie-&gt;<a class="code" href="class_formulaire_saisie.html#a3ec8be21b0ff94e849b14550b36aa900">epaisseurLame</a>());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span>(moteur-&gt;<a class="code" href="class_moteur_calculs.html#ae3d853f2dd4a0b2c07ae8ce62b1464ad">pilote</a>() == -1){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Calculs arrétés&quot;</span>), tr(<span class="stringliteral">&quot;Les calculs demandés sont trop grands. Aucun résultat ne sera affiché.&quot;</span>));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment">//return;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="class_list.html">List</a> * listFinaletroncons = moteur-&gt;<a class="code" href="class_moteur_calculs.html#a4166129a5002c00501af23093d0dc4d5">getTroncons</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span>(not listFinaletroncons-&gt;<a class="code" href="class_list.html#aea7840bdcbe48319178db54cca586b7f">empty</a>()){</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            erreur=10;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            text = tr(<span class="stringliteral">&quot;Vous n&#39;avez pas assez de matière première pour &quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                              <span class="stringliteral">&quot;couper tous les tronçons désirés.&lt;br&gt;Liste des troncons restants:&lt;br&gt;&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            text += listFinaletroncons-&gt;<a class="code" href="class_list.html#ac78dda0c737f9f4d1aa0e146bbcbcdf9">toStr</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Erreur&quot;</span>), text);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        text=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="class_list.html">List</a> * listFinaleBarres = moteur-&gt;<a class="code" href="class_moteur_calculs.html#a9414b92c26026b8d14407690ada2ca94">getBarres</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span>(not listFinaleBarres-&gt;<a class="code" href="class_list.html#aea7840bdcbe48319178db54cca586b7f">empty</a>()){</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            text = tr(<span class="stringliteral">&quot;Il vous reste une/des barre(s) entière(s) non utilisée(s) :&lt;br&gt;Liste de la/des barre(s) restante(s) :&lt;br&gt;&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            text += listFinaleBarres-&gt;<a class="code" href="class_list.html#ac78dda0c737f9f4d1aa0e146bbcbcdf9">toStr</a>(<span class="keyword">true</span>) + <span class="stringliteral">&quot;&lt;hr&gt;&quot;</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span>(erreur==10){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            text += tr(<span class="stringliteral">&quot;Vous n&#39;avez pas eu assez de matière première pour &quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                              <span class="stringliteral">&quot;couper tous les tronçons que vous désiriez.&lt;br&gt;Liste de troncons restants:&lt;br&gt;&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            text += listFinaletroncons-&gt;<a class="code" href="class_list.html#ac78dda0c737f9f4d1aa0e146bbcbcdf9">toStr</a>(<span class="keyword">true</span>) + <span class="stringliteral">&quot;&lt;hr&gt;&quot;</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">// Liste des coupes</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        text += tr(<span class="stringliteral">&quot;&lt;br&gt;Voici la liste des coupes que vous devez effectuer :&lt;ul&gt;&quot;</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        list&lt;Combinaison&gt; * listResultats = moteur-&gt;<a class="code" href="class_moteur_calculs.html#a43476ff0998a69ade4be4848525e0e74">getPointResultatFinal</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">for</span>(list&lt;Combinaison&gt;::iterator it=listResultats-&gt;begin();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            it != listResultats-&gt;end();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            ++it){</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            text+=it-&gt;toStr();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        text += tr(<span class="stringliteral">&quot;&lt;/ul&gt;Vous avez un rendement moyen de &quot;</span>) + QString::number(moteur-&gt;<a class="code" href="class_moteur_calculs.html#a2880d59881ae5d2a24fe0ddaea395f8d">calculeRendementFinal</a>(),<span class="charliteral">&#39;g&#39;</span>, 4) + <span class="stringliteral">&quot;%.&quot;</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        m_widgetResultats-&gt;<a class="code" href="class_widget_resultats.html#afbafe8ca7107c62d855e44924afae3fe">updateResultats</a>(text);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        m_widgetGraphique-&gt;<a class="code" href="class_widget_graphique.html#a853e2ef09889a6b2090e3d94c276c5d5">updateGraphique</a>(listResultats);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        m_tabs-&gt;setCurrentIndex(1);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">delete</span> tronconsList;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">delete</span> barresList;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">delete</span> moteur;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="ttc" id="class_widget_graphique_html_a853e2ef09889a6b2090e3d94c276c5d5"><div class="ttname"><a href="class_widget_graphique.html#a853e2ef09889a6b2090e3d94c276c5d5">WidgetGraphique::updateGraphique</a></div><div class="ttdeci">void updateGraphique(std::list&lt; Combinaison &gt; *combinaison)</div><div class="ttdef"><b>Definition:</b> <a href="wigetgraphique_8cpp_source.html#l00063">wigetgraphique.cpp:63</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a9414b92c26026b8d14407690ada2ca94"><div class="ttname"><a href="class_moteur_calculs.html#a9414b92c26026b8d14407690ada2ca94">MoteurCalculs::getBarres</a></div><div class="ttdeci">List * getBarres() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00206">MoteurCalculs.cpp:206</a></div></div>
+<div class="ttc" id="class_formulaire_saisie_html_abeb5b82ab2099bae7a3f1d0d1aebf15f"><div class="ttname"><a href="class_formulaire_saisie.html#abeb5b82ab2099bae7a3f1d0d1aebf15f">FormulaireSaisie::buttonAppliquer</a></div><div class="ttdeci">QPushButton * buttonAppliquer() const </div><div class="ttdef"><b>Definition:</b> <a href="formulaire_saisie_8cpp_source.html#l00073">formulaireSaisie.cpp:73</a></div></div>
+<div class="ttc" id="class_formulaire_saisie_html_a1a9d346aed65c44558ca811c6981dfd5"><div class="ttname"><a href="class_formulaire_saisie.html#a1a9d346aed65c44558ca811c6981dfd5">FormulaireSaisie::groupeSaisieBarres</a></div><div class="ttdeci">GroupeSaisie * groupeSaisieBarres() const </div><div class="ttdef"><b>Definition:</b> <a href="formulaire_saisie_8cpp_source.html#l00077">formulaireSaisie.cpp:77</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html"><div class="ttname"><a href="class_moteur_calculs.html">MoteurCalculs</a></div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8h_source.html#l00022">MoteurCalculs.h:22</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a4166129a5002c00501af23093d0dc4d5"><div class="ttname"><a href="class_moteur_calculs.html#a4166129a5002c00501af23093d0dc4d5">MoteurCalculs::getTroncons</a></div><div class="ttdeci">List * getTroncons() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00201">MoteurCalculs.cpp:201</a></div></div>
+<div class="ttc" id="class_list_html_ac78dda0c737f9f4d1aa0e146bbcbcdf9"><div class="ttname"><a href="class_list.html#ac78dda0c737f9f4d1aa0e146bbcbcdf9">List::toStr</a></div><div class="ttdeci">QString toStr(bool premier=true) const </div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00175">List.cpp:175</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="_list_8h_source.html#l00028">List.h:28</a></div></div>
+<div class="ttc" id="fenetreprincipale_8h_html"><div class="ttname"><a href="fenetreprincipale_8h.html">fenetreprincipale.h</a></div></div>
+<div class="ttc" id="class_formulaire_saisie_html_a3ec8be21b0ff94e849b14550b36aa900"><div class="ttname"><a href="class_formulaire_saisie.html#a3ec8be21b0ff94e849b14550b36aa900">FormulaireSaisie::epaisseurLame</a></div><div class="ttdeci">double epaisseurLame() const </div><div class="ttdef"><b>Definition:</b> <a href="formulaire_saisie_8cpp_source.html#l00085">formulaireSaisie.cpp:85</a></div></div>
+<div class="ttc" id="class_widget_resultats_html"><div class="ttname"><a href="class_widget_resultats.html">WidgetResultats</a></div><div class="ttdef"><b>Definition:</b> <a href="widgetresultats_8h_source.html#l00029">widgetresultats.h:29</a></div></div>
+<div class="ttc" id="class_fenetre_principale_html_aab8cf15535ca6934db27e5e45e2b6d7b"><div class="ttname"><a href="class_fenetre_principale.html#aab8cf15535ca6934db27e5e45e2b6d7b">FenetrePrincipale::FenetrePrincipale</a></div><div class="ttdeci">FenetrePrincipale(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> <a href="fenetreprincipale_8cpp_source.html#l00010">fenetreprincipale.cpp:10</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a2880d59881ae5d2a24fe0ddaea395f8d"><div class="ttname"><a href="class_moteur_calculs.html#a2880d59881ae5d2a24fe0ddaea395f8d">MoteurCalculs::calculeRendementFinal</a></div><div class="ttdeci">double calculeRendementFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00050">MoteurCalculs.cpp:50</a></div></div>
+<div class="ttc" id="class_fenetre_principale_html_ab9d603518eaeab98041aaf5ffbfb1d70"><div class="ttname"><a href="class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70">FenetrePrincipale::traiterFormulaire</a></div><div class="ttdeci">void traiterFormulaire()</div><div class="ttdef"><b>Definition:</b> <a href="fenetreprincipale_8cpp_source.html#l00048">fenetreprincipale.cpp:48</a></div></div>
+<div class="ttc" id="class_formulaire_saisie_html_a485732932bd02c5744b15d430e858d33"><div class="ttname"><a href="class_formulaire_saisie.html#a485732932bd02c5744b15d430e858d33">FormulaireSaisie::groupeSaisieTron</a></div><div class="ttdeci">GroupeSaisie * groupeSaisieTron() const </div><div class="ttdef"><b>Definition:</b> <a href="formulaire_saisie_8cpp_source.html#l00081">formulaireSaisie.cpp:81</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_ae3d853f2dd4a0b2c07ae8ce62b1464ad"><div class="ttname"><a href="class_moteur_calculs.html#ae3d853f2dd4a0b2c07ae8ce62b1464ad">MoteurCalculs::pilote</a></div><div class="ttdeci">int pilote()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00065">MoteurCalculs.cpp:65</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a43476ff0998a69ade4be4848525e0e74"><div class="ttname"><a href="class_moteur_calculs.html#a43476ff0998a69ade4be4848525e0e74">MoteurCalculs::getPointResultatFinal</a></div><div class="ttdeci">std::list&lt; Combinaison &gt; * getPointResultatFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00221">MoteurCalculs.cpp:221</a></div></div>
+<div class="ttc" id="_list_8cpp_html_a44615aecc0545a0924250e8d2f141505"><div class="ttname"><a href="_list_8cpp.html#a44615aecc0545a0924250e8d2f141505">createSortedList</a></div><div class="ttdeci">List * createSortedList(List *l, double tabLongueurs[])</div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00128">List.cpp:128</a></div></div>
+<div class="ttc" id="class_groupe_saisie_html_a4b64ac08bc98acd627bee72c4a7b45aa"><div class="ttname"><a href="class_groupe_saisie.html#a4b64ac08bc98acd627bee72c4a7b45aa">GroupeSaisie::saisies</a></div><div class="ttdeci">QVector&lt; Saisie * &gt; saisies() const </div><div class="ttdef"><b>Definition:</b> <a href="groupesaisie_8cpp_source.html#l00091">groupesaisie.cpp:91</a></div></div>
+<div class="ttc" id="class_widget_resultats_html_afbafe8ca7107c62d855e44924afae3fe"><div class="ttname"><a href="class_widget_resultats.html#afbafe8ca7107c62d855e44924afae3fe">WidgetResultats::updateResultats</a></div><div class="ttdeci">void updateResultats(QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="widgetresultats_8cpp_source.html#l00050">widgetresultats.cpp:50</a></div></div>
+<div class="ttc" id="class_onglet_info_html"><div class="ttname"><a href="class_onglet_info.html">OngletInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="ongletinfo_8h_source.html#l00022">ongletinfo.h:22</a></div></div>
+<div class="ttc" id="class_formulaire_saisie_html"><div class="ttname"><a href="class_formulaire_saisie.html">FormulaireSaisie</a></div><div class="ttdef"><b>Definition:</b> <a href="formulaire_saisie_8h_source.html#l00030">formulaireSaisie.h:30</a></div></div>
+<div class="ttc" id="class_widget_graphique_html"><div class="ttname"><a href="class_widget_graphique.html">WidgetGraphique</a></div><div class="ttdef"><b>Definition:</b> <a href="wigetgraphique_8h_source.html#l00028">wigetgraphique.h:28</a></div></div>
+<div class="ttc" id="class_list_html_aea7840bdcbe48319178db54cca586b7f"><div class="ttname"><a href="class_list.html#aea7840bdcbe48319178db54cca586b7f">List::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00241">List.cpp:241</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="fenetreprincipale_8cpp.html">fenetreprincipale.cpp</a></li>
+    <li class="footer">Généré le Samedi 4 Juillet 2015 10:04:12 pour Cutting optimizer par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

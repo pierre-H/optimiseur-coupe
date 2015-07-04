@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Cutting optimizer:  Fichier source de moteur/MoteurCalculs.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="mainIcon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Cutting optimizer
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_moteur_calculs_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">MoteurCalculs.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_moteur_calculs_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* MoteurCalculs.cpp</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Optimiseur de Coupe</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * 2015 - Rebecca Charbit</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_moteur_calculs_8h.html">MoteurCalculs.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_moteur_calculs_8h.html#a0bee46e1d463902d844613b024542e14">    9</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_moteur_calculs_8cpp.html#a0bee46e1d463902d844613b024542e14">limite</a> = 0;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_moteur_calculs_8h.html#afc1dbe465a1cb07f6bde816efbded451">   10</a></span>&#160;<span class="keywordtype">int</span> * <a class="code" href="_moteur_calculs_8cpp.html#afc1dbe465a1cb07f6bde816efbded451">lim</a> = &amp;<a class="code" href="_moteur_calculs_8cpp.html#a0bee46e1d463902d844613b024542e14">limite</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//============================= MoteurCalculs ===============================</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// obligatoirement initialisé avec tous les membres, sauf la liste des</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//possibilités qui sera calculée au fur et à mesure</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a1c168bb2f5c7d91a57f97d6ba4da8317">   16</a></span>&#160;<a class="code" href="class_moteur_calculs.html#a1c168bb2f5c7d91a57f97d6ba4da8317">MoteurCalculs::MoteurCalculs</a>(<a class="code" href="class_list.html">List</a>* troncons, <a class="code" href="class_list.html">List</a> *barres, <span class="keywordtype">double</span> perte)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_perteCoupe = perte;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    m_troncons = troncons;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    ajoutePerte ();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    m_barres = barres;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_troncons-&gt;<a class="code" href="class_list.html#a9916443489345c6cb649e4321aa50ead">copie</a>(&amp;m_copieTroncons);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_exigence = 100;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    *<a class="code" href="_moteur_calculs_8cpp.html#afc1dbe465a1cb07f6bde816efbded451">lim</a> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a0b2e19398b77b16abe9e9c51251f6ded">   28</a></span>&#160;<a class="code" href="class_moteur_calculs.html#a0b2e19398b77b16abe9e9c51251f6ded">MoteurCalculs::~MoteurCalculs</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_possibilites.clear();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_resultatFinal.clear();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="comment">//dtor</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// ajoutePerte ajoute la longueur de perte à la coupe de</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// chacun des tronçons de la liste de tronçons</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// utilisée dans pilote avant toute opération</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a02491ce0d5266dcb9364e360ccd3fb7c">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_moteur_calculs.html#a02491ce0d5266dcb9364e360ccd3fb7c">MoteurCalculs::ajoutePerte</a> ()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_list.html">List</a> * it = m_troncons; <span class="comment">// itérateur</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">while</span> (it)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        it-&gt;<a class="code" href="class_list.html#a38c81149b608fc7b1370aa89f995e130">setPremier</a> (it-&gt;<a class="code" href="class_list.html#a859fd7ec710ff7bcc7623153cb171112">getPremier</a> () + m_perteCoupe);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        it = it-&gt;<a class="code" href="class_list.html#a41507d308eede0f93bc47d18801704b8">getProchain</a> ();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// calcule le rendement moyen final quand tous les calculs ont été finis</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// exprimé en pourcentage</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a2880d59881ae5d2a24fe0ddaea395f8d">   50</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_moteur_calculs.html#a2880d59881ae5d2a24fe0ddaea395f8d">MoteurCalculs::calculeRendementFinal</a> ()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> sum = 0., sumBarres=0.;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    list &lt;Combinaison&gt;::iterator it;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (it = m_resultatFinal.begin(); it != m_resultatFinal.end(); it++)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        sum += it-&gt;somme();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        sumBarres += it-&gt;getBarre ();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> sum / sumBarres *100;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// dirige tous les calculs en appelant les fonctions nécessaires</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// se charge de l&#39;affichage</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#ae3d853f2dd4a0b2c07ae8ce62b1464ad">   65</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_moteur_calculs.html#ae3d853f2dd4a0b2c07ae8ce62b1464ad">MoteurCalculs::pilote</a> ()</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_combinaison.html">Combinaison</a> *liste = <span class="keyword">new</span> <a class="code" href="class_combinaison.html">Combinaison</a> ();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">while</span> ((not getTroncons()-&gt;empty()) and (not getBarres()-&gt;empty()) and (m_exigence &gt;= 0))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (moteurCombinaisons(*liste) == -1) <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        rentreCombinaisonFinale();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">    #if DEBUG</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span>    affiche ();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// fonction récursive</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// à partir d&#39;une Combinaison, calcule toutes les combinaisons possibles</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// et les rentre dans la liste des possibilités</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// renvoie le nombre de possibilités dans la liste</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a5e65ffebef84832e43ab2fcd42676a9e">   84</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_moteur_calculs.html#a5e65ffebef84832e43ab2fcd42676a9e">MoteurCalculs::moteurCombinaisons</a> (<a class="code" href="class_combinaison.html">Combinaison</a>&amp; l)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> cpt = 0, t;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_paire.html">Paire</a> * p = <span class="keyword">new</span> <a class="code" href="class_paire.html">Paire</a> ();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="class_combinaison.html">Combinaison</a> * lp = <span class="keyword">new</span> <a class="code" href="class_combinaison.html">Combinaison</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i= l.<a class="code" href="class_combinaison.html#affcd4e8d328e08af0a34f4f52c683d5d">getPosDernier</a>()+1; i &lt;= m_troncons-&gt;length(); i++)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="_moteur_calculs_8cpp.html#a0bee46e1d463902d844613b024542e14">limite</a> &gt; 2000000) <span class="keywordflow">return</span>(-1);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (doublons (m_copieTroncons[i], i))</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        *<a class="code" href="_moteur_calculs_8cpp.html#afc1dbe465a1cb07f6bde816efbded451">lim</a>=*<a class="code" href="_moteur_calculs_8cpp.html#afc1dbe465a1cb07f6bde816efbded451">lim</a> + 1;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        *lp = l;                <span class="comment">// copie de la liste donnée en argument</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        p-&gt;<a class="code" href="class_paire.html#a069c23d3687093a3a6b938685caace41">setLongueur</a>(m_copieTroncons[i]);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        p-&gt;<a class="code" href="class_paire.html#afc49742864b5eb073f18c6192d6b728a">setPosition</a>(i);      <span class="comment">// création d&#39;1 nvelle paire</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        lp-&gt;<a class="code" href="class_combinaison.html#a626f07dd6a96fb38dfa6918f417a5856">push</a> (*p);          <span class="comment">// rajout à la liste de paires</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">switch</span> (t = push (lp))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">case</span> 0 :</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                cpt++;   <span class="comment">// nouvelle possibilité créé rajoutée à la liste</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                cpt += moteurCombinaisons(*lp);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">case</span> 1 :    <span class="comment">// tailler la branche qui dépasse la longueur de la barre</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">default</span> :   <span class="comment">// pas rajouter mais continuer de mouliner</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                cpt += moteurCombinaisons(*lp);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   <span class="keywordflow">return</span> cpt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// renvoie 1 s&#39;il on a déjà effectué des combinaisons commençant par un tronçon différent, mais de même taille</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// c&#39;est à dire un doublon. Renvoie 0 sinon</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a082ae8db2bdbd606d79d4c9111f21044">  117</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_moteur_calculs.html#a082ae8db2bdbd606d79d4c9111f21044">MoteurCalculs::doublons</a> (<span class="keywordtype">double</span> longueur, <span class="keywordtype">int</span> position)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    list&lt;Combinaison&gt;::iterator itComb;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    list&lt;Paire&gt;::iterator itPair;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (itComb = m_possibilites.begin(); itComb != m_possibilites.end(); itComb++)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        itPair = itComb-&gt;getPaires().begin();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (itPair-&gt;getLongueur() == longueur &amp;&amp; itPair-&gt;getPos() != position)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">// ajoute une combinaison à la liste des possibilités</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// si cette combinaison ne dépasse pas la longueur des barres</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// et qu&#39;elle est au dessus du niveau d&#39;exigence de rendement.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// Retourne 0 si on a ajouté à la liste de possibilités</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// 1 si c&#39;était plus grand que la taille de la plus grande barre,</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">// et 2 si &lt; que exigence sur la plus petite barre</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a34a04088e43697dad1464f078e06dfb4">  137</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_moteur_calculs.html#a34a04088e43697dad1464f078e06dfb4">MoteurCalculs::push</a> (<a class="code" href="class_combinaison.html">Combinaison</a> * l)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">double</span> result = l-&gt;<a class="code" href="class_combinaison.html#a79d4db19ced0dbaa876096f97ffa255e">attacheBarre</a> (m_barres, m_perteCoupe);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (result == -1.)  <span class="comment">//si dépasse la taille de la plus grande barre</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (l-&gt;<a class="code" href="class_combinaison.html#a4b91cb0f2fc17563a1dd622e69ff6a97">calculeRendement</a>(m_perteCoupe) &lt; m_exigence) <span class="comment">// trop mauvais rendement pour le retenir</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    m_possibilites.push_back(*l);                       <span class="comment">// encore avec la perte à la coupe</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">// rentre la meilleure combinaison dans la Combinaison resultatFinal</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">// supprime les tronçons correspondants dans la liste des tronçons</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">// supprime la barre correspondante dans la liste des barres</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// recopie le vecteur m_copieTroncons avec les nouvelles valeurs de la liste de tronçons</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">// fait le ménage ds la liste des possibilités</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">// vérifie s&#39;il n&#39;y a pas trop de tronçons pour le nombre de barres.</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a934a5bde77f8d2c4e502be39d576a75a">  154</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_moteur_calculs.html#a934a5bde77f8d2c4e502be39d576a75a">MoteurCalculs::rentreCombinaisonFinale</a> ()</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="class_combinaison.html">Combinaison</a> * lp= <span class="keyword">new</span> <a class="code" href="class_combinaison.html">Combinaison</a> ();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (m_possibilites.empty())</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        m_exigence -= 10;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    lp = &amp;maxi(lp);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    list&lt;Paire&gt;::iterator it;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    list&lt;Paire&gt; p = lp-&gt;<a class="code" href="class_combinaison.html#aa08c8f6dcb9c16d7b138a8a776b20bc9">getPaires</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">for</span> (it = p.begin(); it != p.end(); it++)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        m_troncons-&gt;supprimeExplicite (it-&gt;getLongueur());</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    lp-&gt;<a class="code" href="class_combinaison.html#a569bffacf5862c334c9c5fa02fab57c8">retranchePerte</a> (m_perteCoupe);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    m_resultatFinal.push_front (*lp); <span class="comment">// rajouter ds combinaisons finales</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    m_barres-&gt;supprimeExplicite (lp-&gt;<a class="code" href="class_combinaison.html#adf0fafeea3017283aa1b03c4f89521b0">getBarre</a>());</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    m_copieTroncons.clear();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    m_troncons-&gt;copie (&amp;m_copieTroncons);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    m_possibilites.clear();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">// renvoie la liste de Paires qui a le plus haut rendement</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">// de la liste des possibilités déjà calculées</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">// Modifie les tronçons qui prennent en compte la perte en leur longueur sans coupe</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#ac2c4036e15a2a8aa388b2d9fd895a2a2">  179</a></span>&#160;<a class="code" href="class_combinaison.html">Combinaison</a>&amp;  <a class="code" href="class_moteur_calculs.html#ac2c4036e15a2a8aa388b2d9fd895a2a2">MoteurCalculs::maxi</a>(<a class="code" href="class_combinaison.html">Combinaison</a> *lp)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span> (m_possibilites.empty())</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot;Liste des possibilités vide...&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span> *lp;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">double</span> rendement=0;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    list&lt;Combinaison&gt;::iterator it = m_possibilites.begin();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    lp = &amp;(*it);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">for</span> (it = m_possibilites.begin(); it != m_possibilites.end(); it++)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span> (it-&gt;getRendement() &gt; rendement)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            rendement = it-&gt;<a class="code" href="class_combinaison.html#a23797758c65678ac738134bd7ba816f5">getRendement</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            lp = &amp;(*it);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> *lp;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">/*===================access=====================*/</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a4166129a5002c00501af23093d0dc4d5">  201</a></span>&#160;<a class="code" href="class_list.html">List</a>* <a class="code" href="class_moteur_calculs.html#a4166129a5002c00501af23093d0dc4d5">MoteurCalculs::getTroncons</a> ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">return</span> m_troncons;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a9414b92c26026b8d14407690ada2ca94">  206</a></span>&#160;<a class="code" href="class_list.html">List</a>* <a class="code" href="class_moteur_calculs.html#a9414b92c26026b8d14407690ada2ca94">MoteurCalculs::getBarres</a> ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> m_barres;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a3c7d03dbdf7fbdf3ae6584001f99dc4b">  211</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_moteur_calculs.html#a3c7d03dbdf7fbdf3ae6584001f99dc4b">MoteurCalculs::getPerte</a> ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span> m_perteCoupe;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#aa70832abf341ca96c89ab5a3936371d8">  216</a></span>&#160;std::list&lt;Combinaison&gt; <a class="code" href="class_moteur_calculs.html#aa70832abf341ca96c89ab5a3936371d8">MoteurCalculs::getResultatFinal</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> m_resultatFinal;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a43476ff0998a69ade4be4848525e0e74">  221</a></span>&#160;std::list&lt;Combinaison&gt; *<a class="code" href="class_moteur_calculs.html#a43476ff0998a69ade4be4848525e0e74">MoteurCalculs::getPointResultatFinal</a>()</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> &amp; m_resultatFinal;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="class_moteur_calculs.html#a5fd9f77426585106d5be0027d3a2815e">  226</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_moteur_calculs.html#a5fd9f77426585106d5be0027d3a2815e">MoteurCalculs::getExigence</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> m_exigence;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#if DEBUG</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor"></span><span class="comment">/*===================affichage=====================*/</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keywordtype">void</span> MoteurCalculs::affiche()</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (m_troncons-&gt;empty ())</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot;Vous avez réussi à couper tous les tronçons que vous désiriez.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot;Vous n&#39;avez pas eu assez de matière première pour couper tous les tronçons que vous désiriez... Liste de troncons restants: &quot;</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        m_troncons-&gt;affiche();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (m_barres-&gt;empty ())</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot;Vous avez utilisé toutes vos barres.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        cout &lt;&lt;<span class="stringliteral">&quot;Il vous reste des barres entières que vous n&#39;avez pas utilisées : Liste des barres restantes: &quot;</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        m_barres-&gt;affiche();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Voici la liste des coupes que vous devez effectuer : &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">for</span>(list&lt;Combinaison&gt;::iterator it=m_resultatFinal.begin(); it!= m_resultatFinal.end(); ++it)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        it-&gt;affiche();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        cout &lt;&lt;endl;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Exigence : &quot;</span>&lt;&lt;m_exigence&lt;&lt;endl;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Vous avez un rendement moyen de &quot;</span> &lt;&lt; calculeRendementFinal ()&lt;&lt;<span class="stringliteral">&quot;%&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_moteur_calculs_html_a5fd9f77426585106d5be0027d3a2815e"><div class="ttname"><a href="class_moteur_calculs.html#a5fd9f77426585106d5be0027d3a2815e">MoteurCalculs::getExigence</a></div><div class="ttdeci">int getExigence() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00226">MoteurCalculs.cpp:226</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a3c7d03dbdf7fbdf3ae6584001f99dc4b"><div class="ttname"><a href="class_moteur_calculs.html#a3c7d03dbdf7fbdf3ae6584001f99dc4b">MoteurCalculs::getPerte</a></div><div class="ttdeci">double getPerte() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00211">MoteurCalculs.cpp:211</a></div></div>
+<div class="ttc" id="class_list_html_a9916443489345c6cb649e4321aa50ead"><div class="ttname"><a href="class_list.html#a9916443489345c6cb649e4321aa50ead">List::copie</a></div><div class="ttdeci">void copie(QVector&lt; double &gt; *v)</div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00200">List.cpp:200</a></div></div>
+<div class="ttc" id="class_combinaison_html_a626f07dd6a96fb38dfa6918f417a5856"><div class="ttname"><a href="class_combinaison.html#a626f07dd6a96fb38dfa6918f417a5856">Combinaison::push</a></div><div class="ttdeci">void push(Paire)</div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00051">Combinaison.cpp:51</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a9414b92c26026b8d14407690ada2ca94"><div class="ttname"><a href="class_moteur_calculs.html#a9414b92c26026b8d14407690ada2ca94">MoteurCalculs::getBarres</a></div><div class="ttdeci">List * getBarres() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00206">MoteurCalculs.cpp:206</a></div></div>
+<div class="ttc" id="class_combinaison_html_aa08c8f6dcb9c16d7b138a8a776b20bc9"><div class="ttname"><a href="class_combinaison.html#aa08c8f6dcb9c16d7b138a8a776b20bc9">Combinaison::getPaires</a></div><div class="ttdeci">std::list&lt; Paire &gt; getPaires() const </div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00137">Combinaison.cpp:137</a></div></div>
+<div class="ttc" id="class_paire_html_a069c23d3687093a3a6b938685caace41"><div class="ttname"><a href="class_paire.html#a069c23d3687093a3a6b938685caace41">Paire::setLongueur</a></div><div class="ttdeci">void setLongueur(double)</div><div class="ttdef"><b>Definition:</b> <a href="_paire_8cpp_source.html#l00045">Paire.cpp:45</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_ac2c4036e15a2a8aa388b2d9fd895a2a2"><div class="ttname"><a href="class_moteur_calculs.html#ac2c4036e15a2a8aa388b2d9fd895a2a2">MoteurCalculs::maxi</a></div><div class="ttdeci">Combinaison &amp; maxi(Combinaison *lp=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00179">MoteurCalculs.cpp:179</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a4166129a5002c00501af23093d0dc4d5"><div class="ttname"><a href="class_moteur_calculs.html#a4166129a5002c00501af23093d0dc4d5">MoteurCalculs::getTroncons</a></div><div class="ttdeci">List * getTroncons() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00201">MoteurCalculs.cpp:201</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="_list_8h_source.html#l00028">List.h:28</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a02491ce0d5266dcb9364e360ccd3fb7c"><div class="ttname"><a href="class_moteur_calculs.html#a02491ce0d5266dcb9364e360ccd3fb7c">MoteurCalculs::ajoutePerte</a></div><div class="ttdeci">void ajoutePerte()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00038">MoteurCalculs.cpp:38</a></div></div>
+<div class="ttc" id="class_combinaison_html_a23797758c65678ac738134bd7ba816f5"><div class="ttname"><a href="class_combinaison.html#a23797758c65678ac738134bd7ba816f5">Combinaison::getRendement</a></div><div class="ttdeci">double getRendement() const </div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00134">Combinaison.cpp:134</a></div></div>
+<div class="ttc" id="class_paire_html_afc49742864b5eb073f18c6192d6b728a"><div class="ttname"><a href="class_paire.html#afc49742864b5eb073f18c6192d6b728a">Paire::setPosition</a></div><div class="ttdeci">void setPosition(int)</div><div class="ttdef"><b>Definition:</b> <a href="_paire_8cpp_source.html#l00042">Paire.cpp:42</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a082ae8db2bdbd606d79d4c9111f21044"><div class="ttname"><a href="class_moteur_calculs.html#a082ae8db2bdbd606d79d4c9111f21044">MoteurCalculs::doublons</a></div><div class="ttdeci">int doublons(double longueur, int position)</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00117">MoteurCalculs.cpp:117</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a0b2e19398b77b16abe9e9c51251f6ded"><div class="ttname"><a href="class_moteur_calculs.html#a0b2e19398b77b16abe9e9c51251f6ded">MoteurCalculs::~MoteurCalculs</a></div><div class="ttdeci">virtual ~MoteurCalculs()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00028">MoteurCalculs.cpp:28</a></div></div>
+<div class="ttc" id="class_combinaison_html_adf0fafeea3017283aa1b03c4f89521b0"><div class="ttname"><a href="class_combinaison.html#adf0fafeea3017283aa1b03c4f89521b0">Combinaison::getBarre</a></div><div class="ttdeci">double getBarre() const </div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00140">Combinaison.cpp:140</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a2880d59881ae5d2a24fe0ddaea395f8d"><div class="ttname"><a href="class_moteur_calculs.html#a2880d59881ae5d2a24fe0ddaea395f8d">MoteurCalculs::calculeRendementFinal</a></div><div class="ttdeci">double calculeRendementFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00050">MoteurCalculs.cpp:50</a></div></div>
+<div class="ttc" id="class_list_html_a859fd7ec710ff7bcc7623153cb171112"><div class="ttname"><a href="class_list.html#a859fd7ec710ff7bcc7623153cb171112">List::getPremier</a></div><div class="ttdeci">double getPremier() const </div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00235">List.cpp:235</a></div></div>
+<div class="ttc" id="class_paire_html"><div class="ttname"><a href="class_paire.html">Paire</a></div><div class="ttdef"><b>Definition:</b> <a href="_paire_8h_source.html#l00021">Paire.h:21</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a5e65ffebef84832e43ab2fcd42676a9e"><div class="ttname"><a href="class_moteur_calculs.html#a5e65ffebef84832e43ab2fcd42676a9e">MoteurCalculs::moteurCombinaisons</a></div><div class="ttdeci">int moteurCombinaisons(Combinaison &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00084">MoteurCalculs.cpp:84</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_ae3d853f2dd4a0b2c07ae8ce62b1464ad"><div class="ttname"><a href="class_moteur_calculs.html#ae3d853f2dd4a0b2c07ae8ce62b1464ad">MoteurCalculs::pilote</a></div><div class="ttdeci">int pilote()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00065">MoteurCalculs.cpp:65</a></div></div>
+<div class="ttc" id="_moteur_calculs_8h_html"><div class="ttname"><a href="_moteur_calculs_8h.html">MoteurCalculs.h</a></div></div>
+<div class="ttc" id="class_combinaison_html_a79d4db19ced0dbaa876096f97ffa255e"><div class="ttname"><a href="class_combinaison.html#a79d4db19ced0dbaa876096f97ffa255e">Combinaison::attacheBarre</a></div><div class="ttdeci">double attacheBarre(List *barres, double perte)</div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00087">Combinaison.cpp:87</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a43476ff0998a69ade4be4848525e0e74"><div class="ttname"><a href="class_moteur_calculs.html#a43476ff0998a69ade4be4848525e0e74">MoteurCalculs::getPointResultatFinal</a></div><div class="ttdeci">std::list&lt; Combinaison &gt; * getPointResultatFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00221">MoteurCalculs.cpp:221</a></div></div>
+<div class="ttc" id="class_combinaison_html_affcd4e8d328e08af0a34f4f52c683d5d"><div class="ttname"><a href="class_combinaison.html#affcd4e8d328e08af0a34f4f52c683d5d">Combinaison::getPosDernier</a></div><div class="ttdeci">int getPosDernier()</div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00145">Combinaison.cpp:145</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_aa70832abf341ca96c89ab5a3936371d8"><div class="ttname"><a href="class_moteur_calculs.html#aa70832abf341ca96c89ab5a3936371d8">MoteurCalculs::getResultatFinal</a></div><div class="ttdeci">std::list&lt; Combinaison &gt; getResultatFinal() const </div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00216">MoteurCalculs.cpp:216</a></div></div>
+<div class="ttc" id="class_list_html_a38c81149b608fc7b1370aa89f995e130"><div class="ttname"><a href="class_list.html#a38c81149b608fc7b1370aa89f995e130">List::setPremier</a></div><div class="ttdeci">void setPremier(double e)</div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00230">List.cpp:230</a></div></div>
+<div class="ttc" id="class_list_html_a41507d308eede0f93bc47d18801704b8"><div class="ttname"><a href="class_list.html#a41507d308eede0f93bc47d18801704b8">List::getProchain</a></div><div class="ttdeci">List * getProchain() const </div><div class="ttdef"><b>Definition:</b> <a href="_list_8cpp_source.html#l00238">List.cpp:238</a></div></div>
+<div class="ttc" id="_moteur_calculs_8cpp_html_afc1dbe465a1cb07f6bde816efbded451"><div class="ttname"><a href="_moteur_calculs_8cpp.html#afc1dbe465a1cb07f6bde816efbded451">lim</a></div><div class="ttdeci">int * lim</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00010">MoteurCalculs.cpp:10</a></div></div>
+<div class="ttc" id="class_combinaison_html_a569bffacf5862c334c9c5fa02fab57c8"><div class="ttname"><a href="class_combinaison.html#a569bffacf5862c334c9c5fa02fab57c8">Combinaison::retranchePerte</a></div><div class="ttdeci">void retranchePerte(double perte)</div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00127">Combinaison.cpp:127</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a934a5bde77f8d2c4e502be39d576a75a"><div class="ttname"><a href="class_moteur_calculs.html#a934a5bde77f8d2c4e502be39d576a75a">MoteurCalculs::rentreCombinaisonFinale</a></div><div class="ttdeci">bool rentreCombinaisonFinale()</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00154">MoteurCalculs.cpp:154</a></div></div>
+<div class="ttc" id="class_combinaison_html_a4b91cb0f2fc17563a1dd622e69ff6a97"><div class="ttname"><a href="class_combinaison.html#a4b91cb0f2fc17563a1dd622e69ff6a97">Combinaison::calculeRendement</a></div><div class="ttdeci">double calculeRendement(double perte)</div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8cpp_source.html#l00075">Combinaison.cpp:75</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a34a04088e43697dad1464f078e06dfb4"><div class="ttname"><a href="class_moteur_calculs.html#a34a04088e43697dad1464f078e06dfb4">MoteurCalculs::push</a></div><div class="ttdeci">int push(Combinaison *)</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00137">MoteurCalculs.cpp:137</a></div></div>
+<div class="ttc" id="_moteur_calculs_8cpp_html_a0bee46e1d463902d844613b024542e14"><div class="ttname"><a href="_moteur_calculs_8cpp.html#a0bee46e1d463902d844613b024542e14">limite</a></div><div class="ttdeci">int limite</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00009">MoteurCalculs.cpp:9</a></div></div>
+<div class="ttc" id="class_combinaison_html"><div class="ttname"><a href="class_combinaison.html">Combinaison</a></div><div class="ttdef"><b>Definition:</b> <a href="_combinaison_8h_source.html#l00024">Combinaison.h:24</a></div></div>
+<div class="ttc" id="class_moteur_calculs_html_a1c168bb2f5c7d91a57f97d6ba4da8317"><div class="ttname"><a href="class_moteur_calculs.html#a1c168bb2f5c7d91a57f97d6ba4da8317">MoteurCalculs::MoteurCalculs</a></div><div class="ttdeci">MoteurCalculs(List *troncons, List *barres, double perte)</div><div class="ttdef"><b>Definition:</b> <a href="_moteur_calculs_8cpp_source.html#l00016">MoteurCalculs.cpp:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_96afe0afae238650b507017d9374c279.html">moteur</a></li><li class="navelem"><a class="el" href="_moteur_calculs_8cpp.html">MoteurCalculs.cpp</a></li>
+    <li class="footer">Généré le Samedi 4 Juillet 2015 10:04:12 pour Cutting optimizer par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

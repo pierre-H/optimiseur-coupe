@@ -1,0 +1,20 @@
+<map id="saisies/saisie.h" name="saisies/saisie.h">
+<area shape="rect" id="node2" href="$groupesaisie_8h.html" title="saisies/groupesaisie.h" alt="" coords="170,80,320,107"/>
+<area shape="rect" id="node9" href="$_list_8h.html" title="moteur/List.h" alt="" coords="409,80,508,107"/>
+<area shape="rect" id="node19" href="$saisie_8cpp.html" title="saisies/saisie.cpp" alt="" coords="533,80,659,107"/>
+<area shape="rect" id="node3" href="$formulaire_saisie_8h.html" title="formulaireSaisie.h" alt="" coords="11,155,137,181"/>
+<area shape="rect" id="node8" href="$groupesaisie_8cpp.html" title="saisies/groupesaisie.cpp" alt="" coords="163,155,327,181"/>
+<area shape="rect" id="node4" href="$fenetreprincipale_8h.html" title="fenetreprincipale.h" alt="" coords="420,379,548,405"/>
+<area shape="rect" id="node7" href="$formulaire_saisie_8cpp.html" title="formulaireSaisie.cpp" alt="" coords="5,229,144,256"/>
+<area shape="rect" id="node5" href="$fenetreprincipale_8cpp.html" title="fenetreprincipale.cpp" alt="" coords="347,453,489,480"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="main.cpp" alt="" coords="513,453,587,480"/>
+<area shape="rect" id="node10" href="$_combinaison_8h.html" title="moteur/Combinaison.h" alt="" coords="538,155,691,181"/>
+<area shape="rect" id="node15" href="$_moteur_calculs_8h.html" title="moteur/MoteurCalculs.h" alt="" coords="285,229,445,256"/>
+<area shape="rect" id="node18" href="$_list_8cpp.html" title="moteur/List.cpp" alt="" coords="403,155,513,181"/>
+<area shape="rect" id="node11" href="$wigetgraphique_8h.html" title="graphique/wigetgraphique.h" alt="" coords="750,304,929,331"/>
+<area shape="rect" id="node13" href="$barregraphique_8h.html" title="graphique/barregraphique.h" alt="" coords="713,229,892,256"/>
+<area shape="rect" id="node17" href="$_combinaison_8cpp.html" title="moteur/Combinaison.cpp" alt="" coords="522,229,688,256"/>
+<area shape="rect" id="node12" href="$wigetgraphique_8cpp.html" title="graphique/wigetgraphique.cpp" alt="" coords="743,379,937,405"/>
+<area shape="rect" id="node14" href="$barregraphique_8cpp.html" title="graphique/barregraphique.cpp" alt="" coords="533,304,725,331"/>
+<area shape="rect" id="node16" href="$_moteur_calculs_8cpp.html" title="moteur/MoteurCalculs.cpp" alt="" coords="221,304,395,331"/>
+</map>

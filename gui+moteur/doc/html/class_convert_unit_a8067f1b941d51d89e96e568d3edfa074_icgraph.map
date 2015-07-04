@@ -1,0 +1,8 @@
+<map id="ConvertUnit::toStrSimplifie" name="ConvertUnit::toStrSimplifie">
+<area shape="rect" id="node2" href="$class_barre_graphique.html#a294ccd534377adf3244249816b4212b6" title="BarreGraphique::paintEvent" alt="" coords="233,5,415,32"/>
+<area shape="rect" id="node3" href="$class_combinaison.html#a8a48d0df711b4214604d17ff4d00a63e" title="Combinaison::toStr" alt="" coords="257,56,391,83"/>
+<area shape="rect" id="node4" href="$class_list.html#ac78dda0c737f9f4d1aa0e146bbcbcdf9" title="List::toStr" alt="" coords="285,131,363,157"/>
+<area shape="rect" id="node7" href="$class_paire.html#a1141d7ef7dab82dce5c17f795fbb5dad" title="Paire::toStr" alt="" coords="280,181,368,208"/>
+<area shape="rect" id="node5" href="$class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70" title="FenetrePrincipale::\ltraiterFormulaire" alt="" coords="464,123,595,165"/>
+<area shape="rect" id="node6" href="$class_fenetre_principale.html#aab8cf15535ca6934db27e5e45e2b6d7b" title="FenetrePrincipale::\lFenetrePrincipale" alt="" coords="643,123,773,165"/>
+</map>

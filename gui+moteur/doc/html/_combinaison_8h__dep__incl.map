@@ -1,0 +1,12 @@
+<map id="moteur/Combinaison.h" name="moteur/Combinaison.h">
+<area shape="rect" id="node2" href="$fenetreprincipale_8h.html" title="fenetreprincipale.h" alt="" coords="77,229,205,256"/>
+<area shape="rect" id="node5" href="$wigetgraphique_8h.html" title="graphique/wigetgraphique.h" alt="" coords="595,155,775,181"/>
+<area shape="rect" id="node7" href="$barregraphique_8h.html" title="graphique/barregraphique.h" alt="" coords="385,80,564,107"/>
+<area shape="rect" id="node9" href="$_moteur_calculs_8h.html" title="moteur/MoteurCalculs.h" alt="" coords="186,80,347,107"/>
+<area shape="rect" id="node11" href="$_combinaison_8cpp.html" title="moteur/Combinaison.cpp" alt="" coords="639,80,805,107"/>
+<area shape="rect" id="node3" href="$fenetreprincipale_8cpp.html" title="fenetreprincipale.cpp" alt="" coords="5,304,147,331"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="main.cpp" alt="" coords="171,304,244,331"/>
+<area shape="rect" id="node6" href="$wigetgraphique_8cpp.html" title="graphique/wigetgraphique.cpp" alt="" coords="588,229,783,256"/>
+<area shape="rect" id="node8" href="$barregraphique_8cpp.html" title="graphique/barregraphique.cpp" alt="" coords="379,155,571,181"/>
+<area shape="rect" id="node10" href="$_moteur_calculs_8cpp.html" title="moteur/MoteurCalculs.cpp" alt="" coords="179,155,353,181"/>
+</map>

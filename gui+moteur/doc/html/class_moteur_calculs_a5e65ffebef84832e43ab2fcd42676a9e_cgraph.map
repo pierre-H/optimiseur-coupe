@@ -1,0 +1,6 @@
+<map id="MoteurCalculs::moteurCombinaisons" name="MoteurCalculs::moteurCombinaisons">
+<area shape="rect" id="node2" href="$class_combinaison.html#affcd4e8d328e08af0a34f4f52c683d5d" title="Combinaison::getPosDernier" alt="" coords="291,5,480,32"/>
+<area shape="rect" id="node3" href="$class_paire.html#a069c23d3687093a3a6b938685caace41" title="Paire::setLongueur" alt="" coords="320,56,451,83"/>
+<area shape="rect" id="node4" href="$class_paire.html#afc49742864b5eb073f18c6192d6b728a" title="Paire::setPosition" alt="" coords="323,107,448,133"/>
+<area shape="rect" id="node5" href="$class_combinaison.html#a626f07dd6a96fb38dfa6918f417a5856" title="Combinaison::push" alt="" coords="318,157,453,184"/>
+</map>

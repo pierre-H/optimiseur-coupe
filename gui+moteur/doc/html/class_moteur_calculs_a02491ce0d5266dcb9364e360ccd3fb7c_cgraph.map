@@ -1,0 +1,5 @@
+<map id="MoteurCalculs::ajoutePerte" name="MoteurCalculs::ajoutePerte">
+<area shape="rect" id="node2" href="$class_list.html#a38c81149b608fc7b1370aa89f995e130" title="List::setPremier" alt="" coords="237,5,352,32"/>
+<area shape="rect" id="node3" href="$class_list.html#a859fd7ec710ff7bcc7623153cb171112" title="List::getPremier" alt="" coords="237,56,352,83"/>
+<area shape="rect" id="node4" href="$class_list.html#a41507d308eede0f93bc47d18801704b8" title="List::getProchain" alt="" coords="235,107,355,133"/>
+</map>

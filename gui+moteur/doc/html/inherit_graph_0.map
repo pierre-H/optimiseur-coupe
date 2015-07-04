@@ -1,0 +1,10 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$class_barre_graphique.html" title="BarreGraphique" alt="" coords="133,5,245,32"/>
+<area shape="rect" id="node3" href="$class_fenetre_principale.html" title="FenetrePrincipale" alt="" coords="128,56,251,83"/>
+<area shape="rect" id="node4" href="$class_formulaire_saisie.html" title="FormulaireSaisie" alt="" coords="130,107,249,133"/>
+<area shape="rect" id="node5" href="$class_groupe_saisie.html" title="GroupeSaisie" alt="" coords="139,157,239,184"/>
+<area shape="rect" id="node6" href="$class_onglet_info.html" title="OngletInfo" alt="" coords="148,208,231,235"/>
+<area shape="rect" id="node7" href="$class_saisie.html" title="Saisie" alt="" coords="160,259,219,285"/>
+<area shape="rect" id="node8" href="$class_widget_graphique.html" title="WidgetGraphique" alt="" coords="128,309,251,336"/>
+<area shape="rect" id="node9" href="$class_widget_resultats.html" title="WidgetResultats" alt="" coords="130,360,249,387"/>
+</map>

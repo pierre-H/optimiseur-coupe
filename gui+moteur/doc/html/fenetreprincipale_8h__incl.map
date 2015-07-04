@@ -1,0 +1,14 @@
+<map id="fenetreprincipale.h" name="fenetreprincipale.h">
+<area shape="rect" id="node6" href="$formulaire_saisie_8h.html" title="formulaireSaisie.h" alt="" coords="619,229,745,256"/>
+<area shape="rect" id="node27" href="$widgetresultats_8h.html" title="widgetresultats.h" alt="" coords="1390,229,1511,256"/>
+<area shape="rect" id="node30" href="$_combinaison_8h.html" title="moteur/Combinaison.h" alt="" coords="2777,229,2929,256"/>
+<area shape="rect" id="node33" href="$_list_8h.html" title="List.h" alt="" coords="2977,304,3031,331"/>
+<area shape="rect" id="node37" href="$wigetgraphique_8h.html" title="./graphique/wigetgraphique.h" alt="" coords="1779,80,1967,107"/>
+<area shape="rect" id="node40" href="$ongletinfo_8h.html" title="ongletinfo.h" alt="" coords="1967,229,2056,256"/>
+<area shape="rect" id="node42" href="$_moteur_calculs_8h.html" title="moteur/MoteurCalculs.h" alt="" coords="3006,155,3167,181"/>
+<area shape="rect" id="node18" href="$groupesaisie_8h.html" title="saisies/groupesaisie.h" alt="" coords="494,304,644,331"/>
+<area shape="rect" id="node25" href="$convertunit_8h.html" title="convertunit.h" alt="" coords="2861,453,2957,480"/>
+<area shape="rect" id="node23" href="$saisie_8h.html" title="saisie.h" alt="" coords="1644,379,1711,405"/>
+<area shape="rect" id="node31" href="$_paire_8h.html" title="Paire.h" alt="" coords="3107,304,3169,331"/>
+<area shape="rect" id="node38" href="$barregraphique_8h.html" title="barregraphique.h" alt="" coords="2374,155,2492,181"/>
+</map>

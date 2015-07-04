@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Cutting optimizer: Référence du fichier moteur/List.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="mainIcon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Cutting optimizer
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_list_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier List.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;stdarg.h&gt;</code><br/>
+<code>#include &lt;list&gt;</code><br/>
+<code>#include &lt;QVector&gt;</code><br/>
+<code>#include &quot;<a class="el" href="saisie_8h_source.html">../saisies/saisie.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="convertunit_8h_source.html">../convertunit.h</a>&quot;</code><br/>
+<code>#include &lt;QString&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de List.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_list_8h__incl.png" border="0" usemap="#moteur_2_list_8h" alt=""/></div>
+<map name="moteur_2_list_8h" id="moteur_2_list_8h">
+<area shape="rect" id="node6" href="saisie_8h.html" title="../saisies/saisie.h" alt="" coords="353,80,476,107"/><area shape="rect" id="node12" href="convertunit_8h.html" title="convertunit.h" alt="" coords="522,155,619,181"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="_list_8h__dep__incl.png" border="0" usemap="#moteur_2_list_8hdep" alt=""/></div>
+<map name="moteur_2_list_8hdep" id="moteur_2_list_8hdep">
+<area shape="rect" id="node2" href="_combinaison_8h.html" title="moteur/Combinaison.h" alt="" coords="369,80,521,107"/><area shape="rect" id="node3" href="fenetreprincipale_8h.html" title="fenetreprincipale.h" alt="" coords="457,304,585,331"/><area shape="rect" id="node10" href="_moteur_calculs_8h.html" title="moteur/MoteurCalculs.h" alt="" coords="538,155,699,181"/><area shape="rect" id="node13" href="_list_8cpp.html" title="moteur/List.cpp" alt="" coords="809,80,920,107"/><area shape="rect" id="node6" href="wigetgraphique_8h.html" title="graphique/wigetgraphique.h" alt="" coords="249,229,428,256"/><area shape="rect" id="node8" href="barregraphique_8h.html" title="graphique/barregraphique.h" alt="" coords="12,155,191,181"/><area shape="rect" id="node12" href="_combinaison_8cpp.html" title="moteur/Combinaison.cpp" alt="" coords="215,155,381,181"/><area shape="rect" id="node4" href="fenetreprincipale_8cpp.html" title="fenetreprincipale.cpp" alt="" coords="385,379,527,405"/><area shape="rect" id="node5" href="main_8cpp.html" title="main.cpp" alt="" coords="551,379,624,405"/><area shape="rect" id="node7" href="wigetgraphique_8cpp.html" title="graphique/wigetgraphique.cpp" alt="" coords="239,304,433,331"/><area shape="rect" id="node9" href="barregraphique_8cpp.html" title="graphique/barregraphique.cpp" alt="" coords="5,229,197,256"/><area shape="rect" id="node11" href="_moteur_calculs_8cpp.html" title="moteur/MoteurCalculs.cpp" alt="" coords="559,229,733,256"/></map>
+</div>
+</div>
+<p><a href="_list_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_list.html">List</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3ecceab59a1446f284b6284388c64042"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#a3ecceab59a1446f284b6284388c64042">Car</a>(<a class="el" href="class_list.html">List</a>)&#160;&#160;&#160;((<a class="el" href="class_list.html">List</a>).car())</td></tr>
+<tr class="separator:a3ecceab59a1446f284b6284388c64042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b358bde9a3dbb2447ecf212be60e8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#a30b358bde9a3dbb2447ecf212be60e8c">Cdr</a>(<a class="el" href="class_list.html">List</a>)&#160;&#160;&#160;((<a class="el" href="class_list.html">List</a>).cdr())</td></tr>
+<tr class="separator:a30b358bde9a3dbb2447ecf212be60e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b4875137e9a4e2ed700aa17010fefe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#aa0b4875137e9a4e2ed700aa17010fefe">Cadr</a>(<a class="el" href="class_list.html">List</a>)&#160;&#160;&#160;(List.cdr()-&gt;car())</td></tr>
+<tr class="separator:aa0b4875137e9a4e2ed700aa17010fefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb1c73cda8044082bc8d085638b15a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#adfb1c73cda8044082bc8d085638b15a2">Cddr</a>(<a class="el" href="class_list.html">List</a>)&#160;&#160;&#160;(List.cdr()-&gt;cdr)</td></tr>
+<tr class="separator:adfb1c73cda8044082bc8d085638b15a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e01de4acf2cf2094bb466f54be5202"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#a37e01de4acf2cf2094bb466f54be5202">Caddr</a>(<a class="el" href="class_list.html">List</a>)&#160;&#160;&#160;(List.cdr()-&gt;cdr()-&gt;car())</td></tr>
+<tr class="separator:a37e01de4acf2cf2094bb466f54be5202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a5125ab544a73103d3d09688879c48aac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_list.html">List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#a5125ab544a73103d3d09688879c48aac">createSortedList</a> (<a class="el" href="class_list.html">List</a> *l, double tab[])</td></tr>
+<tr class="separator:a5125ab544a73103d3d09688879c48aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c5b22793e71652ef8e346463ea4b6d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_list.html">List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_list_8h.html#a8c5b22793e71652ef8e346463ea4b6d7">createSortedList</a> (<a class="el" href="class_list.html">List</a> *l, QVector&lt; <a class="el" href="class_saisie.html">Saisie</a> * &gt; vecteur)</td></tr>
+<tr class="separator:a8c5b22793e71652ef8e346463ea4b6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a37e01de4acf2cf2094bb466f54be5202"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Caddr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="class_list.html">List</a></td><td>)</td>
+          <td>&#160;&#160;&#160;(List.cdr()-&gt;cdr()-&gt;car())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8h_source.html#l00013">13</a> du fichier <a class="el" href="_list_8h_source.html">List.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0b4875137e9a4e2ed700aa17010fefe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Cadr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="class_list.html">List</a></td><td>)</td>
+          <td>&#160;&#160;&#160;(List.cdr()-&gt;car())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8h_source.html#l00011">11</a> du fichier <a class="el" href="_list_8h_source.html">List.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ecceab59a1446f284b6284388c64042"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Car</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="class_list.html">List</a></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="class_list.html">List</a>).car())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8h_source.html#l00009">9</a> du fichier <a class="el" href="_list_8h_source.html">List.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adfb1c73cda8044082bc8d085638b15a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Cddr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="class_list.html">List</a></td><td>)</td>
+          <td>&#160;&#160;&#160;(List.cdr()-&gt;cdr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8h_source.html#l00012">12</a> du fichier <a class="el" href="_list_8h_source.html">List.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30b358bde9a3dbb2447ecf212be60e8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Cdr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="class_list.html">List</a></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="class_list.html">List</a>).cdr())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8h_source.html#l00010">10</a> du fichier <a class="el" href="_list_8h_source.html">List.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a5125ab544a73103d3d09688879c48aac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_list.html">List</a>* createSortedList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_list.html">List</a> *&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tab</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8cpp_source.html#l00128">128</a> du fichier <a class="el" href="_list_8cpp_source.html">List.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_list_8h_a5125ab544a73103d3d09688879c48aac_cgraph.png" border="0" usemap="#_list_8h_a5125ab544a73103d3d09688879c48aac_cgraph" alt=""/></div>
+<map name="_list_8h_a5125ab544a73103d3d09688879c48aac_cgraph" id="_list_8h_a5125ab544a73103d3d09688879c48aac_cgraph">
+<area shape="rect" id="node2" href="class_list.html#afeef425c151422c52a7f933990e832af" title="List::trie" alt="" coords="171,29,240,56"/><area shape="rect" id="node3" href="class_list.html#a3dfbd0a3a96a85ad67dddd37f9be1b97" title="List::cons" alt="" coords="425,29,503,56"/><area shape="rect" id="node5" href="class_list.html#a94b6a623f2d2c85adc11f46f3757cca6" title="List::insere" alt="" coords="289,67,375,93"/><area shape="rect" id="node4" href="class_list.html#a64d878a92d11f7c63c70cbe4e7dd4176" title="List::List" alt="" coords="552,29,624,56"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_list_8h_a5125ab544a73103d3d09688879c48aac_icgraph.png" border="0" usemap="#_list_8h_a5125ab544a73103d3d09688879c48aac_icgraph" alt=""/></div>
+<map name="_list_8h_a5125ab544a73103d3d09688879c48aac_icgraph" id="_list_8h_a5125ab544a73103d3d09688879c48aac_icgraph">
+<area shape="rect" id="node2" href="class_fenetre_principale.html#ab9d603518eaeab98041aaf5ffbfb1d70" title="FenetrePrincipale::\ltraiterFormulaire" alt="" coords="171,5,301,46"/><area shape="rect" id="node3" href="class_fenetre_principale.html#aab8cf15535ca6934db27e5e45e2b6d7b" title="FenetrePrincipale::\lFenetrePrincipale" alt="" coords="349,5,480,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c5b22793e71652ef8e346463ea4b6d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_list.html">List</a>* createSortedList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_list.html">List</a> *&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVector&lt; <a class="el" href="class_saisie.html">Saisie</a> * &gt;&#160;</td>
+          <td class="paramname"><em>vecteur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_list_8cpp_source.html#l00140">140</a> du fichier <a class="el" href="_list_8cpp_source.html">List.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_list_8h_a8c5b22793e71652ef8e346463ea4b6d7_cgraph.png" border="0" usemap="#_list_8h_a8c5b22793e71652ef8e346463ea4b6d7_cgraph" alt=""/></div>
+<map name="_list_8h_a8c5b22793e71652ef8e346463ea4b6d7_cgraph" id="_list_8h_a8c5b22793e71652ef8e346463ea4b6d7_cgraph">
+<area shape="rect" id="node2" href="class_list.html#afeef425c151422c52a7f933990e832af" title="List::trie" alt="" coords="171,29,240,56"/><area shape="rect" id="node3" href="class_list.html#a3dfbd0a3a96a85ad67dddd37f9be1b97" title="List::cons" alt="" coords="425,29,503,56"/><area shape="rect" id="node5" href="class_list.html#a94b6a623f2d2c85adc11f46f3757cca6" title="List::insere" alt="" coords="289,67,375,93"/><area shape="rect" id="node4" href="class_list.html#a64d878a92d11f7c63c70cbe4e7dd4176" title="List::List" alt="" coords="552,29,624,56"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_96afe0afae238650b507017d9374c279.html">moteur</a></li><li class="navelem"><a class="el" href="_list_8h.html">List.h</a></li>
+    <li class="footer">Généré le Samedi 4 Juillet 2015 10:04:12 pour Cutting optimizer par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
